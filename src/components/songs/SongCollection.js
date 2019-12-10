@@ -1,14 +1,42 @@
 import React, { Component } from "react";
+import ApiManager from "../modules/ApiManager";
+import SongCard from "./SongCard";
 
-class UserMain extends Component {
-render() {
-    return (
-        <div className="col-md-6">
-            <h1>USER MAIN PAGE!</h1>
-                <h3>You are logged in.</h3>
-        </div>
-    )
-  }
+class Home extends Component {
+    state = {
+        songs:[]
+    }
+
+    componentDidMount() {
+        //getAll from ApiManager to get array of songs
+        //then place that array in state
+        ApiManager.getAll("songs")
+            .then((arrayOfSongs) => {
+                this.setState({
+                    songs: arrayOfSongs
+                })
+            })
+    }
+
+
+    render() {
+        return (
+            <>
+                <header>
+                    <h1>MY SONGS</h1>
+                </header>
+                <section id="songCardContainer">
+                    {this.state.songs.map(song =>
+                        <SongCard
+                            key={song.id}
+                            song={song}
+                            {...this.props}
+                        />
+                    )}
+                </section>
+            </>
+        )
+    }
 }
 
-export default UserMain;
+export default Home;
