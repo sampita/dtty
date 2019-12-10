@@ -1,0 +1,48 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "firstName": "Doodle",
+        "lastName": "Dennen",
+        "email": "doodle@doodled.com",
+        "password": 1
+      }
+    ],
+    "songs": [
+      {
+        "id": 1,
+        "title": "Love Song",
+        "userId": 1,
+        "key": "Em",
+        "audio": "www.url.com",
+        "lyrics": "Yesterday all my troubles seemed so far away, now it seems as though they're here to stay. Oh I believe, in yesterday.",
+        "dateCreated": "09-12-2019",
+        "lastUpdated": "10-12-2019"
+      }
+    ],
+    "writers": [
+      {
+        "id": 1,
+        "songId": 1,
+        "userId": 1
+      }
+    ],
+    "chords": [
+      {
+        "id": 1,
+        "songId": 1,
+        "intro": "Am C G Em",
+        "verse": "Am C G Em",
+        "chorus": "C G F Am",
+        "bridge": "Am C Am G",
+        "outro": "G C"
+      }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "tag": "love song",
+            "songId": 1
+        }
+    ]
+  }
