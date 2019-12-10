@@ -29,6 +29,7 @@
       "userId": 1,
       "key": "Em",
       "audio": "www.url.com",
+      "length": "00:47",
       "lyrics": "Yesterday all my troubles seemed so far away, now it seems as though they're here to stay. Oh I believe, in yesterday.",
       "dateCreated": "09-12-2019",
       "lastUpdated": "10-12-2019"
@@ -39,6 +40,7 @@
       "userId": 1,
       "key": "B",
       "audio": "www.url.com",
+      "length": "02:30",
       "lyrics": "I'm not gonna write you a love song, cuz you asked for it, cuz you need one",
       "dateCreated": "09-10-2019",
       "lastUpdated": "10-13-2019"
