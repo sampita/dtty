@@ -1,10 +1,10 @@
-import React from 'react';
+/* import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { saveProfile } from './modules/ApiManager'
 import * as firebase from 'firebase/app';
-import 'firebase/storage';
+import 'firebase/storage'; */
 
-class ProfileForm extends React.Component {
+/* class ProfileForm extends React.Component {
     state = {
         username: '',
         about: '',
@@ -58,4 +58,4 @@ class ProfileForm extends React.Component {
     }
 }
 
-export default ProfileForm;
+export default ProfileForm; */

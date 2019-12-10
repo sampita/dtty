@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from "../../config/FirebaseConfig";
+import ApiManager from "../modules/ApiManager";
+import { Link } from "react-router-dom";
+import Logo from "../../images/logo.png"
+import "./Auth.css";
+// import withFirebaseAuth from 'react-with-firebase-auth'
+// import * as firebase from 'firebase/app';
+// import 'firebase/auth';
+// import firebaseConfig from "../../config/FirebaseConfig";
 
 class Login extends Component {
      // Sets initial state
@@ -11,17 +15,8 @@ class Login extends Component {
         password: "",
     }
 
-/*     createAccount = (evt) => {
-        evt.preventDefault();
-        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-          });
-    } */
-
-    login = (evt) => {
+    //Firebase auth
+    /* login = (evt) => {
         evt.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
             // Handle Errors here.
@@ -29,7 +24,7 @@ class Login extends Component {
             var errorMessage = error.message;
             // ...
           });
-    }
+    } */
 
     handleFieldChange = (evt) => {
         this.setState({
@@ -37,24 +32,52 @@ class Login extends Component {
             })
     }
 
-    render() {
-        return (
-            <div className="col-md-6">
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="userEmailInput">Email address</label>
-                        <input value={this.state.email} onChange={this.handleFieldChange} type="email" name="email" className="form-control" id="userEmailInput" aria-describedby="emailHelp" placeholder="Enter email" />
-                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="userPasswordInput">Password</label>
-                        <input value={this.state.password} onChange={this.handleFieldChange} type="password" name="password" className="form-control" id="userPasswordInput" />
-                    </div>
-                    <button type="submit" onClick={this.login} className="btn btn-primary">Login</button>
-                    <button onClick={this.signup} style={{marginLeft: "25px"}} className="btn btn-success">Signup</button>
-                </form>
+    handleLogin = e => {
+        e.preventDefault()
+        ApiManager.checkUser(this.state.email, this.state.password)
+        .then(results=>{
+            if(results.length>0) {
+                this.props.setUser(results)
+                this.props.history.push("/home");
+            } else {
+                alert("Incorrect email or password")
+            } 
+        })
+    }
 
-            </div>
+    render() {
+        console.log("login this.props", this.props)
+        return (
+            <>
+                <img src={Logo} alt={"dtty logo"} className="smallLogo"/>
+                <form className="userAuthForm">
+                    <fieldset className="userAuthForm">
+                        <h3>Login:</h3>
+                        <div className="formgrid">
+                            {/* <label htmlFor="inputEmail">Email address: </label> */}
+                            <input onChange={this.handleFieldChange} 
+                                type="email"
+                                name="email"
+                                className="loginInput"
+                                id="email"
+                                placeholder="Email address"
+                                required="" />
+                            {/* <label htmlFor="inputPassword">Password: </label> */}
+                            <input onChange={this.handleFieldChange} 
+                                type="password"
+                                name="password"
+                                className="loginInput"
+                                id="password"
+                                placeholder="Password"
+                                required="" />
+                        </div>
+                        <button onClick={this.handleLogin} type="submit" className="button">
+                            Log In
+                        </button>
+                        <Link className="smallLink" to="/createaccount">or create an account</Link>
+                    </fieldset>
+                </form>
+            </>
         )
     }
 }
