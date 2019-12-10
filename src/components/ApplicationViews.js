@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom"
-import Home from "./Home";
 import Login from "./auth/Login";
 import ProfileForm from "./Form";
 import CreateAccount from "./auth/CreateAccount";
+import Home from "./songs/SongCollection";
 
 class ApplicationViews extends Component {
-    // Sets initial state
-    state = {
-        user: true,
+
+    componentDidMount() {
+    this.props.isAuthenticated()
     }
 
 

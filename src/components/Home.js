@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Home extends Component {
+class Homex extends Component {
 render() {
     console.log("home this.props", this.props)
     return (
@@ -13,4 +13,4 @@ render() {
   }
 }
 
-export default Home;
+export default Homex;
