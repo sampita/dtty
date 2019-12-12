@@ -44,6 +44,28 @@
       "lyrics": "I'm not gonna write you a love song, cuz you asked for it, cuz you need one",
       "dateCreated": "09-10-2019",
       "lastUpdated": "10-13-2019"
+    },
+    {
+      "userId": 4,
+      "title": "Untitled",
+      "key": null,
+      "audio": null,
+      "length": null,
+      "lyrics": null,
+      "dateCreated": "2019-12-11T21:25:57.377Z",
+      "lastUpdated": "2019-12-11T21:25:57.377Z",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": null,
+      "audio": null,
+      "length": null,
+      "lyrics": null,
+      "dateCreated": "2019-12-12T05:12:07.570Z",
+      "lastUpdated": "2019-12-12T05:12:07.570Z",
+      "id": 4
     }
   ],
   "writers": [

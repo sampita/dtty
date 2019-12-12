@@ -4,6 +4,7 @@ import Login from "./auth/Login";
 import ProfileForm from "./Form";
 import CreateAccount from "./auth/CreateAccount";
 import Home from "./songs/SongCollection";
+import SongView from "./songs/Song";
 
 class ApplicationViews extends Component {
 
@@ -17,7 +18,7 @@ class ApplicationViews extends Component {
         //If a user is logged in then render Home, otherwise render Login
         return (
             <React.Fragment>
-                <Route exact path="/home" render={(props) => {
+                <Route exact path="/" render={(props) => {
                     return <Home {...this.props} {...props} />
                     }}
                 />
@@ -25,8 +26,12 @@ class ApplicationViews extends Component {
                     return <Login {...this.props} {...props} />
                     }}
                 />
-                <Route exact path="/createaccount" render={(props) => {
+                <Route exact path="/signup" render={(props) => {
                     return <CreateAccount {...this.props} {...props} />
+                    }}
+                />
+                <Route exact path="/songs/:songId(\d+)" render={(props) => {
+                    return <SongView {...this.props} {...props} />
                     }}
                 />
                 <Route exact path="/form" render={(props) => {
