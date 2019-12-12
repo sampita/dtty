@@ -1,20 +1,45 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "./SongCard.css";
 
 class SongCard extends Component {
-  render() {
-    return (
-      <article className="songCard" onClick={() => console.log("this card was clicked")}>
-        <div className="cardContent">
-          <h3>{this.props.song.title}</h3>
-          <p>Last updated {this.props.song.lastUpdated}</p>
-          <p>{this.props.song.length}</p>
-          <FontAwesomeIcon icon="trash-alt" type="button" />
-        </div>
-      </article>
-    );
-  } 
+    state = {
+        isSongSelected: false,
+        // selectedSongId: null
+    }
+
+    handleSelectedSongChange = (event) => {
+        const target = event.target
+        console.log("event.target", target)
+        this.setState({
+            isSongSelected: true
+            // selectedSongId: event.target.id
+        })
+    }
+
+    render() {
+
+        return (
+            <>
+                <article className="songCard" id={this.props.song.id} onClick={(e) => this.handleSelectedSongChange(e)}>
+                    <div className="cardContent">
+                        <h3>{this.props.song.title}</h3>
+                        <p>Last updated {this.props.song.lastUpdated}</p>
+                        <p>{this.props.song.length}</p>
+                    </div>
+                
+                {this.state.isSongSelected ? (
+                    <section className="cardButtonContainer">
+                        <FontAwesomeIcon icon="trash-alt" type="button" />
+                        <FontAwesomeIcon icon="play" type="button" />
+                        <FontAwesomeIcon icon="ellipsis-h" type="button" />
+                </section>
+                ) : null}
+                </article>
+            </>
+        );
+    }
 }
 
 export default SongCard;

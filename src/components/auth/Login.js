@@ -38,7 +38,8 @@ class Login extends Component {
         .then(results=>{
             if(results.length>0) {
                 this.props.setUser(results)
-                this.props.history.push("/home");
+                console.log("results", results)
+                this.props.history.push("/");
             } else {
                 alert("Incorrect email or password")
             } 
@@ -74,7 +75,7 @@ class Login extends Component {
                         <button onClick={this.handleLogin} type="submit" className="button">
                             Log In
                         </button>
-                        <Link className="smallLink" to="/createaccount">or create an account</Link>
+                        <Link className="smallLink" to="/signup">or create an account</Link>
                     </fieldset>
                 </form>
             </>

@@ -7,19 +7,23 @@ export default {
     get(tableName, id) {
         return fetch(`${remoteURL}/${tableName}/${id}`).then(result => result.json())
     },
-    // This fetch call gets all objects from tableName.
-    getAll(tableName) {
-        return fetch(`${remoteURL}/${tableName}`).then(result => result.json())
+
+    // This fetch call gets all objects from tableName for the active user.
+    getAll(tableName, userId) {
+        return fetch(`${remoteURL}/${tableName}?userId=${userId}`).then(result => result.json())
     },
-    createNewUser(user) {
-        return fetch(`${remoteURL}/users`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user)
-        }).then(results => results.json())
+
+    // This fetch call posts a new object to tableName.  
+    createNew(tableName, newObject) {
+      return fetch(`${remoteURL}/${tableName}`, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newObject)
+      }).then(data => data.json())
     },
+
     checkUser(email, password) {
         return fetch(`${remoteURL}/users?email=${email}&password=${password}`)
             .then(response => response.json())

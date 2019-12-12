@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 // import withFirebaseAuth from 'react-with-firebase-auth'
 // import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -9,8 +9,11 @@ import Home from './Home';
 import Login from './auth/Login';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faTrashAlt)
+library.add(faTrashAlt, faPlay, faEllipsisH, faPlusCircle)
 
 class Dtty extends Component {
 
@@ -24,7 +27,8 @@ class Dtty extends Component {
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     setUser = (results) => {
-        localStorage.setItem("user", results.id)
+        console.log("results", results)
+        localStorage.setItem("user", results[0].id)
         this.setState({
             user: this.isAuthenticated()
         });
@@ -33,6 +37,7 @@ class Dtty extends Component {
     clearUser = () => {
         localStorage.removeItem("user")
         this.setState({ user: this.isAuthenticated() })
+
     }
 
     // Function that checks to see if user is logged in or not. If so, user id is stored to localStorage.

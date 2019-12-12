@@ -39,14 +39,14 @@ class CreateAccount extends Component {
                     };
 
                     // Create the user and redirect user to home
-                    ApiManager.createNewUser(user)
+                    ApiManager.createNew("users", user)
                         .then(results => {
                             // localStorage.setItem("user", results.id)
                             // console.log(results)
                             this.props.setUser(results)
                         });
                         
-                    this.props.history.push("/home")
+                    this.props.history.push("/")
                 }
             })
     }
