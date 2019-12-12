@@ -3,6 +3,7 @@ import ApiManager from "../modules/ApiManager";
 import SongCard from "./SongCard";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCollection.css";
+import "./Footer.css";
 
 class Home extends Component {
     state = {
@@ -80,9 +81,10 @@ class Home extends Component {
                         />
                     )}
                 </section>
-                <footer className="collectionFooter" id="newSongButton">
-                    <FontAwesomeIcon icon="plus-circle" type="button" onClick={(evt) => this.createNewSong(evt)} />
-                    <button onClick={() => this.handleLogout()}>Logout</button>
+                <footer id="collectionFooter">
+                    <FontAwesomeIcon icon="plus-circle" size="3x" type="button" onClick={(evt) => this.createNewSong(evt)} />
+                    <button id=
+                    "logOutButton" onClick={() => this.handleLogout()}>Logout</button>
                 </footer>
             </>
         )

@@ -1,16 +1,64 @@
 import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SongDetails from "./SongDetails";
+import SongDetailsEdit from "./SongDetailsEdit";
+import "./Footer.css";
 
 class SongView extends Component {
+    // Sets initial state
+    state = {
+        editSongDetails: false,
+        title: "",
+        lyrics: ""
+    }
+
+    handleFieldChange = (evt) => {
+        this.setState({
+                [evt.target.name]: evt.target.value
+            })
+    }
+
+    toggle = () => {
+        let editToggle = this.state.editSongDetails
+        editToggle = editToggle ? false : true;
+        this.setState({
+            editSongDetails: editToggle
+        })
+    }
+
+    componentDidMount() {
+        const songId=this.props.match.params.songId
+        ApiManager.get("songs", songId)
+        .then((song) => {
+            this.setState({
+                title: song.title,
+                lyrics: song.lyrics
+            })    
+        })
+    }
 
     render() {
-
+        console.log("song this.props", this.props)
         return (
             <>
-                <h1>My Untitled Song</h1>
-                <input type="text" name="lyricsInput" value="This is my text area.">
-                </input>
+                <header>
+                    <input
+                        name="title"
+                        onChange={(evt) => this.handleFieldChange(evt)}
+                        value={this.state.title}></input>
+                </header>
+                <textarea
+                    type="text"
+                    name="lyrics"
+                    onChange={(evt) => this.handleFieldChange(evt)}
+                    value={this.state.lyrics}>
+                </textarea>
+                <footer id="songFooter">
+                    {this.state.editSongDetails ? (
+                        <SongDetails toggle={this.toggle} {...this.props} />
+                    ) : <SongDetailsEdit toggle={this.toggle} {...this.props} />}
+                </footer>
             </>
         );
     }

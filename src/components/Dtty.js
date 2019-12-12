@@ -7,13 +7,14 @@ import 'firebase/auth';
 import ApplicationViews from './ApplicationViews';
 import Home from './Home';
 import Login from './auth/Login';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faTrashAlt, faPlay, faEllipsisH, faPlusCircle)
+library.add(faTrashAlt, faPlay, faEllipsisH, faPlusCircle, faEdit)
 
 class Dtty extends Component {
 

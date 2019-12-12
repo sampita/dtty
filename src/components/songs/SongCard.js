@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCard.css";
+import ApiManager from '../modules/ApiManager';
 
 class SongCard extends Component {
     state = {
@@ -19,6 +20,7 @@ class SongCard extends Component {
     }
 
     render() {
+        console.log("songcard props", this.props)
 
         return (
             <>

@@ -66,6 +66,50 @@
       "dateCreated": "2019-12-12T05:12:07.570Z",
       "lastUpdated": "2019-12-12T05:12:07.570Z",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": null,
+      "audio": null,
+      "length": null,
+      "lyrics": null,
+      "dateCreated": "2019-12-12T17:30:48.215Z",
+      "lastUpdated": "2019-12-12T17:30:48.215Z",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": null,
+      "audio": null,
+      "length": null,
+      "lyrics": null,
+      "dateCreated": "2019-12-12T17:50:11.016Z",
+      "lastUpdated": "2019-12-12T17:50:11.016Z",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": null,
+      "audio": null,
+      "length": null,
+      "lyrics": null,
+      "dateCreated": "2019-12-12T17:52:29.421Z",
+      "lastUpdated": "2019-12-12T17:52:29.421Z",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": null,
+      "audio": null,
+      "length": null,
+      "lyrics": "The weather outside is frightful, but the fire is so delightful",
+      "dateCreated": "2019-12-12T19:56:52.316Z",
+      "lastUpdated": "2019-12-12T19:56:52.316Z",
+      "id": 8
     }
   ],
   "writers": [
