@@ -22,6 +22,8 @@ class Home extends Component {
     createNewSong = evt => {
         evt.preventDefault();
         const activeUserId = localStorage.getItem("user")
+        const firstName = localStorage.getItem("firstName")
+        const lastName = localStorage.getItem("lastName")
         const dateCreated = new Date();
         // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
@@ -39,57 +41,55 @@ class Home extends Component {
             lastUpdated: dateCreated,
         };
 
-        
+
         // Post the song to the API and redirect user to the Song View
         ApiManager.createNew("songs", song)
-        .then((newSong) => {
-                    const chords = {
-                        songId:newSong.id,
-                        intro: "",
-                        verse: "",
-                        chorus: "",
-                        bridge: "",
-                        outro: ""
-                    };
-            
-                    ApiManager.createNew("chords", chords)
+            .then((newSong) => {
+                const chords = {
+                    songId: newSong.id,
+                    intro: "",
+                    verse: "",
+                    chorus: "",
+                    bridge: "",
+                    outro: ""
+                };
+
+                ApiManager.createNew("chords", chords)
                     .then(() => {
-                        ApiManager.get("users", Number(activeUserId))
-                        .then((userInfo) => {
-                            console.log("userInfo", userInfo)
-                                const writer = {
-                                    songId: newSong.id,
-                                    userId: Number(activeUserId),
-                                    firstName: userInfo.firstName,
-                                    lastName: userInfo.lastName
-                                };
-                                ApiManager.createNew("writers", writer)
-                                .then(() => this.props.history.push(`/songs/${newSong.id}`));
-                                
-                        })
+
+                        const writer = {
+                            songId: newSong.id,
+                            userId: Number(activeUserId),
+                            firstName: firstName,
+                            lastName: lastName
+                        };
+                        ApiManager.createNew("writers", writer)
+                            .then(() => this.props.history.push(`/songs/${newSong.id}`));
+
+
                     })
             })
 
     }
 
     delete = (id) => {
-    const userId = localStorage.getItem("user")
+        const userId = localStorage.getItem("user")
         ApiManager.delete("songs", id)
-        .then(() => {
-            ApiManager.getAll("songs", userId)
-            .then((songs) => {
-                this.setState({
-                    songs: songs
-                })
+            .then(() => {
+                ApiManager.getAll("songs", userId)
+                    .then((songs) => {
+                        this.setState({
+                            songs: songs
+                        })
+                    })
             })
-        })
     }
 
     handleLogout = () => {
         //clears user from localStorage and redirects to home page
         this.props.clearUser();
         this.props.history.push('/login');
-      }
+    }
 
     componentDidMount() {
         const activeUserId = localStorage.getItem("user")
@@ -125,7 +125,7 @@ class Home extends Component {
                 <footer id="collectionFooter">
                     <FontAwesomeIcon icon="plus-circle" size="3x" type="button" onClick={(evt) => this.createNewSong(evt)} />
                     <button id=
-                    "logOutButton" onClick={() => this.handleLogout()}>Logout</button>
+                        "logOutButton" onClick={() => this.handleLogout()}>Logout</button>
                 </footer>
             </>
         )

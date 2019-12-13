@@ -36,12 +36,12 @@
     },
     {
       "id": 2,
-      "title": "Breakup Song",
+      "title": "HI",
       "userId": 1,
       "key": "B",
       "audio": "www.url.com",
       "length": "02:30",
-      "lyrics": "I'm not gonna write you a love song, cuz you asked for it, cuz you need one",
+      "lyrics": "SONG",
       "dateCreated": "09-10-2019",
       "lastUpdated": "10-13-2019"
     },
@@ -66,6 +66,28 @@
       "dateCreated": "2019-12-13T20:25:39.267Z",
       "lastUpdated": "2019-12-13T20:25:39.267Z",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-13T21:05:37.953Z",
+      "lastUpdated": "2019-12-13T21:05:37.953Z",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-13T21:08:11.980Z",
+      "lastUpdated": "2019-12-13T21:08:11.980Z",
+      "id": 6
     }
   ],
   "writers": [
@@ -96,6 +118,20 @@
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 4
+    },
+    {
+      "songId": 5,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 5
+    },
+    {
+      "songId": 6,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 6
     }
   ],
   "chords": [
@@ -134,6 +170,24 @@
       "bridge": "",
       "outro": "",
       "id": 4
+    },
+    {
+      "songId": 5,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 5
+    },
+    {
+      "songId": 6,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 6
     }
   ],
   "tags": [

@@ -29,8 +29,9 @@ class Dtty extends Component {
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     setUser = (results) => {
-        console.log("results", results)
         localStorage.setItem("user", results[0].id)
+        localStorage.setItem("firstName", results[0].firstName)
+        localStorage.setItem("lastName", results[0].lastName)
         this.setState({
             user: this.isAuthenticated()
         });
@@ -38,6 +39,9 @@ class Dtty extends Component {
 
     clearUser = () => {
         localStorage.removeItem("user")
+        localStorage.removeItem("firstName")
+        localStorage.removeItem("lastName")
+
         this.setState({ user: this.isAuthenticated() })
 
     }
