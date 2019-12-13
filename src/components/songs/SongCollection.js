@@ -8,6 +8,7 @@ import "./Footer.css";
 class Home extends Component {
     state = {
         songs: [],
+        songId: null
         // selectedSong: null
     }
 
@@ -19,30 +20,55 @@ class Home extends Component {
     } */
 
     createNewSong = evt => {
+        evt.preventDefault();
         const activeUserId = localStorage.getItem("user")
         const dateCreated = new Date();
         // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
-        evt.preventDefault();
 
         // this.setState({ loadingStatus: true });
 
         const song = {
             userId: Number(activeUserId),
             title: "Untitled",
-            key: null,
-            audio: null,
-            length: null,
-            lyrics: null,
+            key: "",
+            audio: "",
+            length: "",
+            lyrics: "",
             dateCreated: dateCreated,
             lastUpdated: dateCreated,
         };
 
-        console.log(song)
-
+        
         // Post the song to the API and redirect user to the Song View
         ApiManager.createNew("songs", song)
-            .then((song) => this.props.history.push(`/songs/${song.id}`));
+        .then((newSong) => {
+                    const chords = {
+                        songId:newSong.id,
+                        intro: "",
+                        verse: "",
+                        chorus: "",
+                        bridge: "",
+                        outro: ""
+                    };
+            
+                    ApiManager.createNew("chords", chords)
+                    .then(() => {
+                        ApiManager.get("users", Number(activeUserId))
+                        .then((userInfo) => {
+                            console.log("userInfo", userInfo)
+                                const writer = {
+                                    songId: newSong.id,
+                                    userId: Number(activeUserId),
+                                    firstName: userInfo.firstName,
+                                    lastName: userInfo.lastName
+                                };
+                                ApiManager.createNew("writers", writer)
+                                .then(() => this.props.history.push(`/songs/${newSong.id}`));
+                                
+                        })
+                    })
+            })
 
     }
 
