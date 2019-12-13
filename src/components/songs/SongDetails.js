@@ -13,10 +13,11 @@ class SongDetails extends Component {
         writtenBy: "",
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         const songId = this.props.match.params.songId
         ApiManager.getSong("songs", songId)
             .then((song) => {
+                console.log("song", song)
                 this.setState({
                     key: song.key,
                     verse: song.chords[0].verse,
