@@ -35,7 +35,7 @@ class SongCard extends Component {
                     <section className="cardButtonContainer">
                         <FontAwesomeIcon icon="trash-alt" type="button" onClick={() => this.props.delete(this.props.id)} />
                         <FontAwesomeIcon icon="play" type="button" />
-                        <FontAwesomeIcon icon="ellipsis-h" type="button" />
+                        <FontAwesomeIcon icon="ellipsis-h" type="button" onClick={() => {this.props.history.push(`/songs/${this.props.id}`)}} />
                 </section>
                 ) : null}
                 </article>
