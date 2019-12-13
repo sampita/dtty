@@ -3,17 +3,52 @@
 const remoteURL = "http://localhost:5002"
 
 export default {
-    // This fetch call gets one object from tableName.
+    // GET one object from tableName.
     get(tableName, id) {
         return fetch(`${remoteURL}/${tableName}/${id}`).then(result => result.json())
     },
 
-    // This fetch call gets all objects from tableName for the active user.
+    // GET one song from song table with chords and writers.
+    getSong(tableName, objectId) {
+      return fetch(`${remoteURL}/songs/${objectId}?_embed=chords&_embed=writers`).then(result => result.json())
+    },
+
+    // GET all objects from tableName for the active user.
     getAll(tableName, userId) {
         return fetch(`${remoteURL}/${tableName}?userId=${userId}`).then(result => result.json())
     },
 
-    // This fetch call posts a new object to tableName.  
+    // PATCH information to existing object.
+    patch(tableName, objectId, updatedObject) {
+      return fetch(`${remoteURL}/${tableName}/${objectId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updatedObject)
+      }).then(results => results.json())
+    },
+
+    // PATCH information to existing object.
+    patchChords(songId, updatedObject) {
+      return fetch(`${remoteURL}/chords/?songId=${songId}`, {
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(updatedObject)
+        }).then(results => results.json())
+      },
+    
+    // DELETE an object from tableName.
+    delete(tableName, id) {
+      return fetch(`http://localhost:5002/${tableName}/${id}`, {
+          method: "DELETE"
+      })
+      .then(result => result.json())
+    },
+
+    // POST a new object to tableName.  
     createNew(tableName, newObject) {
       return fetch(`${remoteURL}/${tableName}`, {
           method: "POST",

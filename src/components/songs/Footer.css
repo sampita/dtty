@@ -1,0 +1,20 @@
+#songFooter, #collectionFooter {
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#collectionFooter {
+    height: 70px;
+}
+
+#editSongDetailsButton {
+    color: white;
+    font-weight: bold;
+}
+
+#logOutButton {
+    color: white;
+}

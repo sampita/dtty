@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCard.css";
+import ApiManager from '../modules/ApiManager';
 
 class SongCard extends Component {
     state = {
@@ -19,6 +20,7 @@ class SongCard extends Component {
     }
 
     render() {
+        console.log("songcard props", this.props)
 
         return (
             <>
@@ -31,7 +33,7 @@ class SongCard extends Component {
                 
                 {this.state.isSongSelected ? (
                     <section className="cardButtonContainer">
-                        <FontAwesomeIcon icon="trash-alt" type="button" />
+                        <FontAwesomeIcon icon="trash-alt" type="button" onClick={() => this.props.delete(this.props.id)} />
                         <FontAwesomeIcon icon="play" type="button" />
                         <FontAwesomeIcon icon="ellipsis-h" type="button" />
                 </section>

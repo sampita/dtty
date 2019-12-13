@@ -46,33 +46,34 @@
       "lastUpdated": "10-13-2019"
     },
     {
-      "userId": 4,
-      "title": "Untitled",
-      "key": null,
-      "audio": null,
-      "length": null,
-      "lyrics": null,
-      "dateCreated": "2019-12-11T21:25:57.377Z",
-      "lastUpdated": "2019-12-11T21:25:57.377Z",
-      "id": 3
-    },
-    {
       "userId": 1,
-      "title": "Untitled",
-      "key": null,
+      "title": "Let It Snow!!",
+      "key": "C Minor",
       "audio": null,
       "length": null,
-      "lyrics": null,
-      "dateCreated": "2019-12-12T05:12:07.570Z",
-      "lastUpdated": "2019-12-12T05:12:07.570Z",
-      "id": 4
+      "lyrics": "The weather outside is frightful, but the fire is so delightful. As long as you love me so",
+      "dateCreated": "2019-12-12T19:56:52.316Z",
+      "lastUpdated": "2019-12-12T19:56:52.316Z",
+      "id": 8,
+      "verse": "Bb Bb Gm Em",
+      "chorus": "Em Em Gm",
+      "bridge": "D Em"
     }
   ],
   "writers": [
     {
       "id": 1,
       "songId": 1,
-      "userId": 1
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith"
+    },
+    {
+      "id": 1,
+      "songId": 8,
+      "userId": 1,
+      "firstName": "Sam",
+      "lastName": "Smith"
     }
   ],
   "chords": [
@@ -84,6 +85,24 @@
       "chorus": "C G F Am",
       "bridge": "Am C Am G",
       "outro": "G C"
+    },
+    {
+      "id": 2,
+      "songId": 2,
+      "intro": "C G C G",
+      "verse": "F G C G",
+      "chorus": "C G C G",
+      "bridge": "C C C C",
+      "outro": "G C"
+    },
+    {
+      "id": 4,
+      "songId": 8,
+      "intro": "Bb Bb Gm Em",
+      "verse": "Cm G Am G",
+      "chorus": "C G C G",
+      "bridge": "C Am C Am",
+      "outro": "Bb Em"
     }
   ],
   "tags": [

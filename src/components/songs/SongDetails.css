@@ -1,0 +1,9 @@
+section.songDetailsContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-basis: 100%;
+}
+
+.boldText {
+    font-weight: bold;
+}

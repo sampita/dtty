@@ -3,19 +3,20 @@ import ApiManager from "../modules/ApiManager";
 import SongCard from "./SongCard";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCollection.css";
+import "./Footer.css";
 
 class Home extends Component {
     state = {
         songs: [],
-        selectedSong: null
+        // selectedSong: null
     }
 
 
-    selectSong = (song) => {
+    /* selectSong = (song) => {
         this.setState({
             selectedSong: song.id
         })
-    }
+    } */
 
     createNewSong = evt => {
         const activeUserId = localStorage.getItem("user")
@@ -43,6 +44,19 @@ class Home extends Component {
         ApiManager.createNew("songs", song)
             .then((song) => this.props.history.push(`/songs/${song.id}`));
 
+    }
+
+    delete = (id) => {
+    const userId = localStorage.getItem("user")
+        ApiManager.delete("songs", id)
+        .then(() => {
+            ApiManager.getAll("songs", userId)
+            .then((songs) => {
+                this.setState({
+                    songs: songs
+                })
+            })
+        })
     }
 
     handleLogout = () => {
@@ -76,13 +90,16 @@ class Home extends Component {
                         <SongCard
                             key={song.id}
                             song={song}
+                            id={song.id}
                             {...this.props}
+                            delete={this.delete}
                         />
                     )}
                 </section>
-                <footer className="collectionFooter" id="newSongButton">
-                    <FontAwesomeIcon icon="plus-circle" type="button" onClick={(evt) => this.createNewSong(evt)} />
-                    <button onClick={() => this.handleLogout()}>Logout</button>
+                <footer id="collectionFooter">
+                    <FontAwesomeIcon icon="plus-circle" size="3x" type="button" onClick={(evt) => this.createNewSong(evt)} />
+                    <button id=
+                    "logOutButton" onClick={() => this.handleLogout()}>Logout</button>
                 </footer>
             </>
         )
