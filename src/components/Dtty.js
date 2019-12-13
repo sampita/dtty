@@ -13,8 +13,9 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faTrashAlt, faPlay, faEllipsisH, faPlusCircle, faEdit)
+library.add(faTrashAlt, faPlay, faEllipsisH, faPlusCircle, faEdit, faArrowAltCircleLeft)
 
 class Dtty extends Component {
 

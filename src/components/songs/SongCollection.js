@@ -8,15 +8,15 @@ import "./Footer.css";
 class Home extends Component {
     state = {
         songs: [],
-        selectedSong: null
+        // selectedSong: null
     }
 
 
-    selectSong = (song) => {
+    /* selectSong = (song) => {
         this.setState({
             selectedSong: song.id
         })
-    }
+    } */
 
     createNewSong = evt => {
         const activeUserId = localStorage.getItem("user")
@@ -44,6 +44,19 @@ class Home extends Component {
         ApiManager.createNew("songs", song)
             .then((song) => this.props.history.push(`/songs/${song.id}`));
 
+    }
+
+    delete = (id) => {
+    const userId = localStorage.getItem("user")
+        ApiManager.delete("songs", id)
+        .then(() => {
+            ApiManager.getAll("songs", userId)
+            .then((songs) => {
+                this.setState({
+                    songs: songs
+                })
+            })
+        })
     }
 
     handleLogout = () => {
@@ -77,7 +90,9 @@ class Home extends Component {
                         <SongCard
                             key={song.id}
                             song={song}
+                            id={song.id}
                             {...this.props}
+                            delete={this.delete}
                         />
                     )}
                 </section>

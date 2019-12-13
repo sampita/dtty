@@ -19,6 +19,19 @@ class SongView extends Component {
             })
     }
 
+    updateTitleandLyricsAndReturnToHome = evt => {
+        const songId = this.props.match.params.songId
+
+        const updatedTitleAndLyrics = {
+            title: this.state.title,
+            lyrics: this.state.lyrics
+        };
+
+        ApiManager.patch("songs", songId, updatedTitleAndLyrics)
+        .then(() => this.props.history.push("/"))
+
+    }
+
     toggle = () => {
         let editToggle = this.state.editSongDetails
         editToggle = editToggle ? false : true;
@@ -39,7 +52,6 @@ class SongView extends Component {
     }
 
     render() {
-        console.log("song this.props", this.props)
         return (
             <>
                 <header>
@@ -56,8 +68,8 @@ class SongView extends Component {
                 </textarea>
                 <footer id="songFooter">
                     {this.state.editSongDetails ? (
-                        <SongDetails toggle={this.toggle} {...this.props} />
-                    ) : <SongDetailsEdit toggle={this.toggle} {...this.props} />}
+                        <SongDetailsEdit toggle={this.toggle} {...this.props} />
+                    ) : <SongDetails toggle={this.toggle} {...this.props} title={this.state.title} lyrics={this.state.lyrics} updateSongAndReturnToHome={this.updateTitleandLyricsAndReturnToHome} />}
                 </footer>
             </>
         );
