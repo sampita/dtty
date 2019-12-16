@@ -20,175 +20,52 @@
       "email": "mel@melrocks.com",
       "password": "mel",
       "id": 3
-    }
-  ],
-  "songs": [
-    {
-      "id": 1,
-      "title": "Love Song",
-      "userId": 2,
-      "key": "Em",
-      "audio": "www.url.com",
-      "length": "00:47",
-      "lyrics": "Yesterday all my troubles seemed so far away, now it seems as though they're here to stay. Oh I believe, in yesterday.",
-      "dateCreated": "09-12-2019",
-      "lastUpdated": "10-12-2019"
     },
     {
-      "id": 2,
-      "title": "HI",
-      "userId": 1,
-      "key": "B",
-      "audio": "www.url.com",
-      "length": "02:30",
-      "lyrics": "SONG",
-      "dateCreated": "09-10-2019",
-      "lastUpdated": "10-13-2019"
+      "firstName": "Bob",
+      "lastName": "Ross",
+      "email": "happytrees@bobross.com",
+      "password": "123",
+      "id": 4
     },
     {
-      "userId": 1,
-      "title": "Let It Snow!!",
-      "key": "C Minor",
-      "audio": "",
-      "length": "",
-      "lyrics": "The weather outside is frightful, but the fire is so delightful. As long as you love me so",
-      "dateCreated": "2019-12-12T19:56:52.316Z",
-      "lastUpdated": "2019-12-12T19:56:52.316Z",
-      "id": 3
+      "firstName": "joy",
+      "lastName": "stone",
+      "email": "joy@joy.com",
+      "password": "123",
+      "id": 5
     },
     {
-      "title": "Holly Jolly Christmas",
-      "lyrics": "It's the best time of the year",
-      "userId": "1",
-      "length": "",
-      "key": "",
-      "audio": "",
-      "dateCreated": "2019-12-13T21:50:04.088Z",
-      "lastUpdated": "2019-12-13T21:50:04.088Z",
+      "firstName": "julian",
+      "lastName": "garcie",
+      "email": "julian@gmail.com",
+      "password": "123",
       "id": 6
     },
     {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "Am",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-14T02:24:49.469Z",
-      "lastUpdated": "2019-12-14T02:24:49.469Z",
-      "id": 7
-    }
-  ],
-  "writers": [
-    {
-      "id": 1,
-      "songId": 1,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith"
-    },
-    {
-      "id": 2,
-      "songId": 2,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith"
-    },
-    {
-      "id": 3,
-      "songId": 3,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith"
-    },
-    {
-      "songId": 6,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 6
-    },
-    {
-      "songId": 7,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
+      "firstName": "bito",
+      "lastName": "mann",
+      "email": "bito@gmail.com",
+      "password": "123",
       "id": 7
     },
     {
-      "songId": 2,
-      "userId": 2,
-      "firstName": "Sam",
-      "lastName": "Pita",
+      "firstName": "your",
+      "lastName": "pal",
+      "email": "pal@gmail.com",
+      "password": "pal",
       "id": 8
     },
     {
-      "songId": "7",
-      "userId": null,
-      "firstName": "Mr",
-      "lastName": "Rogers",
+      "firstName": "patrick",
+      "lastName": "pal",
+      "email": "patrick@gmail.com",
+      "password": "123",
       "id": 9
-    },
-    {
-      "songId": "7",
-      "userId": null,
-      "firstName": "T",
-      "lastName": "Pain",
-      "id": 10
     }
   ],
-  "chords": [
-    {
-      "id": 1,
-      "songId": 1,
-      "intro": "Am C G Em",
-      "verse": "Am C G Em",
-      "chorus": "C G F Am",
-      "bridge": "Am C Am G",
-      "outro": "G C"
-    },
-    {
-      "id": 2,
-      "songId": 2,
-      "intro": "C G C G",
-      "verse": "F G C G",
-      "chorus": "C G C G",
-      "bridge": "C C C C",
-      "outro": "G C"
-    },
-    {
-      "id": 3,
-      "songId": 3,
-      "intro": "Bb Bb Gm Em",
-      "verse": "Cm G Am G",
-      "chorus": "C G C G",
-      "bridge": "C Am C Am",
-      "outro": "Bb Em"
-    },
-    {
-      "songId": 6,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 6
-    },
-    {
-      "songId": 7,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 7
-    }
-  ],
-  "tags": [
-    {
-      "id": 1,
-      "tag": "love song",
-      "songId": 1
-    }
-  ]
+  "songs": [],
+  "writers": [],
+  "chords": [],
+  "tags": []
 }

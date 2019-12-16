@@ -9,7 +9,7 @@ export default {
     },
 
     // GET one song from song table with chords and writers.
-    getSong(tableName, objectId) {
+    getSong(objectId) {
       return fetch(`${remoteURL}/songs/${objectId}?_embed=chords&_embed=writers`).then(result => result.json())
     },
 

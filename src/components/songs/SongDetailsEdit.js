@@ -32,9 +32,8 @@ class SongDetailsEdit extends Component {
         };
 
         ApiManager.patch("songs", songId, updatedKey)
-        .then(ApiManager.patch("chords", chordsId, updatedChords));
-
-        this.props.toggle();
+        .then(() => ApiManager.patch("chords", chordsId, updatedChords))
+        .then(this.props.toggle)
     }
 
     saveNewWriter = evt => {
@@ -75,7 +74,7 @@ class SongDetailsEdit extends Component {
 
     componentDidMount() {
         const songId = this.props.match.params.songId
-        ApiManager.getSong("songs", songId)
+        ApiManager.getSong(songId)
             .then((song) => {
                 this.setState({
                     key: song.key,
@@ -83,7 +82,6 @@ class SongDetailsEdit extends Component {
                     chorus: song.chords[0].chorus,
                     bridge: song.chords[0].bridge,
                     writersId: song.writers[0].id,
-                    writtenBy: `${song.writers[0].firstName} ${song.writers[0].lastName}`,
                     chordsId: song.chords[0].id
                 })
             });
