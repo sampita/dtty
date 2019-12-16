@@ -92,8 +92,10 @@ input.loginInput, input.createAccountInput {
     width: 100%;
 }
 
-#recorderImage {
-    width: 30%;
+#microphoneImage {
+    display: flex;
+    justify-content: center;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
 }

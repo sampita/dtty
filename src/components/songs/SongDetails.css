@@ -6,14 +6,22 @@ section.songDetailsContainer {
 
 #editSongDetailsButton {
 color: rgb(255, 255, 255);
-background-color: black;
-border: none;
+background-color: rgb(109, 4, 170);
+padding: 8px;
+border: 1px solid rgb(109, 4, 170);
+border-radius: 5px;
 }
 
 .boldText {
     font-weight: bold;
 }
 
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
 /* Style the Add Writer button that is used to open and close the collapsible content */
 .collapsible {
     background-color: rgb(22, 22, 22);

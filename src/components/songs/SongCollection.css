@@ -1,3 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    font-family: 'Roboto';
+}
+
+#songCollectionHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+#songCardContainer.item {
+    background-color: lightgrey;
+    padding: 0;
+    margin: none;
+
+}
+
+.ui.menu {
+    border: none;
+}
+
 .collectionFooter {
     display: flex;
     justify-content: center;
@@ -10,6 +32,7 @@
     color: white;
     border: none;
 }
+
 
 /* newSongButton {
     margin-left: auto;
