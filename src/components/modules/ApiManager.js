@@ -18,6 +18,11 @@ export default {
         return fetch(`${remoteURL}/${tableName}?userId=${userId}`).then(result => result.json())
     },
 
+    // GET all writers for a particular song.
+    getWriters(songId) {
+      return fetch(`${remoteURL}/writers?songId=${songId}`).then(result => result.json())
+  },
+
     // PATCH information to existing object.
     patch(tableName, objectId, updatedObject) {
       return fetch(`${remoteURL}/${tableName}/${objectId}`, {

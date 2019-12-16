@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Logo from "../../images/logo.png"
 import "./Auth.css";
 // import withFirebaseAuth from 'react-with-firebase-auth'
@@ -82,4 +82,4 @@ class Login extends Component {
         )
     }
 }
-export default Login;
+export default withRouter(Login);

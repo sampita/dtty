@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom"
+import { Route } from "react-router-dom"
 import Login from "./auth/Login";
 import ProfileForm from "./Form";
 import CreateAccount from "./auth/CreateAccount";
@@ -14,7 +14,7 @@ class ApplicationViews extends Component {
 
 
     render() {
-        console.log("AppViews this.props", this.props)
+
         //If a user is logged in then render Home, otherwise render Login
         return (
             <React.Fragment>

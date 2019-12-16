@@ -10,8 +10,12 @@ class SongDetailsEdit extends Component {
         verse: "",
         chorus: "",
         bridge: "",
-        writtenBy: "",
-        chordsId: ""
+        writers: [],
+        writersId: "",
+        chordsId: "",
+        hidden: true,
+        firstName: "",
+        lastName: ""
     }
 
     saveChangesAndToggleView = evt => {
@@ -33,9 +37,39 @@ class SongDetailsEdit extends Component {
         this.props.toggle();
     }
 
+    saveNewWriter = evt => {
+        const songId = this.props.match.params.songId
+        const newWriterObject = {
+            songId: songId,
+            userId: null,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName
+        }
+
+        ApiManager.createNew("writers", newWriterObject)
+            .then(() => {
+                ApiManager.getWriters(songId).then(writersArray => 
+                    this.setState({
+                        writers: writersArray,
+                        firstName: "",
+                        lastName: ""
+                    }));
+            })
+
+        this.collapsibleFormHandler(evt)
+    }
+
     handleFieldChange = (evt) => {
         this.setState({
             [evt.target.name]: evt.target.value
+        })
+    }
+
+    collapsibleFormHandler = (evt) => {
+        let hiddenForm = this.state.hidden
+        hiddenForm = hiddenForm ? false : true;
+        this.setState({
+            hidden: hiddenForm
         })
     }
 
@@ -48,10 +82,13 @@ class SongDetailsEdit extends Component {
                     verse: song.chords[0].verse,
                     chorus: song.chords[0].chorus,
                     bridge: song.chords[0].bridge,
+                    writersId: song.writers[0].id,
                     writtenBy: `${song.writers[0].firstName} ${song.writers[0].lastName}`,
                     chordsId: song.chords[0].id
                 })
-            })
+            });
+        ApiManager.getWriters(songId).then(writersArray => 
+            this.setState({writers: writersArray}));
     }
 
     render() {
@@ -104,13 +141,37 @@ class SongDetailsEdit extends Component {
                     </p>
                 </section>
                 <section>
-                    <p>
                         <span className="songDetailsContainer boldText">Written By:
                         </span>
-                        <span>{this.state.writtenBy}</span>
-                        <FontAwesomeIcon icon="edit" type="button" />
-                    </p>
-                    {/* hidden Add Writer input field here?? */}
+                        {this.state.writers.map(writer =>
+                            <div key={writer.id} value={writer.id}>
+                                {writer.firstName} {writer.lastName}
+                            </div>
+                        )}
+                        <button type="button" className="collapsible" onClick={(evt) => this.collapsibleFormHandler(evt)}>+ Add Writer</button>
+                        <div className="content" hidden={this.state.hidden}>
+                            <div>
+                                <label>First Name</label>
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    value={this.state.firstName}
+                                    onChange={(evt) => this.handleFieldChange(evt)}
+                                    >
+                                </input>
+                            </div>
+                            <div>
+                                <label>Last Name</label>
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    value={this.state.lastName}
+                                    onChange={(evt) => this.handleFieldChange(evt)}
+                                    >
+                                </input>
+                            </div>
+                            <button id="saveNewWriterButton" onClick={(evt) => {this.saveNewWriter(evt)}}>Add</button>
+                        </div>
                 </section>
                 <section>
                     <button id="editSongDetailsButton" onClick={() => { this.saveChangesAndToggleView() }}>Save</button>
