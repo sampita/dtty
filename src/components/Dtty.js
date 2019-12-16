@@ -37,6 +37,16 @@ class Dtty extends Component {
         });
     }
 
+    loginUser = (results) => {
+        console.log(results)
+        localStorage.setItem("user", results[0].id)
+        localStorage.setItem("firstName", results[0].firstName)
+        localStorage.setItem("lastName", results[0].lastName)
+        this.setState({
+            user: this.isAuthenticated()
+        });
+    }
+
     clearUser = () => {
         localStorage.removeItem("user")
         localStorage.removeItem("firstName")
@@ -70,7 +80,6 @@ class Dtty extends Component {
         }
 
     render() {
-        console.log("this.state.user", this.state.user)
         return (
             <>
                 <ApplicationViews 
@@ -78,6 +87,7 @@ class Dtty extends Component {
                     clearUser={this.clearUser}
                     user={this.state.user}
                     setUser={this.setUser}
+                    loginUser={this.loginUser}
                 />
                 {/* <Route exact path="/" render={props => {
                     if (this.isAuthenticated()) {

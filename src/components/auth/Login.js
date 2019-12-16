@@ -40,7 +40,7 @@ class Login extends Component {
         ApiManager.checkUser(this.state.email, this.state.password)
             .then(results => {
                 if (results.length > 0) {
-                    this.props.setUser(results)
+                    this.props.loginUser(results)
                     console.log("results", results)
                     this.props.history.push("/");
                 } else {
