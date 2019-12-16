@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #E5E5E5;
+}
+
+input#songTitle {
+    font-family: 'Roboto';
+    background: none !important;
+    border: none;
+
+}
+
+.paper {
+  height: 550px;
+  margin-left: 25px;
+  margin-right: 25px;
+  left: 50%;
+  top: 50%;
+  box-shadow: 0px 0px 5px 0px #888;
+}
+
+/* .paper::before {
+  content: '';
+  position: absolute;
+  left: 55px;
+  height: 100%;
+  width: 2px;
+  background: rgba(255,0,0,0.4);
+} */
+
+.lines {
+  margin-top: 40px;
+  height: calc(100% - 40px);
+  background-image: repeating-linear-gradient(rgb(225, 225, 225) 0px, rgb(225, 225, 225) 24px, white 25px);
+}
+
+.lyricsTextBox {
+    width: 80%;
+    /* height: 90%; */
+    /* line-height: 100%; */
+    background-color: rgba(236, 236, 236, 0);
+    font-size: 18px;
+    border: none;
+    resize: none;
+    margin: 3px 15px 160px 0px;}
+
+.text {
+  position: absolute;
+  top: 65px;
+  left: 55px;
+  bottom: 10px;
+  right: 10px;
+  line-height: 25px;
+  font-family: 'Indie Flower';
+  overflow: hidden;
+  outline: none;
+}
+.holes {
+  position: absolute;
+  left: 10px;
+  height: 25px;
+  width: 25px;
+  background: lightgoldenrodyellow;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 2px 0px #888;
+}
+.hole-top {
+  top: 10%;
+}
+.hole-middle {
+  top: 50%;
+}
+.hole-bottom {
+  bottom: 10%;
+}
+
+/* .lyricsTextArea {
+    width: 90%;
+    height: 500px;
+    background-color: #E8E8E8;
+    border: none;
+    /* padding: 10px; */
+    /* margin: 10px; }*/
+
+/*     background-image: -moz-linear-gradient(top , transparent, transparent 30px,rgb(252, 252, 252) 0px); 
+    background-image: -webkit-linear-gradient(top , transparent, transparent 49px,rgb(254, 254, 254) 0);
+    -webkit-background-size:  100% 50px;
+    background-size: 100% 50px; */
+    /* background-attachment: local; */

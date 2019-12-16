@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import SongDetails from "./SongDetails";
 import SongDetailsEdit from "./SongDetailsEdit";
+import TextareaAutosize from 'react-autosize-textarea';
+import "./Song.css";
 import "./Footer.css";
 
 class SongView extends Component {
@@ -56,16 +58,23 @@ class SongView extends Component {
                 <header>
                     <input
                         name="title"
+                        id="songTitle"
                         onChange={(evt) => this.handleFieldChange(evt)}
                         value={this.state.title}></input>
                 </header>
-                <textarea
+                <div className="lyricsTextArea paper">
+                    <div className="lines">
+                <TextareaAutosize
                     type="text"
                     name="lyrics"
+                    className="lyricsTextBox text"
                     placeholder="Write your lyrics here..."
                     onChange={(evt) => this.handleFieldChange(evt)}
+                    onResize={(e) => {}}
                     value={this.state.lyrics}>
-                </textarea>
+                </TextareaAutosize>
+                </div>
+                </div>
                 <footer id="songFooter">
                     {this.state.editSongDetails ? (
                         <SongDetailsEdit toggle={this.toggle} {...this.props} />

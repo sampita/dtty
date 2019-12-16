@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import { Link, withRouter } from "react-router-dom";
 import Logo from "../../images/logo.png"
-import Recorder from "../../images/recorder-buttons.png"
-
+import Microphone from "../../images/microphone.png"
 import "./Auth.css";
 import { Button } from 'semantic-ui-react';
 // import withFirebaseAuth from 'react-with-firebase-auth'
@@ -80,9 +79,9 @@ class Login extends Component {
                         <Link className="smallLink" to="/signup">or create an account</Link>
                     </fieldset>
                 </form>
-                {/* <picture>
-                    <img src={Recorder} alt="rewind, record, play, and fast-forward buttons on recorder" id="recorderImage" />
-                </picture> */}
+                <picture>
+                    <img src={Microphone} alt="rewind, record, play, and fast-forward buttons on recorder" id="microphoneImage" />
+                </picture>
             </>
         )
     }
