@@ -30,6 +30,7 @@ class SongCard extends Component {
                         <FontAwesomeIcon icon="ellipsis-h" type="button" onClick={() => {this.props.history.push(`/songs/${this.props.id}`)}} />
                 </section>
                 ) : null}
+                <div className="ui fitted divider"></div>
                 </article>
             </>
         );

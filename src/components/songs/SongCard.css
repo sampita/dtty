@@ -1,5 +1,13 @@
+h3 {
+    padding: 18px 0 0 0;
+}
+
 section.cardButtonContainer {
     display: flex;
     justify-content: space-between;
     padding: 0 50px 0 50px;
+}
+
+.ui.fitted.divider {
+    margin-top: 20px;
 }

@@ -104,24 +104,29 @@ class Home extends Component {
     render() {
         return (
             <>
-                <header>
+                <header id="songCollectionHeader">
                     <h1>MY SONGS</h1>
-                </header>
-                <section id="songCardContainer">
-                    {this.state.songs.map(song =>
-                        <SongCard
-                            key={song.id}
-                            song={song}
-                            id={song.id}
-                            {...this.props}
-                            delete={this.delete}
-                        />
-                    )}
-                </section>
-                <footer id="collectionFooter">
-                    <FontAwesomeIcon icon="plus-circle" size="3x" type="button" onClick={(evt) => this.createNewSong(evt)} />
                     <button id=
                         "logOutButton" onClick={() => this.handleLogout()}>Logout</button>
+                </header>
+                <div className="column">
+                    <div className="ui vertical fluid menu">
+                        <section className="item" id="songCardContainer">
+                            {this.state.songs.map(song =>
+                                <SongCard
+                                    key={song.id}
+                                    song={song}
+                                    id={song.id}
+                                    {...this.props}
+                                    delete={this.delete}
+                                />
+                                )}
+                                {/* <div class="ui fitted divider"></div> */}
+                        </section>
+                    </div>
+                </div>
+                <footer id="collectionFooter">
+                    <FontAwesomeIcon id="addNewSongButton" icon="plus-circle" size="3x" type="button" onClick={(evt) => this.createNewSong(evt)} />
                 </footer>
             </>
         )

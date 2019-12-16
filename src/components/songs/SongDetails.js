@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import "./SongDetails.css";
+import "./Footer.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class SongDetails extends Component {
@@ -35,28 +36,30 @@ class SongDetails extends Component {
         return (
             <>
                 <div>
-                    <FontAwesomeIcon icon="arrow-alt-circle-left" type="button" onClick={(evt) => {this.props.updateSongAndReturnToHome(evt)}} />
-                </div>
-                <div>
-                    <section>
-                        <p><span className="boldText">Key:</span>{this.state.key}</p>
-                        <p><span className="boldText">Verse:</span>{this.state.verse}</p>
-                        <p><span className="boldText">Chorus:</span>{this.state.chorus}</p>
-                        <p><span className="boldText">Bridge:</span>{this.state.bridge}</p>
+                    <div className="ui equal width grid">
+                        <div className="column">
+                            <FontAwesomeIcon icon="arrow-alt-circle-left" type="button" onClick={(evt) => {this.props.updateSongAndReturnToHome(evt)}} />
+                        </div>
+                        <section className="column">
+                            <div><span className="boldText">Key:</span>{this.state.key}</div>
+                            <div><span className="boldText">Verse:</span>{this.state.verse}</div>
+                            <div><span className="boldText">Chorus:</span>{this.state.chorus}</div>
+                            <div><span className="boldText">Bridge:</span>{this.state.bridge}</div>
+                        </section>
+                        <section className="column">
+                            <span className="boldText">Written By:
+                            </span>
+                            {this.state.writers.map(writer =>
+                                <div key={writer.id} value={writer.id}>
+                                    {writer.firstName} {writer.lastName}
+                                </div>
+                            )}
+                        </section>
+                    </div>
+                    <section className="flexContainer">
+                        <button id="editSongDetailsButton" onClick={() => {this.props.toggle()}}>Edit Song Details</button>
                     </section>
-                    <section>
-                        <span className="boldText">Written By:
-                        </span>
-                        {this.state.writers.map(writer =>
-                            <div key={writer.id} value={writer.id}>
-                                {writer.firstName} {writer.lastName}
-                            </div>
-                        )}
-                    </section>
                 </div>
-                <section>
-                    <button id="editSongDetailsButton" onClick={() => {this.props.toggle()}}>Edit Song Details</button>
-                </section>
             </>
         );
     }
