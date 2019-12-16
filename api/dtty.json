@@ -20,6 +20,41 @@
       "email": "mel@melrocks.com",
       "password": "mel",
       "id": 3
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Ross",
+      "email": "happytrees@bobross.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "firstName": "joy",
+      "lastName": "stone",
+      "email": "joy@joy.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "firstName": "julian",
+      "lastName": "garcie",
+      "email": "julian@gmail.com",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "firstName": "bito",
+      "lastName": "mann",
+      "email": "bito@gmail.com",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "firstName": "your",
+      "lastName": "pal",
+      "email": "pal@gmail.com",
+      "password": "pal",
+      "id": 8
     }
   ],
   "songs": [
@@ -77,6 +112,72 @@
       "dateCreated": "2019-12-14T02:24:49.469Z",
       "lastUpdated": "2019-12-14T02:24:49.469Z",
       "id": 7
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-16T15:05:03.945Z",
+      "lastUpdated": "2019-12-16T15:05:03.945Z",
+      "id": 8
+    },
+    {
+      "userId": 2,
+      "title": "Deck The Halls",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "Fa la la",
+      "dateCreated": "2019-12-16T15:40:05.955Z",
+      "lastUpdated": "2019-12-16T15:40:05.955Z",
+      "id": 9
+    },
+    {
+      "userId": 2,
+      "title": "White Christmas!",
+      "key": "B Major",
+      "audio": "",
+      "length": "",
+      "lyrics": "Yay christmas",
+      "dateCreated": "2019-12-16T15:41:09.609Z",
+      "lastUpdated": "2019-12-16T15:41:09.609Z",
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "title": "Untitled",
+      "key": "nn",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-16T15:42:10.146Z",
+      "lastUpdated": "2019-12-16T15:42:10.146Z",
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "title": "Untitledxyz",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "xyz",
+      "dateCreated": "2019-12-16T16:14:17.134Z",
+      "lastUpdated": "2019-12-16T16:14:17.134Z",
+      "id": 12
+    },
+    {
+      "userId": 8,
+      "title": "WOOOO",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "yaaay",
+      "dateCreated": "2019-12-16T16:22:52.945Z",
+      "lastUpdated": "2019-12-16T16:22:52.945Z",
+      "id": 13
     }
   ],
   "writers": [
@@ -135,6 +236,48 @@
       "firstName": "T",
       "lastName": "Pain",
       "id": 10
+    },
+    {
+      "songId": 8,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 11
+    },
+    {
+      "songId": 9,
+      "userId": 2,
+      "firstName": "Sam",
+      "lastName": "Pita",
+      "id": 12
+    },
+    {
+      "songId": 10,
+      "userId": 2,
+      "firstName": "Sam",
+      "lastName": "Pita",
+      "id": 13
+    },
+    {
+      "songId": 11,
+      "userId": 2,
+      "firstName": "Sam",
+      "lastName": "Pita",
+      "id": 14
+    },
+    {
+      "songId": 12,
+      "userId": 2,
+      "firstName": "Sam",
+      "lastName": "Pita",
+      "id": 15
+    },
+    {
+      "songId": 13,
+      "userId": 8,
+      "firstName": "your",
+      "lastName": "pal",
+      "id": 16
     }
   ],
   "chords": [
@@ -182,6 +325,60 @@
       "bridge": "",
       "outro": "",
       "id": 7
+    },
+    {
+      "songId": 8,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 8
+    },
+    {
+      "songId": 9,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 9
+    },
+    {
+      "songId": 10,
+      "intro": "",
+      "verse": "C G Am G",
+      "chorus": "C G C G",
+      "bridge": "Am C F G",
+      "outro": "",
+      "id": 10
+    },
+    {
+      "songId": 11,
+      "intro": "",
+      "verse": "nn",
+      "chorus": "nn",
+      "bridge": "nn",
+      "outro": "",
+      "id": 11
+    },
+    {
+      "songId": 12,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 12
+    },
+    {
+      "songId": 13,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 13
     }
   ],
   "tags": [

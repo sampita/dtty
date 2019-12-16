@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 // import withFirebaseAuth from 'react-with-firebase-auth';
 // import * as firebase from "firebase/app";
 import 'firebase/auth';
+import 'semantic-ui-css/semantic.min.css'
 import Dtty from './components/Dtty';
 
 

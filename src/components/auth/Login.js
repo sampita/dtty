@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import { Link, withRouter } from "react-router-dom";
 import Logo from "../../images/logo.png"
+import Recorder from "../../images/recorder-buttons.png"
+
 import "./Auth.css";
+import { Button } from 'semantic-ui-react';
 // import withFirebaseAuth from 'react-with-firebase-auth'
 // import * as firebase from 'firebase/app';
 // import 'firebase/auth';
 // import firebaseConfig from "../../config/FirebaseConfig";
 
 class Login extends Component {
-     // Sets initial state
-     state = {
+    // Sets initial state
+    state = {
         email: "",
         password: "",
     }
@@ -28,35 +31,34 @@ class Login extends Component {
 
     handleFieldChange = (evt) => {
         this.setState({
-                [evt.target.name]: evt.target.value
-            })
+            [evt.target.name]: evt.target.value
+        })
     }
 
     handleLogin = e => {
         e.preventDefault()
         ApiManager.checkUser(this.state.email, this.state.password)
-        .then(results=>{
-            if(results.length>0) {
-                this.props.setUser(results)
-                console.log("results", results)
-                this.props.history.push("/");
-            } else {
-                alert("Incorrect email or password")
-            } 
-        })
+            .then(results => {
+                if (results.length > 0) {
+                    this.props.setUser(results)
+                    console.log("results", results)
+                    this.props.history.push("/");
+                } else {
+                    alert("Incorrect email or password")
+                }
+            })
     }
 
     render() {
-        console.log("login this.props", this.props)
         return (
             <>
-                <img src={Logo} alt={"dtty logo"} className="smallLogo"/>
+                <img src={Logo} alt={"dtty logo"} className="smallLogo" />
                 <form className="userAuthForm">
-                    <fieldset className="userAuthForm">
+                    <fieldset className="userAuthForm" >
                         <h3>Login:</h3>
-                        <div className="formgrid">
+                        <div className="formgrid" id="loginForm">
                             {/* <label htmlFor="inputEmail">Email address: </label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="email"
                                 name="email"
                                 className="loginInput"
@@ -64,7 +66,7 @@ class Login extends Component {
                                 placeholder="Email address"
                                 required="" />
                             {/* <label htmlFor="inputPassword">Password: </label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="password"
                                 name="password"
                                 className="loginInput"
@@ -72,12 +74,15 @@ class Login extends Component {
                                 placeholder="Password"
                                 required="" />
                         </div>
-                        <button onClick={this.handleLogin} type="submit" className="button">
+                        <button onClick={this.handleLogin} type="submit" className="button" id="loginButton" >
                             Log In
                         </button>
                         <Link className="smallLink" to="/signup">or create an account</Link>
                     </fieldset>
                 </form>
+                {/* <picture>
+                    <img src={Recorder} alt="rewind, record, play, and fast-forward buttons on recorder" id="recorderImage" />
+                </picture> */}
             </>
         )
     }

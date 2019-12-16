@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 // import withFirebaseAuth from 'react-with-firebase-auth'
 // import * as firebase from 'firebase/app';
 import 'firebase/auth';
@@ -19,7 +20,7 @@ class Dtty extends Component {
 
     // Sets initial state
     state = {
-        user: true,
+        user: false,
     }
 
     // isAuthenticated checks if credentials are in local storage
@@ -27,9 +28,10 @@ class Dtty extends Component {
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     setUser = (results) => {
-        localStorage.setItem("user", results[0].id)
-        localStorage.setItem("firstName", results[0].firstName)
-        localStorage.setItem("lastName", results[0].lastName)
+        console.log(results)
+        localStorage.setItem("user", results.id)
+        localStorage.setItem("firstName", results.firstName)
+        localStorage.setItem("lastName", results.lastName)
         this.setState({
             user: this.isAuthenticated()
         });
@@ -61,27 +63,40 @@ class Dtty extends Component {
         firebase.auth().signOut()
         } */
 
-    /*     componentDidMount() {
-            this.setUser(results)
-        } */
+        componentDidMount() {
+            this.setState({
+                user: this.isAuthenticated()
+            });
+        }
 
     render() {
         console.log("this.state.user", this.state.user)
         return (
             <>
+                <ApplicationViews 
+                    isAuthenticated={this.isAuthenticated}
+                    clearUser={this.clearUser}
+                    user={this.state.user}
+                    setUser={this.setUser}
+                />
                 {/* <Route exact path="/" render={props => {
-                    if (this.state.user=true) {
-                        return <ApplicationViews {...props} />
+                    if (this.isAuthenticated()) {
+                        return <ApplicationViews {...props}
+                        isAuthenticated={this.isAuthenticated}
+                        clearUser={this.clearUser}
+                        user={this.state.user}
+                        />
                     } else {
-                        return <Login {...props}/>
+                        return <Login {...props}
+                        setUser={this.setUser}/>
                     }
                 }} /> */}
                 {/* {/* If a user is logged in, render Home, otherwise render Login */}
-                {this.state.user ? (<ApplicationViews
+                {/* {this.state.user ? (<ApplicationViews
                     user={this.state.user}
                     setUser={this.setUser}
                     clearUser={this.clearUser}
-                    isAuthenticated={this.isAuthenticated} />) : (<Login setUser={this.setUser} />)}
+                    isAuthenticated={this.isAuthenticated} />) : (<Login setUser={this.setUser} />)} */}
             </>
         )
     }

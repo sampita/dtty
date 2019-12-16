@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import { Link } from "react-router-dom"
 import Logo from "../../images/logo.png"
+import Cassette from "../../images/cassette.png"
 import "./Auth.css";
 // import withFirebaseAuth from 'react-with-firebase-auth'
 // import * as firebase from 'firebase/app';
@@ -41,14 +42,11 @@ class CreateAccount extends Component {
                     // Create the user and redirect user to home
                     ApiManager.createNew("users", user)
                         .then(results => {
-                            // localStorage.setItem("user", results.id)
-                            // console.log(results)
                             this.props.setUser(results)
-                        });
-                        
-                    this.props.history.push("/")
-                }
-            })
+                        })
+                        .then(() => {this.props.history.push("/")
+                    })
+                }})
     }
 
     handleFieldChange = (evt) => {
@@ -58,48 +56,42 @@ class CreateAccount extends Component {
     }
 
     render() {
-        console.log("CreateAccount this.props", this.props)
         return (
             <>
-              <img src={Logo} alt={"dtty logo"} className="smallLogo"/>
+                <img src={Logo} alt={"dtty logo"} className="smallLogo" />
                 <form className="userAuthForm">
-                    <fieldset className="userAuthForm">
-                        <h3>Create Account:</h3>
+                    <fieldset className="userAuthForm" id="signup">
+                        <h3>Sign Up:</h3>
                         <div className="formgrid">
-                            {/* <label htmlFor="inputFirstName">First Name:</label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="name"
                                 name="firstName"
                                 className="createAccountInput"
                                 id="firstName"
                                 placeholder="First name"
                                 required="" />
-                            {/* <label htmlFor="inputLastName">Last Name:</label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="name"
                                 name="lastName"
                                 className="createAccountInput"
                                 id="lastName"
                                 placeholder="Last name"
                                 required="" />
-                            {/* <label htmlFor="inputEmail">Email address: </label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="email"
                                 name="email"
                                 className="createAccountInput"
                                 id="email"
                                 placeholder="Email address"
                                 required="" />
-                            {/* <label htmlFor="inputPassword">Password: </label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="password"
                                 name="password"
                                 className="createAccountInput"
                                 id="password"
                                 placeholder="Password"
                                 required="" />
-                            {/* <label htmlFor="inputPassword">Confirm Password</label> */}
-                            <input onChange={this.handleFieldChange} 
+                            <input onChange={this.handleFieldChange}
                                 type="password"
                                 name="confirmPassword"
                                 className="createAccountInput"
@@ -108,10 +100,13 @@ class CreateAccount extends Component {
                                 required="" />
 
                         </div>
-                        <button onClick={this.createNewUser} type="submit" className="button">
+                        <button onClick={this.createNewUser} type="submit" className="button" id="signupButton">
                             Register
                         </button>
                         <Link className="smallLink" to="/login">I already have an account</Link>
+                    <picture>
+                        <img src={Cassette} alt="cassette tape drawing" id="cassetteImage"/>
+                    </picture>
                     </fieldset>
                 </form>
             </>

@@ -16,7 +16,7 @@ class SongDetails extends Component {
 
     componentDidMount = () => {
         const songId = this.props.match.params.songId
-        ApiManager.getSong("songs", songId)
+        ApiManager.getSong(songId)
             .then((song) => {
                 this.setState({
                     key: song.key,
