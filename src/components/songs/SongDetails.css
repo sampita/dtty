@@ -1,9 +1,44 @@
 section.songDetailsContainer {
     display: flex;
     flex-wrap: nowrap;
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
+}
+
+#editSongDetailsButton {
+color: rgb(255, 255, 255);
+background-color: black;
+border: none;
 }
 
 .boldText {
     font-weight: bold;
 }
+
+/* Style the Add Writer button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: rgb(22, 22, 22);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 10px 0 10px 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    background-color: rgb(22, 22, 22);
+    color: white;
+    padding: 0 18px 80px 0;
+    /* display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }

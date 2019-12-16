@@ -5,6 +5,12 @@
     color: white;
 }
 
+#logOutButton {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
 /* newSongButton {
     margin-left: auto;
     margin-right: auto;

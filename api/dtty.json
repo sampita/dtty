@@ -57,37 +57,26 @@
       "id": 3
     },
     {
-      "userId": 1,
-      "title": "Untitled",
+      "title": "Holly Jolly Christmas",
+      "lyrics": "It's the best time of the year",
+      "userId": "1",
+      "length": "",
       "key": "",
       "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-13T20:25:39.267Z",
-      "lastUpdated": "2019-12-13T20:25:39.267Z",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-13T21:05:37.953Z",
-      "lastUpdated": "2019-12-13T21:05:37.953Z",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-13T21:08:11.980Z",
-      "lastUpdated": "2019-12-13T21:08:11.980Z",
+      "dateCreated": "2019-12-13T21:50:04.088Z",
+      "lastUpdated": "2019-12-13T21:50:04.088Z",
       "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "Am",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-14T02:24:49.469Z",
+      "lastUpdated": "2019-12-14T02:24:49.469Z",
+      "id": 7
     }
   ],
   "writers": [
@@ -113,25 +102,39 @@
       "lastName": "Smith"
     },
     {
-      "songId": 4,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 4
-    },
-    {
-      "songId": 5,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 5
-    },
-    {
       "songId": 6,
       "userId": 1,
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 6
+    },
+    {
+      "songId": 7,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 7
+    },
+    {
+      "songId": 2,
+      "userId": 2,
+      "firstName": "Sam",
+      "lastName": "Pita",
+      "id": 8
+    },
+    {
+      "songId": "7",
+      "userId": null,
+      "firstName": "Mr",
+      "lastName": "Rogers",
+      "id": 9
+    },
+    {
+      "songId": "7",
+      "userId": null,
+      "firstName": "T",
+      "lastName": "Pain",
+      "id": 10
     }
   ],
   "chords": [
@@ -163,24 +166,6 @@
       "outro": "Bb Em"
     },
     {
-      "songId": 4,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 4
-    },
-    {
-      "songId": 5,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 5
-    },
-    {
       "songId": 6,
       "intro": "",
       "verse": "",
@@ -188,6 +173,15 @@
       "bridge": "",
       "outro": "",
       "id": 6
+    },
+    {
+      "songId": 7,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 7
     }
   ],
   "tags": [

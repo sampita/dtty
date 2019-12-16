@@ -20,7 +20,6 @@ class Home extends Component {
     } */
 
     createNewSong = evt => {
-        evt.preventDefault();
         const activeUserId = localStorage.getItem("user")
         const firstName = localStorage.getItem("firstName")
         const lastName = localStorage.getItem("lastName")
@@ -45,7 +44,7 @@ class Home extends Component {
         // Post the song to the API and redirect user to the Song View
         ApiManager.createNew("songs", song)
             .then((newSong) => {
-                const chords = {
+                const newChordsObject = {
                     songId: newSong.id,
                     intro: "",
                     verse: "",
@@ -53,22 +52,19 @@ class Home extends Component {
                     bridge: "",
                     outro: ""
                 };
+                return ApiManager.createNew("chords", newChordsObject)
+                    .then((newChordsObject) => {
 
-                ApiManager.createNew("chords", chords)
-                    .then(() => {
-
-                        const writer = {
-                            songId: newSong.id,
+                        const newWritersObject = {
+                            songId: newChordsObject.songId,
                             userId: Number(activeUserId),
                             firstName: firstName,
                             lastName: lastName
                         };
-                        ApiManager.createNew("writers", writer)
-                            .then(() => this.props.history.push(`/songs/${newSong.id}`));
-
-
+                        return ApiManager.createNew("writers", newWritersObject) 
                     })
-            })
+                    .then((newWritersObject) => this.props.history.push(`/songs/${newWritersObject.songId}`));
+                })
 
     }
 

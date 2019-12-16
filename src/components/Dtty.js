@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import { Link } from "react-router-dom"
+import React, { Component } from 'react';
 // import withFirebaseAuth from 'react-with-firebase-auth'
 // import * as firebase from 'firebase/app';
 import 'firebase/auth';
 // import firebaseConfig from '../config/FirebaseConfig';
 import ApplicationViews from './ApplicationViews';
-import Home from './Home';
 import Login from './auth/Login';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +19,7 @@ class Dtty extends Component {
 
     // Sets initial state
     state = {
-        user: false,
+        user: true,
     }
 
     // isAuthenticated checks if credentials are in local storage
@@ -68,6 +66,7 @@ class Dtty extends Component {
         } */
 
     render() {
+        console.log("this.state.user", this.state.user)
         return (
             <>
                 {/* <Route exact path="/" render={props => {
@@ -78,11 +77,11 @@ class Dtty extends Component {
                     }
                 }} /> */}
                 {/* {/* If a user is logged in, render Home, otherwise render Login */}
-                {this.state.user=true ? (<ApplicationViews
+                {this.state.user ? (<ApplicationViews
                     user={this.state.user}
                     setUser={this.setUser}
                     clearUser={this.clearUser}
-                    isAuthenticated={this.isAuthenticated} />) : (<Login />)}
+                    isAuthenticated={this.isAuthenticated} />) : (<Login setUser={this.setUser} />)}
             </>
         )
     }

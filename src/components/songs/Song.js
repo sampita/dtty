@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SongDetails from "./SongDetails";
 import SongDetailsEdit from "./SongDetailsEdit";
 import "./Footer.css";
@@ -63,6 +62,7 @@ class SongView extends Component {
                 <textarea
                     type="text"
                     name="lyrics"
+                    placeholder="Write your lyrics here..."
                     onChange={(evt) => this.handleFieldChange(evt)}
                     value={this.state.lyrics}>
                 </textarea>
