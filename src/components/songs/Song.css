@@ -11,6 +11,10 @@ input#songTitle {
     font-family: 'Roboto';
     background: none !important;
     border: none;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-left: 25px;
+    font-weight: bold;
 
 }
 
@@ -33,7 +37,7 @@ input#songTitle {
 } */
 
 .lines {
-  margin-top: 40px;
+  margin-top: 10px;
   height: calc(100% - 40px);
   background-image: repeating-linear-gradient(rgb(225, 225, 225) 0px, rgb(225, 225, 225) 24px, white 25px);
 }
