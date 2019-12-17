@@ -4,6 +4,11 @@ section.songDetailsContainer {
     /* flex-basis: 100%; */
 }
 
+#backButton {
+  font-size: 40px;
+  margin-top: 40%;
+}
+
 #editSongDetailsButton {
 color: rgb(255, 255, 255);
 background-color: rgb(109, 4, 170);
@@ -11,6 +16,15 @@ padding: 8px;
 border: 1px solid rgb(109, 4, 170);
 border-radius: 5px;
 }
+
+#editSongDetailsButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(85, 2, 133);
+  padding: 8px;
+  border: 1px solid rgb(85, 2, 133);
+  border-radius: 5px;
+  cursor: pointer;
+  }
 
 .boldText {
     font-weight: bold;

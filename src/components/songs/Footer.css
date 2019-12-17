@@ -1,13 +1,9 @@
 #songFooter, #collectionFooter {
     background-color: black;
     color: white;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-#songFooter {
-    height: 150px;
 }
 
 #collectionFooter {

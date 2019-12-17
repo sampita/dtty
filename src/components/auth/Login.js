@@ -4,11 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 import Logo from "../../images/logo.png"
 import Microphone from "../../images/microphone.png"
 import "./Auth.css";
-import { Button } from 'semantic-ui-react';
-// import withFirebaseAuth from 'react-with-firebase-auth'
-// import * as firebase from 'firebase/app';
-// import 'firebase/auth';
-// import firebaseConfig from "../../config/FirebaseConfig";
 
 class Login extends Component {
     // Sets initial state

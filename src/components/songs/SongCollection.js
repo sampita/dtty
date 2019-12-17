@@ -126,7 +126,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <footer id="collectionFooter">
-                    <FontAwesomeIcon id="addNewSongButton" icon="plus-circle" size="3x" type="button" onClick={(evt) => this.createNewSong(evt)} />
+                    <FontAwesomeIcon id="addNewSongButton" icon="plus-circle"  type="button" onClick={(evt) => this.createNewSong(evt)} />
                 </footer>
             </>
         )

@@ -38,7 +38,8 @@ class SongDetails extends Component {
                 <div>
                     <div className="ui equal width grid">
                         <div className="column">
-                            <FontAwesomeIcon icon="arrow-alt-circle-left" type="button" onClick={(evt) => {this.props.updateSongAndReturnToHome(evt)}} />
+                            <FontAwesomeIcon icon="arrow-alt-circle-left" type="button"
+                            id="backButton" onClick={(evt) => {this.props.updateSongAndReturnToHome(evt)}} />
                         </div>
                         <section className="column">
                             <div><span className="boldText">Key:</span>{this.state.key}</div>

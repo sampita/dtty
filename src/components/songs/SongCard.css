@@ -2,6 +2,15 @@ h3 {
     padding: 18px 0 0 0;
 }
 
+.songCard {
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+}
+
+.divider {
+    background-color: #E5E5E5;
+}
+
 section.cardButtonContainer {
     display: flex;
     justify-content: space-between;

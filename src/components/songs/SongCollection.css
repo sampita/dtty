@@ -33,6 +33,17 @@ body {
     border: none;
 }
 
+#addNewSongButton {
+    color: #00DF8C;
+    cursor: pointer;
+    font-size: 48px;
+}
+
+#addNewSongButton:hover {
+    color: rgb(2, 165, 106);
+}
+
+
 
 /* newSongButton {
     margin-left: auto;

@@ -171,7 +171,7 @@ class SongDetailsEdit extends Component {
                             <button id="saveNewWriterButton" onClick={(evt) => {this.saveNewWriter(evt)}}>Add</button>
                         </div>
                 </section>
-                <section>
+                <section className="flexContainer">
                     <button id="editSongDetailsButton" onClick={() => { this.saveChangesAndToggleView() }}>Save</button>
                 </section>
             </>
