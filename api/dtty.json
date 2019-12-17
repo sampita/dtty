@@ -108,6 +108,39 @@
       "dateCreated": "2019-12-16T21:12:08.674Z",
       "lastUpdated": "2019-12-16T21:12:08.674Z",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-17T04:51:13.235Z",
+      "lastUpdated": "2019-12-17T04:51:13.235Z",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-17T04:52:54.464Z",
+      "lastUpdated": "2019-12-17T04:52:54.464Z",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-17T04:54:24.714Z",
+      "lastUpdated": "2019-12-17T04:54:24.714Z",
+      "id": 8
     }
   ],
   "writers": [
@@ -138,6 +171,27 @@
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 5
+    },
+    {
+      "songId": 6,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 6
+    },
+    {
+      "songId": 7,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 7
+    },
+    {
+      "songId": 8,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 8
     }
   ],
   "chords": [
@@ -176,6 +230,33 @@
       "bridge": "",
       "outro": "",
       "id": 5
+    },
+    {
+      "songId": 6,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 6
+    },
+    {
+      "songId": 7,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 7
+    },
+    {
+      "songId": 8,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 8
     }
   ],
   "tags": []
