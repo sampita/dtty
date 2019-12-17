@@ -18,6 +18,16 @@ input#songTitle {
 
 }
 
+#audioContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+audio#player {
+  width: 90%;
+}
+
 .paper {
   height: 550px;
   margin-left: 25px;
@@ -50,7 +60,7 @@ input#songTitle {
     font-size: 18px;
     border: none;
     resize: none;
-    margin: 3px 15px 160px 0px;}
+    margin: 80px 15px 160px 0px;}
 
 .text {
   position: absolute;

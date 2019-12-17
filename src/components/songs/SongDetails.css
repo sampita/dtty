@@ -4,6 +4,11 @@ section.songDetailsContainer {
     /* flex-basis: 100%; */
 }
 
+#backButton {
+  font-size: 40px;
+  margin-top: 40%;
+}
+
 #editSongDetailsButton {
 color: rgb(255, 255, 255);
 background-color: rgb(109, 4, 170);

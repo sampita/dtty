@@ -68,8 +68,8 @@
     {
       "userId": 1,
       "title": "Let It Snow",
-      "key": "",
-      "audio": "",
+      "key": "A Major",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-1-user-1?alt=media&token=242e8c53-3a5c-48af-a841-888a73df27b8",
       "length": "",
       "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snow.",
       "dateCreated": "2019-12-16T17:50:35.118Z",
@@ -80,7 +80,7 @@
       "userId": 1,
       "title": "Jingle Bells",
       "key": "",
-      "audio": "",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-2-user-1?alt=media&token=ce7c49bd-d0c9-4b04-bcd4-8cbf30576859",
       "length": "",
       "lyrics": "Jingle bells\nBatman smells\nrobin laid an egg",
       "dateCreated": "2019-12-16T20:42:45.415Z",
@@ -94,8 +94,8 @@
       "audio": "",
       "length": "",
       "lyrics": "",
-      "dateCreated": "2019-12-16T20:43:23.950Z",
-      "lastUpdated": "2019-12-16T20:43:23.950Z",
+      "dateCreated": "2019-12-17T17:29:53.013Z",
+      "lastUpdated": "2019-12-17T17:29:53.013Z",
       "id": 3
     },
     {
@@ -105,42 +105,9 @@
       "audio": "",
       "length": "",
       "lyrics": "",
-      "dateCreated": "2019-12-16T21:12:08.674Z",
-      "lastUpdated": "2019-12-16T21:12:08.674Z",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-17T04:51:13.235Z",
-      "lastUpdated": "2019-12-17T04:51:13.235Z",
-      "id": 6
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-17T04:52:54.464Z",
-      "lastUpdated": "2019-12-17T04:52:54.464Z",
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-17T04:54:24.714Z",
-      "lastUpdated": "2019-12-17T04:54:24.714Z",
-      "id": 8
+      "dateCreated": "2019-12-17T17:41:08.560Z",
+      "lastUpdated": "2019-12-17T17:41:08.560Z",
+      "id": 4
     }
   ],
   "writers": [
@@ -166,32 +133,11 @@
       "id": 3
     },
     {
-      "songId": 5,
+      "songId": 4,
       "userId": 1,
       "firstName": "Dude",
       "lastName": "Smith",
-      "id": 5
-    },
-    {
-      "songId": 6,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 6
-    },
-    {
-      "songId": 7,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 7
-    },
-    {
-      "songId": 8,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 8
+      "id": 4
     }
   ],
   "chords": [
@@ -223,40 +169,13 @@
       "id": 3
     },
     {
-      "songId": 5,
+      "songId": 4,
       "intro": "",
       "verse": "",
       "chorus": "",
       "bridge": "",
       "outro": "",
-      "id": 5
-    },
-    {
-      "songId": 6,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 6
-    },
-    {
-      "songId": 7,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 7
-    },
-    {
-      "songId": 8,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 8
+      "id": 4
     }
   ],
   "tags": []
