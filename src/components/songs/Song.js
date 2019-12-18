@@ -15,9 +15,11 @@ class SongView extends Component {
         editSongDetails: false,
         title: "",
         lyrics: "",
-        audio: null,
+        audioURL: null,
+        mediarecorder: null,
         chunks: [],
-        recordingStatus: false
+        recordingStatus: false,
+        audioFromStream: null
     }
 
     handleFieldChange = (evt) => {
@@ -34,7 +36,7 @@ class SongView extends Component {
                 this.setState({
                     title: song.title,
                     lyrics: song.lyrics,
-                    audio: song.audio,
+                    audioURL: song.audio,
                     songId: song.id,
                     userId: userId
                 })
@@ -62,54 +64,76 @@ class SongView extends Component {
             .then(() => {this.getUpdatedSongInfo()})
     }
 
+    
+    // Collect audio data as recording progesses
     //recorder()
     recordAudioStream = () => {
-        let audio = new MediaRecorder(this.state.audio)
-        audio.ondataavailable = (e) => {
+        const audioStream = new MediaRecorder(this.state.audioFromStream);
+        audioStream.start();
+        console.log(audioStream.state);
+        console.log("this.state.audioFromStream", this.state.audioFromStream)
+        console.log("recorder started");
+        audioStream.ondataavailable = (e) => {
             let chunksFromAudioStream = []
             chunksFromAudioStream.push(e.data)
             this.setState({
                 chunks: chunksFromAudioStream
             })
+            .then(console.log("this.state.chunks", this.state.chunks))
         }
-        console.log("this.state.chunks", this.state.chunks)
-
+        this.setState({ mediarecorder: audioStream })
+        
     }
     
-    getUserMedia = (e) => {
+// **************************************************************
+//                   MICROPHONE ON/OFF FUNCTIONS
+// **************************************************************
+
+    // If there is audio currently being captured, turn microphone off. If there is no audio being captured, turn microphone on.
+    toggleMicrophone = () => {
+        if (this.state.audioFromStream) {
+          this.stopMicrophone()
+        } else {
+          this.turnOnMicrophone()
+        }
+      }
+
+    // getMicrophone()
+    turnOnMicrophone = (e) => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log('getUserMedia supported.');
             navigator.mediaDevices.getUserMedia (
-               // Constraints - only audio needed for this app
-               {
-                  audio: true
+                // Constraints - only audio needed for this app
+                {
+                    audio: true
+                })
+               .then((audioFromStream) => {
+                   this.setState({ audioFromStream })
+                   this.recordAudioStream()
                })
                
-    // *********** Success callback ***************
-               .then(function(stream) {
-                    const mediaRecorder = new MediaRecorder(stream);
-                    mediaRecorder.start();
-                    console.log(mediaRecorder.state);
-                    console.log("recorder started");
-                
-                })
-                // Collect audio data as recording progesses
-                mediaRecorder.ondataavailable = (e) => {
-                    this.setState({
-                    chunks: e.data,
-                    recordingStatus: true
-                })
-            }
-    // ********************************************     
-
                // Error callback
                .catch(function(err) {
                   console.log('The following getUserMedia error occured: ' + err);
+                  this.setState({ audioFromStream: null });
                }
             );
          } else {
             console.log('getUserMedia not supported on your browser!');
          }
+    }
+
+    stopMicrophone = () => {
+        this.state.audio.getTracks().forEach(track => track.stop())
+        this.setState({ audio: null })
+      }
+
+// **************************************************************
+// **************************************************************
+
+    startRecording = () => {
+        this.state.mediarecorder.start()
+        this.setState({ recording: true })
     }
   
 
@@ -126,7 +150,7 @@ class SongView extends Component {
 
     }
 
-    toggle = () => {
+    toggleDetailsCard = () => {
         let editToggle = this.state.editSongDetails
         editToggle = editToggle ? false : true;
         this.setState({
@@ -182,7 +206,7 @@ class SongView extends Component {
                 </div>
                 <footer id="songFooter">
                     {this.state.editSongDetails ? (
-                        <SongDetailsEdit toggle={this.toggle} {...this.props} />
+                        <SongDetailsEdit toggle={this.toggleDetailsCard} {...this.props} />
                     ) : <SongDetails toggle={this.toggle} {...this.props} title={this.state.title} lyrics={this.state.lyrics} updateSongAndReturnToHome={this.updateTitleandLyricsAndReturnToHome} />}
                 </footer>
             </>
