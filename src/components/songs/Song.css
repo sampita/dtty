@@ -20,12 +20,22 @@ input#songTitle {
 
 #audioContainer {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+#recordButton {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  width: 56px;
+  height: 56px;
+  outline: none;
 }
 
 audio#player {
-  width: 90%;
+  outline: none;
 }
 
 .paper {
