@@ -19,7 +19,8 @@ class SongView extends Component {
         mediarecorder: null,
         chunks: [],
         recordingStatus: false,
-        audioFromStream: null
+        audioFromStream: null,
+        newAudioFilepath: null
     }
 
     handleFieldChange = (evt) => {
@@ -43,20 +44,20 @@ class SongView extends Component {
             })
     }
 
-    audioFileHandler = (evt) => {
-        const file = evt.target.files[0];
+    audioUploadHandler = (evt) => {
+        const file = this.state.audioURL;
         const songId = this.props.match.params.songId
         const audioRef = firebase.storage().ref('audio');
-        const childRef = audioRef.child(`song-${this.state.songId}-user-${this.state.userId}`);
+        const childRef = audioRef.child(`${Date.now()}-song-${this.state.songId}-user-${this.state.userId}`);
 
         // step 1: save audio to Firebase
         childRef.put(file)
             // step 2: get url from firebase
             .then(response => response.ref.getDownloadURL())
             // step 3: save everything to json server
-            .then(downloadUrl => {
+            .then(downloadURL => {
                 const newAudioURL = {
-                    audio: downloadUrl
+                    audio: downloadURL
                 }
                 ApiManager.patch("songs", songId, newAudioURL)
             })
@@ -67,9 +68,8 @@ class SongView extends Component {
     
     // Collect audio data as recording progesses
     //recorder()
-    recordAudioStream = () => {
+    getAudioStream = () => {
         const audioStream = new MediaRecorder(this.state.audioFromStream);
-        audioStream.start();
         console.log(audioStream.state);
         console.log("this.state.audioFromStream", this.state.audioFromStream)
         console.log("recorder started");
@@ -79,9 +79,19 @@ class SongView extends Component {
             this.setState({
                 chunks: chunksFromAudioStream
             })
-            .then(console.log("this.state.chunks", this.state.chunks))
+            /* .then(console.log("this.state.chunks ondataavailable", this.state.chunks)) */
+        }
+        audioStream.onstop = (e) => {
+            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/ogg; codecs=opus' })
+            let audioURL = window.URL.createObjectURL(audioBlob);
+            this.setState({
+                chunks: [],
+                audioURL: audioURL,
+                audioBlob: audioBlob
+            })
         }
         this.setState({ mediarecorder: audioStream })
+
         
     }
     
@@ -99,7 +109,7 @@ class SongView extends Component {
       }
 
     // getMicrophone()
-    turnOnMicrophone = (e) => {
+    turnOnMicrophone = () => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log('getUserMedia supported.');
             navigator.mediaDevices.getUserMedia (
@@ -109,7 +119,7 @@ class SongView extends Component {
                 })
                .then((audioFromStream) => {
                    this.setState({ audioFromStream })
-                   this.recordAudioStream()
+                   this.getAudioStream()
                })
                
                // Error callback
@@ -125,19 +135,34 @@ class SongView extends Component {
 
     stopMicrophone = () => {
         this.state.audio.getTracks().forEach(track => track.stop())
-        this.setState({ audio: null })
+        this.setState({ audioFromStream: null })
       }
 
 // **************************************************************
+//                   RECORDING FUNCTIONS
 // **************************************************************
 
-    startRecording = () => {
-        this.state.mediarecorder.start()
-        this.setState({ recording: true })
+    startOrStopRecording = () => {
+        if (this.state.recordingStatus) {
+            //Stop recording
+            this.state.mediarecorder.stop()
+            this.setState({ recordingStatus: false })
+            this.audioUploadHandler()
+        } else {
+            //Start recording
+            this.state.mediarecorder.start()
+            this.setState({ recordingStatus: true})
+        }
     }
-  
+
+    stopRecording = () => {
+        this.stopMicrophone()
+        this.setState({ recordingStatus: false })
+    }
 
     updateTitleandLyricsAndReturnToHome = (evt) => {
+        // this.toggleMicrophone()
+
         const songId = this.props.match.params.songId
 
         const updatedTitleAndLyrics = {
@@ -163,6 +188,9 @@ class SongView extends Component {
     }
 
     render() {
+        
+        // this.turnOnMicrophone()
+
         return (
             <>
                 <header>
@@ -177,11 +205,11 @@ class SongView extends Component {
                     accept="audio/*"
                     capture
                     id="recorder"
-                    onChange={(evt) => this.audioFileHandler(evt)} />
+                    onChange={(evt) => this.audioUploadHandler(evt)} />
                 <section id="audioContainer">
                     <button
                         id="recordButton"
-                        onClick={(e) => this.getUserMedia(e)}
+                        onClick={() => this.startOrStopRecording()}
                     >REC
                     </button>
                     <audio
