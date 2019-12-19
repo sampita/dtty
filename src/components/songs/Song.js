@@ -139,7 +139,7 @@ class SongView extends Component {
             console.log("this.state.chunks ondataavailable", this.state.chunks)
         }
         audioStream.onstop = (e) => {
-            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/ogg; codecs=opus' })
+            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/wav' })
             let audioURL = window.URL.createObjectURL(audioBlob);
             console.log("audioURL", audioURL)
             
