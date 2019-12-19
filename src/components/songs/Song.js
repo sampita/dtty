@@ -68,14 +68,15 @@ class SongView extends Component {
             })
     }
 
-    audioUploadHandler = (evt) => {
-        const file = this.state.audioBlob;
+    audioUploadHandler = () => {
+        const blob = this.state.audioBlob;
         const songId = this.props.match.params.songId
         const audioRef = firebase.storage().ref('audio');
         const childRef = audioRef.child(`${Date.now()}-song-${this.state.songId}-user-${this.state.userId}`);
 
-        // step 1: save audio to Firebase
-        childRef.put(file)
+        console.log("audioUploadHandler blob", blob)
+        // step 1: save audio blob to Firebase
+        childRef.put(blob)
             // step 2: get url from firebase
             .then(response => response.ref.getDownloadURL())
             // step 3: save everything to json server
@@ -140,11 +141,16 @@ class SongView extends Component {
         audioStream.onstop = (e) => {
             let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/ogg; codecs=opus' })
             let audioURL = window.URL.createObjectURL(audioBlob);
+            console.log("audioURL", audioURL)
+            
             this.setState({
                 chunks: [],
                 audioURL: audioURL,
                 audioBlob: audioBlob
             })
+            console.log("audioBlob onstop", this.state.audioBlob)
+            this.audioUploadHandler()
+            
         }
         this.setState({ mediarecorder: audioStream })
     }
@@ -159,10 +165,10 @@ class SongView extends Component {
         //STOP RECORDING
             this.state.mediarecorder.stop()
             //set recordingStatus to false
-            console.log("stop recording")
+            console.log("mediarecorder", this.state.mediarecorder)
             this.setState({ recordingStatus: false })
             //upload audio to Firebase
-            this.audioUploadHandler()
+            // this.audioUploadHandler()
         } else {
         //START RECORDING
             this.state.mediarecorder.start(1000)
