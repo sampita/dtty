@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-// import withFirebaseAuth from 'react-with-firebase-auth'
-// import * as firebase from 'firebase/app';
 import 'firebase/auth';
-// import firebaseConfig from '../config/FirebaseConfig';
 import ApplicationViews from './ApplicationViews';
-import Login from './auth/Login';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
@@ -23,8 +18,7 @@ class Dtty extends Component {
         user: false,
     }
 
-    // isAuthenticated checks if credentials are in local storage
-    // returns true/false
+    // isAuthenticated checks if credentials are in local storage (returns true/false)
     isAuthenticated = () => localStorage.getItem("user") !== null
 
     setUser = (results) => {

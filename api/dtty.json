@@ -67,11 +67,11 @@
   "songs": [
     {
       "userId": 1,
-      "title": "Let It Snow",
+      "title": "Let It Snow!",
       "key": "A Major",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-1-user-1?alt=media&token=242e8c53-3a5c-48af-a841-888a73df27b8",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-1-user-1?alt=media&token=b17fc9ef-96fc-422b-bcea-9d4d541f177e",
       "length": "",
-      "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snow.",
+      "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snowasdfa.",
       "dateCreated": "2019-12-16T17:50:35.118Z",
       "lastUpdated": "2019-12-16T17:50:35.118Z",
       "id": 1
@@ -89,9 +89,9 @@
     },
     {
       "userId": 1,
-      "title": "Untitled",
+      "title": "Blob Test",
       "key": "",
-      "audio": "",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1576801972600-song-3-user-1?alt=media&token=9a6b84ab-4791-4c38-8e09-931b3f95123a",
       "length": "",
       "lyrics": "",
       "dateCreated": "2019-12-17T17:29:53.013Z",
@@ -108,6 +108,17 @@
       "dateCreated": "2019-12-17T17:41:08.560Z",
       "lastUpdated": "2019-12-17T17:41:08.560Z",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2019-12-18T22:11:59.660Z",
+      "lastUpdated": "2019-12-18T22:11:59.660Z",
+      "id": 5
     }
   ],
   "writers": [
@@ -138,6 +149,27 @@
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 4
+    },
+    {
+      "songId": "1",
+      "userId": null,
+      "firstName": "Sam",
+      "lastName": "Pita",
+      "id": 5
+    },
+    {
+      "songId": "1",
+      "userId": null,
+      "firstName": "ryan",
+      "lastName": "bishop",
+      "id": 6
+    },
+    {
+      "songId": 5,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 7
     }
   ],
   "chords": [
@@ -176,6 +208,15 @@
       "bridge": "",
       "outro": "",
       "id": 4
+    },
+    {
+      "songId": 5,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 5
     }
   ],
   "tags": []
