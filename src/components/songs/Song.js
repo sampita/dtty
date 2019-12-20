@@ -160,7 +160,7 @@ class SongView extends Component {
         this.setState({ recordingStatus: true })
     }
 
-    
+    //CAUSES LOOP
     /* startOrStopRecording = () => {
         if (this.state.recordingStatus) {
         //STOP RECORDING
