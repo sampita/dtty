@@ -118,7 +118,7 @@ class SongView extends Component {
             console.log("this.state.chunks ondataavailable", this.state.chunks)
         }
         audioStream.onstop = (e) => {
-            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/wav' })
+            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/mp3' })
             let audioURL = window.URL.createObjectURL(audioBlob);
             console.log("audioURL", audioURL)
             
@@ -140,7 +140,28 @@ class SongView extends Component {
     //                   RECORDING FUNCTIONS
     // **************************************************************
 
-    startOrStopRecording = () => {
+    recordingOnOffSwitch = () => {
+        if (this.state.recordingStatus) {
+            this.stopRecording()
+        } else {
+            this.startRecording()
+        }
+    }
+
+    stopRecording = () => {
+        this.state.mediarecorder.stop()
+        console.log("mediarecorder stopRecording", this.state.mediarecorder)
+        this.setState({ recordingStatus: false })
+    }
+
+    startRecording = () => {
+        this.state.mediarecorder.start(1000)
+        console.log("mediarecorder startRecording", this.state.mediarecorder)
+        this.setState({ recordingStatus: true })
+    }
+
+    
+    /* startOrStopRecording = () => {
         if (this.state.recordingStatus) {
         //STOP RECORDING
             this.state.mediarecorder.stop()
@@ -154,7 +175,7 @@ class SongView extends Component {
             console.log("mediarecorder", this.state.mediarecorder)
             // this.setState({ recordingStatus: true })
         }
-    }
+    } */
 
     // **************************************************************
     //                   AUDIO UPLOAD
@@ -212,7 +233,7 @@ class SongView extends Component {
                 <section id="audioContainer">
                     <button
                         id="recordButton"
-                        onClick={() => this.startOrStopRecording()}
+                        onClick={() => this.recordingOnOffSwitch()}
                     >REC
                     </button>
                     <audio
