@@ -68,6 +68,98 @@ class SongView extends Component {
             })
     }
 
+    // **************************************************************
+    //                   MICROPHONE FUNCTIONS
+    // **************************************************************
+
+
+    turnOnMicrophone = () => {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            console.log('getUserMedia supported.');
+            
+            navigator.mediaDevices.getUserMedia(
+                // Constraints - only audio needed for this app
+                {
+                    audio: true,
+                    video: false
+                })
+                .then((audioFromStream) => {
+                    this.setState({ audioFromStream })
+                    this.getAudioStream()
+                })
+
+                // Error callback
+                .catch(function (err) {
+                    console.log('The following turnOnMicrophone error occured: ' + err);
+                    this.setState({ audioFromStream: null });
+                }
+                );
+        } else {
+            console.log('Microphone access not supported on your browser!');
+        }
+    }
+
+    // Collect audio data
+    getAudioStream = () => {
+        // debugger
+        const audioStream = new MediaRecorder(this.state.audioFromStream);
+        console.log("audioStream.state", audioStream.state);
+        console.log("this.state.audioFromStream", this.state.audioFromStream)
+        console.log("audioStream", audioStream)
+
+        audioStream.ondataavailable = (e) => {
+            this.setState({ recordingStatus: true })
+            let chunksFromAudioStream = []
+            chunksFromAudioStream.push(e.data)
+            this.setState({
+                chunks: chunksFromAudioStream
+            })
+            console.log("audioStream.state ondataavailable", audioStream.state);
+            console.log("this.state.chunks ondataavailable", this.state.chunks)
+        }
+        audioStream.onstop = (e) => {
+            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/wav' })
+            let audioURL = window.URL.createObjectURL(audioBlob);
+            console.log("audioURL", audioURL)
+            
+            this.setState({
+                chunks: [],
+                audioURL: audioURL,
+                audioBlob: audioBlob
+            })
+            console.log("audioBlob onstop", this.state.audioBlob)
+            //upload audio to firebase
+            this.audioUploadHandler()
+            
+        }
+        this.setState({ mediarecorder: audioStream })
+    }
+
+
+    // **************************************************************
+    //                   RECORDING FUNCTIONS
+    // **************************************************************
+
+    startOrStopRecording = () => {
+        if (this.state.recordingStatus) {
+        //STOP RECORDING
+            this.state.mediarecorder.stop()
+            //set recordingStatus to false
+            console.log("mediarecorder", this.state.mediarecorder)
+            this.setState({ recordingStatus: false })
+        } else {
+            debugger
+        //START RECORDING
+            this.state.mediarecorder.start(1000)
+            console.log("mediarecorder", this.state.mediarecorder)
+            // this.setState({ recordingStatus: true })
+        }
+    }
+
+    // **************************************************************
+    //                   AUDIO UPLOAD
+    // **************************************************************
+
     audioUploadHandler = () => {
         const blob = this.state.audioBlob;
         const songId = this.props.match.params.songId
@@ -93,90 +185,6 @@ class SongView extends Component {
             // step 4: update state with new audio file url
             .then(() => { this.getUpdatedSongInfo() })
     }
-
-    // **************************************************************
-    //                   MICROPHONE FUNCTIONS
-    // **************************************************************
-
-    // getMicrophone()
-    turnOnMicrophone = () => {
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            console.log('getUserMedia supported.');
-            navigator.mediaDevices.getUserMedia(
-                // Constraints - only audio needed for this app
-                {
-                    audio: true
-                })
-                .then((audioFromStream) => {
-                    this.setState({ audioFromStream })
-                    this.getAudioStream()
-                })
-
-                // Error callback
-                .catch(function (err) {
-                    console.log('The following turnOnMicrophone error occured: ' + err);
-                    this.setState({ audioFromStream: null });
-                }
-                );
-        } else {
-            console.log('Microphone access not supported on your browser!');
-        }
-    }
-
-    // Collect audio data
-    getAudioStream = () => {
-        // debugger
-        const audioStream = new MediaRecorder(this.state.audioFromStream);
-        console.log(audioStream.state);
-        console.log("this.state.audioFromStream", this.state.audioFromStream)
-        console.log("audioStream", audioStream)
-        audioStream.ondataavailable = (e) => {
-            let chunksFromAudioStream = []
-            chunksFromAudioStream.push(e.data)
-            this.setState({
-                chunks: chunksFromAudioStream
-            })
-            console.log("this.state.chunks ondataavailable", this.state.chunks)
-        }
-        audioStream.onstop = (e) => {
-            let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/wav' })
-            let audioURL = window.URL.createObjectURL(audioBlob);
-            console.log("audioURL", audioURL)
-            
-            this.setState({
-                chunks: [],
-                audioURL: audioURL,
-                audioBlob: audioBlob
-            })
-            console.log("audioBlob onstop", this.state.audioBlob)
-            this.audioUploadHandler()
-            
-        }
-        this.setState({ mediarecorder: audioStream })
-    }
-
-
-    // **************************************************************
-    //                   RECORDING FUNCTIONS
-    // **************************************************************
-
-    startOrStopRecording = () => {
-        if (this.state.recordingStatus) {
-        //STOP RECORDING
-            this.state.mediarecorder.stop()
-            //set recordingStatus to false
-            console.log("mediarecorder", this.state.mediarecorder)
-            this.setState({ recordingStatus: false })
-            //upload audio to Firebase
-            // this.audioUploadHandler()
-        } else {
-        //START RECORDING
-            this.state.mediarecorder.start(1000)
-            console.log("mediarecorder", this.state.mediarecorder)
-            this.setState({ recordingStatus: true })
-        }
-    }
-
 
     componentDidMount() {
         this.getUpdatedSongInfo()
