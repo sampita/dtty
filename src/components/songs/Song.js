@@ -108,12 +108,10 @@ class SongView extends Component {
         console.log("audioStream", audioStream)
 
         audioStream.ondataavailable = (e) => {
-            this.setState({ recordingStatus: true })
-            let chunksFromAudioStream = []
-            chunksFromAudioStream.push(e.data)
             this.setState({
-                chunks: chunksFromAudioStream
-            })
+                recordingStatus: true,
+                chunks: [...this.state.chunks, e.data]
+            });
             console.log("audioStream.state ondataavailable", audioStream.state);
             console.log("this.state.chunks ondataavailable", this.state.chunks)
         }
@@ -125,9 +123,12 @@ class SongView extends Component {
             this.setState({
                 chunks: [],
                 audioURL: audioURL,
-                audioBlob: audioBlob
+                audioBlob: audioBlob,
+                recordingStatus: false,
             })
             console.log("audioBlob onstop", this.state.audioBlob)
+            console.log("audioURL onstop", this.state.audioURL)
+            
             //upload audio to firebase
             this.audioUploadHandler()
             
@@ -155,7 +156,7 @@ class SongView extends Component {
     }
 
     startRecording = () => {
-        this.state.mediarecorder.start(1000)
+        this.state.mediarecorder.start(500)
         console.log("mediarecorder startRecording", this.state.mediarecorder)
         this.setState({ recordingStatus: true })
     }
@@ -194,6 +195,7 @@ class SongView extends Component {
             .then(response => response.ref.getDownloadURL())
             // step 3: save everything to json server
             .then(downloadURL => {
+                console.log("downloadURL upload", downloadURL)
                 this.setState({
                     audioURL: downloadURL
                 })
@@ -204,7 +206,10 @@ class SongView extends Component {
                 ApiManager.patch("songs", songId, newAudioURL)
             })
             // step 4: update state with new audio file url
-            .then(() => { this.getUpdatedSongInfo() })
+            // .then(() => {
+            //     console.log('FLAG');
+            //     this.getUpdatedSongInfo();
+            // })
     }
 
     componentDidMount() {
@@ -259,7 +264,7 @@ class SongView extends Component {
                 <footer id="songFooter">
                     {this.state.editSongDetails ? (
                         <SongDetailsEdit toggle={this.toggleDetailsCard} {...this.props} />
-                    ) : <SongDetails toggle={this.toggle} {...this.props} title={this.state.title} lyrics={this.state.lyrics} updateSongAndReturnToHome={this.updateTitleandLyricsAndReturnToHome} />}
+                    ) : <SongDetails toggle={this.toggleDetailsCard} {...this.props} title={this.state.title} lyrics={this.state.lyrics} updateSongAndReturnToHome={this.updateTitleandLyricsAndReturnToHome} />}
                 </footer>
             </>
         );
