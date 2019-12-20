@@ -108,11 +108,8 @@ class SongView extends Component {
         console.log("audioStream", audioStream)
 
         audioStream.ondataavailable = (e) => {
-            // Only set if not already recording.
-            if (!this.state.recordingStatus) {
-                this.setState({ recordingStatus: true });
-            }
             this.setState({
+                recordingStatus: true,
                 chunks: [...this.state.chunks, e.data]
             });
             console.log("audioStream.state ondataavailable", audioStream.state);
@@ -126,7 +123,8 @@ class SongView extends Component {
             this.setState({
                 chunks: [],
                 audioURL: audioURL,
-                audioBlob: audioBlob
+                audioBlob: audioBlob,
+                recordingStatus: false,
             })
             console.log("audioBlob onstop", this.state.audioBlob)
             //upload audio to firebase
