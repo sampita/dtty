@@ -203,7 +203,10 @@ class SongView extends Component {
                 ApiManager.patch("songs", songId, newAudioURL)
             })
             // step 4: update state with new audio file url
-            .then(() => { this.getUpdatedSongInfo() })
+            // .then(() => {
+            //     console.log('FLAG');
+            //     this.getUpdatedSongInfo();
+            // })
     }
 
     componentDidMount() {
