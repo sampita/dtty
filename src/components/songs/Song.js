@@ -108,12 +108,13 @@ class SongView extends Component {
         console.log("audioStream", audioStream)
 
         audioStream.ondataavailable = (e) => {
-            this.setState({ recordingStatus: true })
-            let chunksFromAudioStream = []
-            chunksFromAudioStream.push(e.data)
+            // Only set if not already recording.
+            if (!this.state.recordingStatus) {
+                this.setState({ recordingStatus: true });
+            }
             this.setState({
-                chunks: chunksFromAudioStream
-            })
+                chunks: [...this.state.chunks, e.data]
+            });
             console.log("audioStream.state ondataavailable", audioStream.state);
             console.log("this.state.chunks ondataavailable", this.state.chunks)
         }
