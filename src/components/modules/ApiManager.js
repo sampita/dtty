@@ -53,6 +53,14 @@ export default {
       .then(result => result.json())
     },
 
+    // DELETE corresponding objects for a song from tableName.
+    deleteChain(tableName, songId) {
+      return fetch(`http://localhost:5002/${tableName}?songId=${songId}`, {
+              method: "DELETE"
+      })
+      .then(result => result.json())
+    },
+
     // POST a new object to tableName.  
     createNew(tableName, newObject) {
       return fetch(`${remoteURL}/${tableName}`, {

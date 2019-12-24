@@ -68,18 +68,29 @@ class Home extends Component {
 
     }
 
-    delete = (id) => {
+    getAllSongs = () => {
+        const userId = localStorage.getItem("user")
+        ApiManager.getAll("songs", userId)
+            .then((songsArray) => {
+                        this.setState({
+                            songs: songsArray
+                        })
+                    })
+    }
+
+    deleteSong = (id) => {
         const userId = localStorage.getItem("user")
         ApiManager.delete("songs", id)
             .then(() => {
-                ApiManager.getAll("songs", userId)
-                    .then((songs) => {
-                        this.setState({
-                            songs: songs
-                        })
+                ApiManager.deleteChain("chords", id)
+                })
+                .then(() => {
+                    ApiManager.deleteChain("writers", id)
                     })
-            })
+                    .then(() => {this.getAllSongs()
+                    })
     }
+    
 
     handleLogout = () => {
         //clears user from localStorage and redirects to home page
@@ -92,12 +103,13 @@ class Home extends Component {
 
         //getAll from ApiManager to get array of songs
         //then place that array in state
-        ApiManager.getAll("songs", activeUserId)
+        this.getAllSongs()
+        /* ApiManager.getAll("songs", activeUserId)
             .then((arrayOfSongs) => {
                 this.setState({
                     songs: arrayOfSongs
                 })
-            })
+            }) */
     }
 
 
@@ -118,7 +130,7 @@ class Home extends Component {
                                     song={song}
                                     id={song.id}
                                     {...this.props}
-                                    delete={this.delete}
+                                    deleteSong={this.deleteSong}
                                 />
                                 )}
                                 {/* <div class="ui fitted divider"></div> */}

@@ -37,10 +37,10 @@ class SongDetailsEdit extends Component {
     }
 
     saveNewWriter = evt => {
-        const songId = this.props.match.params.songId
+        const songId = Number(this.props.match.params.songId)
         const newWriterObject = {
             songId: songId,
-            userId: null,
+            userId: "",
             firstName: this.state.firstName,
             lastName: this.state.lastName
         }
