@@ -67,11 +67,11 @@
   "songs": [
     {
       "userId": 1,
-      "title": "Let It Snow!",
+      "title": "Let It Snow",
       "key": "A Major",
       "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-1-user-1?alt=media&token=b17fc9ef-96fc-422b-bcea-9d4d541f177e",
       "length": "",
-      "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snowasdfa.",
+      "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snowasdfa. jasdfjklajsdkfjaksdlfjkldajfkdajk\najlfkdja\njalksdfjkldas",
       "dateCreated": "2019-12-16T17:50:35.118Z",
       "lastUpdated": "2019-12-16T17:50:35.118Z",
       "id": 1
@@ -89,36 +89,14 @@
     },
     {
       "userId": 1,
-      "title": "Blob Test",
-      "key": "A Major",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1576813465668-song-3-user-1?alt=media&token=e8d51be5-fb96-4eda-8737-7b737d0ef008",
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
       "length": "",
-      "lyrics": "Testing testing 123",
-      "dateCreated": "2019-12-17T17:29:53.013Z",
-      "lastUpdated": "2019-12-17T17:29:53.013Z",
+      "lyrics": "",
+      "dateCreated": "2019-12-24T03:01:01.578Z",
+      "lastUpdated": "2019-12-24T03:01:01.578Z",
       "id": 3
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-17T17:41:08.560Z",
-      "lastUpdated": "2019-12-17T17:41:08.560Z",
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2019-12-18T22:11:59.660Z",
-      "lastUpdated": "2019-12-18T22:11:59.660Z",
-      "id": 5
     }
   ],
   "writers": [
@@ -142,41 +120,13 @@
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 3
-    },
-    {
-      "songId": 4,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 4
-    },
-    {
-      "songId": "1",
-      "userId": null,
-      "firstName": "Sam",
-      "lastName": "Pita",
-      "id": 5
-    },
-    {
-      "songId": "1",
-      "userId": null,
-      "firstName": "ryan",
-      "lastName": "bishop",
-      "id": 6
-    },
-    {
-      "songId": 5,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 7
     }
   ],
   "chords": [
     {
       "songId": 1,
       "intro": "",
-      "verse": "",
+      "verse": "C G F Am",
       "chorus": "",
       "bridge": "",
       "outro": "",
@@ -199,24 +149,6 @@
       "bridge": "",
       "outro": "",
       "id": 3
-    },
-    {
-      "songId": 4,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 4
-    },
-    {
-      "songId": 5,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 5
     }
   ],
   "tags": []
