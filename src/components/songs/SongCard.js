@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Label } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCard.css";
+import ApiManager from '../modules/ApiManager';
 
 class SongCard extends Component {
     state = {
         isSongSelected: false,
+        tags: []
     }
 
     handleSelectedSongChange = (event) => {
@@ -13,11 +16,30 @@ class SongCard extends Component {
         })
     }
 
+    componentDidMount = () => {
+        const songId = this.props.id
+        ApiManager.getItemsForSpecificSong("tags", songId).then(tagsArray => 
+            this.setState({tags: tagsArray}));
+    }
+
     render() {
         return (
             <>
                 <article className="songCard" id={this.props.song.id} onClick={(e) => this.handleSelectedSongChange(e)}>
                     <div className="cardContent">
+                        <section className="tagContainer">
+                            {/* <Label color='purple' horizontal>
+                                Candy
+                            </Label>
+                            <Label color='purple' horizontal>
+                                Popcorn
+                            </Label> */}
+                            {this.state.tags.map(tag =>
+                            <Label key={tag.id} color='purple' horizontal>
+                                {tag.tag}
+                            </Label>
+                            )}
+                        </section>
                         <h3>{this.props.song.title}</h3>
                         <p>Last updated {this.props.song.lastUpdated}</p>
                         <p>{this.props.song.length}</p>

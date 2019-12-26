@@ -19,8 +19,8 @@ export default {
     },
 
     // GET all writers for a particular song.
-    getWriters(songId) {
-      return fetch(`${remoteURL}/writers?songId=${songId}`).then(result => result.json())
+    getItemsForSpecificSong(tableName, songId) {
+      return fetch(`${remoteURL}/${tableName}?songId=${songId}`).then(result => result.json())
   },
 
     // PATCH information to existing object.

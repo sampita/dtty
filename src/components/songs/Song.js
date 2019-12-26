@@ -3,6 +3,7 @@ import ApiManager from "../modules/ApiManager";
 import SongDetails from "./SongDetails";
 import SongDetailsEdit from "./SongDetailsEdit";
 import TextareaAutosize from 'react-autosize-textarea';
+import { Label } from 'semantic-ui-react';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import "./Song.css";
@@ -21,7 +22,8 @@ class SongView extends Component {
         recordingStatus: false,
         audioFromStream: null,
         newAudioFilepath: null,
-        audioBlob: null
+        audioBlob: null,
+        tags: []
     }
 
     handleFieldChange = (evt) => {
@@ -205,16 +207,14 @@ class SongView extends Component {
                 }
                 ApiManager.patch("songs", songId, newAudioURL)
             })
-            // step 4: update state with new audio file url
-            // .then(() => {
-            //     console.log('FLAG');
-            //     this.getUpdatedSongInfo();
-            // })
     }
 
     componentDidMount() {
         this.getUpdatedSongInfo()
         this.turnOnMicrophone()
+        const songId = this.props.match.params.songId
+        ApiManager.getItemsForSpecificSong("tags", songId).then(tagsArray => 
+            this.setState({tags: tagsArray}));
     }
 
     render() {
@@ -229,12 +229,6 @@ class SongView extends Component {
                         onChange={(evt) => this.handleFieldChange(evt)}
                         value={this.state.title}></input>
                 </header>
-                <input
-                    type="file"
-                    accept="audio/*"
-                    capture
-                    id="recorder"
-                    onChange={(evt) => this.audioUploadHandler(evt)} />
                 <section id="audioContainer">
                     <button
                         id="recordButton"
@@ -247,6 +241,13 @@ class SongView extends Component {
                         src={this.state.audioURL}
                     >
                     </audio>
+                </section>
+                <section id="tagContainerSongView">
+                {this.state.tags.map(tag =>
+                            <Label key={tag.id} color='purple' horizontal>
+                                {tag.tag}
+                            </Label>
+                            )}
                 </section>
                 <div className="lyricsTextArea paper">
                     <div className="lines">
