@@ -27,7 +27,7 @@ class SongDetails extends Component {
                     writersId: song.writers[0].id
                 })
             });
-         ApiManager.getWriters(songId).then(writersArray => 
+         ApiManager.getItemsForSpecificSong("writers", songId).then(writersArray => 
                 this.setState({writers: writersArray}));
     }
     

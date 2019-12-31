@@ -1,10 +1,12 @@
 h3 {
-    padding: 18px 0 0 0;
+    padding: 0;
+    margin: 0;
 }
 
 .songCard {
     background-color: rgb(220, 220, 220);
     border-radius: 10px;
+    padding: 1em;
 }
 
 .divider {
@@ -19,4 +21,13 @@ section.cardButtonContainer {
 
 .ui.fitted.divider {
     margin-top: 20px;
+}
+
+.ui.horizontal.label {
+    margin: .5em 0;
+    padding: .4em .4em;
+}
+
+.tagContainer {
+    float: right;
 }

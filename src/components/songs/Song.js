@@ -3,6 +3,7 @@ import ApiManager from "../modules/ApiManager";
 import SongDetails from "./SongDetails";
 import SongDetailsEdit from "./SongDetailsEdit";
 import TextareaAutosize from 'react-autosize-textarea';
+import { Label, Popup, Input, Icon } from 'semantic-ui-react';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import "./Song.css";
@@ -14,6 +15,7 @@ class SongView extends Component {
         userId: "",
         editSongDetails: false,
         title: "",
+        tag: "",
         lyrics: "",
         audioURL: null,
         mediarecorder: null,
@@ -21,7 +23,9 @@ class SongView extends Component {
         recordingStatus: false,
         audioFromStream: null,
         newAudioFilepath: null,
-        audioBlob: null
+        audioBlob: null,
+        tags: [],
+        isOpen: false
     }
 
     handleFieldChange = (evt) => {
@@ -31,8 +35,6 @@ class SongView extends Component {
     }
 
     updateTitleandLyricsAndReturnToHome = (evt) => {
-        // this.toggleMicrophone()
-
         const songId = this.props.match.params.songId
 
         const updatedTitleAndLyrics = {
@@ -43,6 +45,37 @@ class SongView extends Component {
         ApiManager.patch("songs", songId, updatedTitleAndLyrics)
             .then(() => this.props.history.push("/"))
 
+    }
+
+    handleOpen = () => {
+        this.setState({ isOpen: true })
+      }
+
+    handleClose = () => {
+        this.setState({ isOpen: false })
+      }
+
+    submitNewTag = (evt) => {
+        evt.preventDefault()
+        
+        const songId = this.props.match.params.songId
+
+        const str = this.state.tag;
+        const tagText = str.toUpperCase();    
+
+        const newTag = {
+            tag: tagText,
+            songId: songId
+        };
+
+        ApiManager.createNew("tags", newTag)
+            .then(() => {
+                this.setState({
+                tag: "",
+                isOpen: false
+                })
+            })
+            .then(this.getUpdatedSongInfo())
     }
 
     toggleDetailsCard = () => {
@@ -66,6 +99,16 @@ class SongView extends Component {
                     userId: userId
                 })
             })
+            .then(() => {
+                ApiManager.getItemsForSpecificSong("tags", songId).then(tagsArray =>
+                this.setState({ tags: tagsArray })
+                )});
+    }
+
+    deleteTag = (id) => {
+        ApiManager.delete("tags", id)
+            .then(() => {this.getUpdatedSongInfo()
+        })
     }
 
     // **************************************************************
@@ -76,7 +119,7 @@ class SongView extends Component {
     turnOnMicrophone = () => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log('getUserMedia supported.');
-            
+
             navigator.mediaDevices.getUserMedia(
                 // Constraints - only audio needed for this app
                 {
@@ -119,7 +162,7 @@ class SongView extends Component {
             let audioBlob = new Blob(this.state.chunks, { 'type': 'audio/mp3' })
             let audioURL = window.URL.createObjectURL(audioBlob);
             console.log("audioURL", audioURL)
-            
+
             this.setState({
                 chunks: [],
                 audioURL: audioURL,
@@ -128,10 +171,10 @@ class SongView extends Component {
             })
             console.log("audioBlob onstop", this.state.audioBlob)
             console.log("audioURL onstop", this.state.audioURL)
-            
+
             //upload audio to firebase
             this.audioUploadHandler()
-            
+
         }
         this.setState({ mediarecorder: audioStream })
     }
@@ -161,23 +204,6 @@ class SongView extends Component {
         this.setState({ recordingStatus: true })
     }
 
-    //CAUSES LOOP
-    /* startOrStopRecording = () => {
-        if (this.state.recordingStatus) {
-        //STOP RECORDING
-            this.state.mediarecorder.stop()
-            //set recordingStatus to false
-            console.log("mediarecorder", this.state.mediarecorder)
-            this.setState({ recordingStatus: false })
-        } else {
-            debugger
-        //START RECORDING
-            this.state.mediarecorder.start(1000)
-            console.log("mediarecorder", this.state.mediarecorder)
-            // this.setState({ recordingStatus: true })
-        }
-    } */
-
     // **************************************************************
     //                   AUDIO UPLOAD
     // **************************************************************
@@ -205,20 +231,18 @@ class SongView extends Component {
                 }
                 ApiManager.patch("songs", songId, newAudioURL)
             })
-            // step 4: update state with new audio file url
-            // .then(() => {
-            //     console.log('FLAG');
-            //     this.getUpdatedSongInfo();
-            // })
     }
 
     componentDidMount() {
         this.getUpdatedSongInfo()
         this.turnOnMicrophone()
+        const songId = this.props.match.params.songId
+        ApiManager.getItemsForSpecificSong("tags", songId).then(tagsArray =>
+            this.setState({ tags: tagsArray }));
     }
 
     render() {
-
+        console.log("tag input", this.state.tag)
 
         return (
             <>
@@ -229,12 +253,6 @@ class SongView extends Component {
                         onChange={(evt) => this.handleFieldChange(evt)}
                         value={this.state.title}></input>
                 </header>
-                <input
-                    type="file"
-                    accept="audio/*"
-                    capture
-                    id="recorder"
-                    onChange={(evt) => this.audioUploadHandler(evt)} />
                 <section id="audioContainer">
                     <button
                         id="recordButton"
@@ -247,6 +265,38 @@ class SongView extends Component {
                         src={this.state.audioURL}
                     >
                     </audio>
+                </section>
+                <section id="tagContainerSongView">
+                    {this.state.tags.map(tag =>
+                        <Label key={tag.id} color='purple' horizontal>
+                            {tag.tag}
+                            <Icon name='delete' onClick={() => {this.deleteTag(tag.id)}}/>
+                        </Label>
+                    )}
+                    {/* <button class='ui horizontal label' id="addTagButton">
+                        + ADD TAG
+                    </button> */}
+                    <Popup
+                        trigger={
+                            <button className='ui horizontal label' id="addTagButton">
+                                + ADD TAG
+                            </button>
+                        }
+                        content={
+                            <form onSubmit = {this.submitNewTag}>
+                            <Input icon='tags'
+                                iconPosition='left'
+                                name="tag"
+                                onChange={(evt) => this.handleFieldChange(evt)}
+                                placeholder='Enter new tag...' />
+                            </form>
+                            }
+                        open={this.state.isOpen}
+                        on='click'
+                        onOpen={this.handleOpen}
+                        onClose={this.handleClose}
+                        position='bottom right'
+                    />
                 </section>
                 <div className="lyricsTextArea paper">
                     <div className="lines">

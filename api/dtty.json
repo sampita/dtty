@@ -71,7 +71,7 @@
       "key": "A Major",
       "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-1-user-1?alt=media&token=b17fc9ef-96fc-422b-bcea-9d4d541f177e",
       "length": "",
-      "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snowasdfa. jasdfjklajsdkfjaksdlfjkldajfkdajk\najlfkdja\njalksdfjkldas",
+      "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snow",
       "dateCreated": "2019-12-16T17:50:35.118Z",
       "lastUpdated": "2019-12-16T17:50:35.118Z",
       "id": 1
@@ -151,5 +151,21 @@
       "id": 3
     }
   ],
-  "tags": []
+  "tags": [
+    {
+      "tag": "DANNY",
+      "songId": "1",
+      "id": 3
+    },
+    {
+      "tag": "HOORAY",
+      "songId": "1",
+      "id": 4
+    },
+    {
+      "tag": "TEST",
+      "songId": "1",
+      "id": 5
+    }
+  ]
 }

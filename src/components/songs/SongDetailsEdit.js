@@ -85,7 +85,7 @@ class SongDetailsEdit extends Component {
                     chordsId: song.chords[0].id
                 })
             });
-        ApiManager.getWriters(songId).then(writersArray => 
+        ApiManager.getItemsForSpecificSong("writers", songId).then(writersArray => 
             this.setState({writers: writersArray}));
     }
 
