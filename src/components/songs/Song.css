@@ -38,9 +38,20 @@ audio#player {
   outline: none;
 }
 
-.ui.horizontal.label {
+#tagContainerSongView {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
+  margin-right: 24px;
+}
+
+#addTagButton {
+  background-color: rgb(129, 39, 159);
+  color: white;
+}
+
+#addTagButton:hover {
+  background-color: rgb(86, 26, 106);
+  cursor: pointer;
 }
 
 .paper {

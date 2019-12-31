@@ -153,14 +153,19 @@
   ],
   "tags": [
     {
-      "id": 1,
-      "tag": "BALLAD",
-      "songId": 1
+      "tag": "DANNY",
+      "songId": "1",
+      "id": 3
     },
     {
-      "id": 2,
-      "tag": "LOVE SONG",
-      "songId": 1
+      "tag": "HOORAY",
+      "songId": "1",
+      "id": 4
+    },
+    {
+      "tag": "TEST",
+      "songId": "1",
+      "id": 5
     }
   ]
 }
