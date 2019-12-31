@@ -24,7 +24,8 @@ class SongView extends Component {
         audioFromStream: null,
         newAudioFilepath: null,
         audioBlob: null,
-        tags: []
+        tags: [],
+        isOpen: false
     }
 
     handleFieldChange = (evt) => {
@@ -46,6 +47,14 @@ class SongView extends Component {
 
     }
 
+    handleOpen = () => {
+        this.setState({ isOpen: true })
+      }
+
+    handleClose = () => {
+        this.setState({ isOpen: false })
+      }
+
     submitNewTag = (evt) => {
         evt.preventDefault()
         
@@ -60,6 +69,12 @@ class SongView extends Component {
         };
 
         ApiManager.createNew("tags", newTag)
+            .then(() => {
+                this.setState({
+                tag: "",
+                isOpen: false
+                })
+            })
             .then(this.getUpdatedSongInfo())
     }
 
@@ -276,7 +291,10 @@ class SongView extends Component {
                                 placeholder='Enter new tag...' />
                             </form>
                             }
+                        open={this.state.isOpen}
                         on='click'
+                        onOpen={this.handleOpen}
+                        onClose={this.handleClose}
                         position='bottom right'
                     />
                 </section>
