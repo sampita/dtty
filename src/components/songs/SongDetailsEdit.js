@@ -47,7 +47,7 @@ class SongDetailsEdit extends Component {
 
         ApiManager.createNew("writers", newWriterObject)
             .then(() => {
-                ApiManager.getWriters(songId).then(writersArray => 
+                ApiManager.getItemsForSpecificSong("writers", songId).then(writersArray => 
                     this.setState({
                         writers: writersArray,
                         firstName: "",

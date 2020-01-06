@@ -279,7 +279,7 @@ class SongView extends Component {
                     <Popup
                         trigger={
                             <button className='ui horizontal label' id="addTagButton">
-                                + ADD TAG
+                                ADD TAG +
                             </button>
                         }
                         content={

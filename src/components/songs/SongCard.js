@@ -7,6 +7,7 @@ import ApiManager from '../modules/ApiManager';
 class SongCard extends Component {
     state = {
         isSongSelected: false,
+        hidden: true,
         tags: []
     }
 
@@ -28,12 +29,6 @@ class SongCard extends Component {
                 <article className="songCard" id={this.props.song.id} onClick={(e) => this.handleSelectedSongChange(e)}>
                     <div className="cardContent">
                         <section className="tagContainer">
-                            {/* <Label color='purple' horizontal>
-                                Candy
-                            </Label>
-                            <Label color='purple' horizontal>
-                                Popcorn
-                            </Label> */}
                             {this.state.tags.map(tag =>
                             <Label key={tag.id} color='purple' horizontal>
                                 {tag.tag}
@@ -52,7 +47,7 @@ class SongCard extends Component {
                         <FontAwesomeIcon icon="ellipsis-h" type="button" onClick={() => {this.props.history.push(`/songs/${this.props.id}`)}} />
                 </section>
                 ) : null}
-                <div className="ui fitted divider"></div>
+                {/* <div className="ui fitted divider"></div> */}
                 </article>
             </>
         );

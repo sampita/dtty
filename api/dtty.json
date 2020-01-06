@@ -120,6 +120,27 @@
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 3
+    },
+    {
+      "songId": 1,
+      "userId": "",
+      "firstName": "",
+      "lastName": "",
+      "id": 4
+    },
+    {
+      "songId": 3,
+      "userId": "",
+      "firstName": "Smith",
+      "lastName": "Smitherson",
+      "id": 5
+    },
+    {
+      "songId": 3,
+      "userId": "",
+      "firstName": "Bob",
+      "lastName": "Ross",
+      "id": 6
     }
   ],
   "chords": [
@@ -171,6 +192,11 @@
       "tag": "CHRISTMAS",
       "songId": "2",
       "id": 6
+    },
+    {
+      "tag": "TEST",
+      "songId": "2",
+      "id": 7
     }
   ]
 }
