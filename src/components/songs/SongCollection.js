@@ -93,7 +93,7 @@ class Home extends Component {
             })
     }
 
-    filterSongCollection = (evt) => {
+    searchSongCollection = (evt) => {
         this.handleFieldChange(evt)
 
         const userId = localStorage.getItem("user")
@@ -138,10 +138,10 @@ class Home extends Component {
                     <div>
                         <Input type="text"
                             name="searchInput"
-                            icon={<Icon name='search' link onClick={(evt) => this.filterSongCollection(evt)}/>}
+                            icon={<Icon name='search' link />}
                             placeholder='Search songs...'
                             value={this.state.searchInput}
-                            onChange={(evt) => this.filterSongCollection(evt)}
+                            onChange={(evt) => this.searchSongCollection(evt)}
                         />
                         <Dropdown
                             text='Filter'
