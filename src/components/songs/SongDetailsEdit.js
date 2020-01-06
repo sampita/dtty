@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Label, Popup, Input, Icon, Modal, Button, Image, Header } from 'semantic-ui-react';
 import "./SongDetails.css";
 
 class SongDetailsEdit extends Component {
@@ -146,7 +147,8 @@ class SongDetailsEdit extends Component {
                                 {writer.firstName} {writer.lastName}
                             </div>
                         )}
-                        <button type="button" className="collapsible" onClick={(evt) => this.collapsibleFormHandler(evt)}>+ Add Writer</button>
+                        <Button onClick={() => this.props.show('blurring')}>Add Writer +</Button>
+                        {/* <button type="button" className="collapsible" onClick={(evt) => this.collapsibleFormHandler(evt)}>+ Add Writer</button> */}
                         <div className="content" hidden={this.state.hidden}>
                             <div>
                                 <label>First Name</label>

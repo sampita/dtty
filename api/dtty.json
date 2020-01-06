@@ -94,9 +94,75 @@
       "audio": "",
       "length": "",
       "lyrics": "",
-      "dateCreated": "2019-12-24T03:01:01.578Z",
-      "lastUpdated": "2019-12-24T03:01:01.578Z",
-      "id": 3
+      "dateCreated": "2020-01-06T22:52:30.829Z",
+      "lastUpdated": "2020-01-06T22:52:30.829Z",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-06T23:00:10.962Z",
+      "lastUpdated": "2020-01-06T23:00:10.962Z",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-06T23:00:13.701Z",
+      "lastUpdated": "2020-01-06T23:00:13.701Z",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-06T23:00:16.197Z",
+      "lastUpdated": "2020-01-06T23:00:16.197Z",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-06T23:00:17.600Z",
+      "lastUpdated": "2020-01-06T23:00:17.600Z",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-06T23:00:19.128Z",
+      "lastUpdated": "2020-01-06T23:00:19.128Z",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-06T23:00:20.556Z",
+      "lastUpdated": "2020-01-06T23:00:20.556Z",
+      "id": 15
     }
   ],
   "writers": [
@@ -115,32 +181,53 @@
       "id": 2
     },
     {
-      "songId": 3,
+      "songId": 9,
       "userId": 1,
       "firstName": "Dude",
       "lastName": "Smith",
-      "id": 3
+      "id": 12
     },
     {
-      "songId": 1,
-      "userId": "",
-      "firstName": "",
-      "lastName": "",
-      "id": 4
+      "songId": 10,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 13
     },
     {
-      "songId": 3,
-      "userId": "",
-      "firstName": "Smith",
-      "lastName": "Smitherson",
-      "id": 5
+      "songId": 11,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 14
     },
     {
-      "songId": 3,
-      "userId": "",
-      "firstName": "Bob",
-      "lastName": "Ross",
-      "id": 6
+      "songId": 12,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 15
+    },
+    {
+      "songId": 13,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 16
+    },
+    {
+      "songId": 14,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 17
+    },
+    {
+      "songId": 15,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 18
     }
   ],
   "chords": [
@@ -163,13 +250,67 @@
       "id": 2
     },
     {
-      "songId": 3,
+      "songId": 9,
       "intro": "",
       "verse": "",
       "chorus": "",
       "bridge": "",
       "outro": "",
-      "id": 3
+      "id": 9
+    },
+    {
+      "songId": 10,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 10
+    },
+    {
+      "songId": 11,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 11
+    },
+    {
+      "songId": 12,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 12
+    },
+    {
+      "songId": 13,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 13
+    },
+    {
+      "songId": 14,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 14
+    },
+    {
+      "songId": 15,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 15
     }
   ],
   "tags": [
@@ -192,11 +333,6 @@
       "tag": "CHRISTMAS",
       "songId": "2",
       "id": 6
-    },
-    {
-      "tag": "TEST",
-      "songId": "2",
-      "id": 7
     }
   ]
 }

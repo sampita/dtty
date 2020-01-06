@@ -183,7 +183,6 @@ class Home extends Component {
                                     deleteSong={this.deleteSong}
                                 />
                             )}
-                            {/* <div class="ui fitted divider"></div> */}
                         </section>
                     </div>
                 </div>
