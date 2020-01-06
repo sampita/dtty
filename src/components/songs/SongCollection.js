@@ -107,8 +107,6 @@ class Home extends Component {
                 })
             )
             .then((results) => this.setState({songs: results}))
-        // this.setState({songs: songList})
-        // console.log("this.state.songs search results", this.state.songs)
     }
 
     handleLogout = () => {
@@ -123,12 +121,6 @@ class Home extends Component {
         //getAll from ApiManager to get array of songs
         //then place that array in state
         this.getAllSongs()
-        /* ApiManager.getAll("songs", activeUserId)
-            .then((arrayOfSongs) => {
-                this.setState({
-                    songs: arrayOfSongs
-                })
-            }) */
     }
 
 
