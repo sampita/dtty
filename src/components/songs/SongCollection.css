@@ -43,7 +43,12 @@ body {
     color: rgb(2, 165, 106);
 }
 
-
+#filterButton {
+    width: 30%;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+}
 
 /* newSongButton {
     margin-left: auto;

@@ -2,12 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-  margin: 0;
-  padding: 0;
   background: #E5E5E5;
+  height: 667px;
 }
 
-input#songTitle {
+
+#songTitle {
     font-family: 'Roboto';
     background: none !important;
     border: none;
@@ -15,20 +15,27 @@ input#songTitle {
     margin-top: 10px;
     margin-left: 25px;
     font-weight: bold;
+}
 
+#songPageContainer {
+  max-height: 100vh;
+}
+
+.writerLabel {
+  color: gray;
 }
 
 #audioContainer {
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
 }
 
 #recordButton {
-  background-color: red;
+  background-color: rgb(5, 224, 86);
+  padding-top: 15px;
   color: white;
-  font-weight: bold;
-  border-radius: 30px;
+  font-size: 30px;
+  border-radius: 40px;
   width: 56px;
   height: 56px;
   outline: none;
@@ -63,14 +70,6 @@ audio#player {
   box-shadow: 0px 0px 5px 0px #888;
 }
 
-/* .paper::before {
-  content: '';
-  position: absolute;
-  left: 55px;
-  height: 100%;
-  width: 2px;
-  background: rgba(255,0,0,0.4);
-} */
 
 .lines {
   margin-top: 10px;
@@ -80,8 +79,6 @@ audio#player {
 
 .lyricsTextBox {
     width: 80%;
-    /* height: 90%; */
-    /* line-height: 100%; */
     background-color: rgba(236, 236, 236, 0);
     font-size: 18px;
     border: none;

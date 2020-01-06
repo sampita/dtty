@@ -19,10 +19,6 @@ section.cardButtonContainer {
     padding: 0 50px 0 50px;
 }
 
-.ui.fitted.divider {
-    margin-top: 20px;
-}
-
 .ui.horizontal.label {
     margin: .5em 0;
     padding: .4em .4em;

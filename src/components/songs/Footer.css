@@ -1,13 +1,21 @@
-#songFooter, #collectionFooter {
+#songFooter {
     background-color: black;
     color: white;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: 0px;
     width: 100%;
+    overflow: hidden;
+    /* height: 30%; */
 }
 
 #collectionFooter {
-    height: 70px;
+    /* height: 70px; */
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-wrap: none;

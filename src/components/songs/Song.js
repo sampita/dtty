@@ -3,7 +3,7 @@ import ApiManager from "../modules/ApiManager";
 import SongDetails from "./SongDetails";
 import SongDetailsEdit from "./SongDetailsEdit";
 import TextareaAutosize from 'react-autosize-textarea';
-import { Label, Popup, Input, Icon } from 'semantic-ui-react';
+import { Label, Popup, Input, Icon, Modal, Button, Image, Header } from 'semantic-ui-react';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
 import "./Song.css";
@@ -25,8 +25,17 @@ class SongView extends Component {
         newAudioFilepath: null,
         audioBlob: null,
         tags: [],
-        isOpen: false
+        isOpen: false,
+        open: false,
+        writers: [],
+        writerFirstName: "",
+        writerLastName: ""
     }
+
+    show = (dimmer) => () => this.setState({ dimmer, open: true })
+
+    close = () => this.setState({ open: false })
+
 
     handleFieldChange = (evt) => {
         this.setState({
@@ -49,19 +58,19 @@ class SongView extends Component {
 
     handleOpen = () => {
         this.setState({ isOpen: true })
-      }
+    }
 
     handleClose = () => {
         this.setState({ isOpen: false })
-      }
+    }
 
     submitNewTag = (evt) => {
         evt.preventDefault()
-        
+
         const songId = this.props.match.params.songId
 
         const str = this.state.tag;
-        const tagText = str.toUpperCase();    
+        const tagText = str.toUpperCase();
 
         const newTag = {
             tag: tagText,
@@ -71,8 +80,8 @@ class SongView extends Component {
         ApiManager.createNew("tags", newTag)
             .then(() => {
                 this.setState({
-                tag: "",
-                isOpen: false
+                    tag: "",
+                    isOpen: false
                 })
             })
             .then(this.getUpdatedSongInfo())
@@ -101,14 +110,16 @@ class SongView extends Component {
             })
             .then(() => {
                 ApiManager.getItemsForSpecificSong("tags", songId).then(tagsArray =>
-                this.setState({ tags: tagsArray })
-                )});
+                    this.setState({ tags: tagsArray })
+                )
+            });
     }
 
     deleteTag = (id) => {
         ApiManager.delete("tags", id)
-            .then(() => {this.getUpdatedSongInfo()
-        })
+            .then(() => {
+                this.getUpdatedSongInfo()
+            })
     }
 
     // **************************************************************
@@ -233,6 +244,26 @@ class SongView extends Component {
             })
     }
 
+    saveNewWriter = evt => {
+        const songId = Number(this.props.match.params.songId)
+        const newWriterObject = {
+            songId: songId,
+            userId: "",
+            firstName: this.state.writerFirstName,
+            lastName: this.state.writerLastName
+        }
+
+        ApiManager.createNew("writers", newWriterObject)
+            .then(() => {
+                ApiManager.getItemsForSpecificSong("writers", songId).then(writersArray => 
+                    this.setState({
+                        writers: writersArray,
+                        firstName: "",
+                        lastName: ""
+                    }));
+            })
+    }
+
     componentDidMount() {
         this.getUpdatedSongInfo()
         this.turnOnMicrophone()
@@ -242,23 +273,57 @@ class SongView extends Component {
     }
 
     render() {
-        console.log("tag input", this.state.tag)
+        const { open, dimmer } = this.state
 
         return (
             <>
-                <header>
+            
+                <div>
+                    <Modal id="writerModal" dimmer={dimmer} open={open} onClose={this.close}>
+                        <Modal.Header>Add Writer</Modal.Header>
+                        <Modal.Content scrolling>
+                            <form>
+                                <div>
+                                    <label className="writerLabel">First Name</label>
+                                    <Input
+                                        name="writerFirstName"
+                                        onChange={(evt) => this.handleFieldChange(evt)}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="writerLabel">Last Name</label>
+                                    <Input
+                                        name="writerLastName"
+                                        onChange={(evt) => this.handleFieldChange(evt)}
+                                    />
+                                </div>
+                            </form>
+                        </Modal.Content>
+                        <Modal.Actions>
+                            <Button color='black' onClick={this.close}>
+                                Cancel
+                            </Button>
+                            <Button
+                                positive
+                                icon='checkmark'
+                                labelPosition='right'
+                                content="Submit"
+                                onClick={this.close}
+                            />
+                        </Modal.Actions>
+                    </Modal>
+                </div>
+                <div>
                     <input
                         name="title"
                         id="songTitle"
                         onChange={(evt) => this.handleFieldChange(evt)}
                         value={this.state.title}></input>
-                </header>
+                </div>
                 <section id="audioContainer">
-                    <button
+                    <Icon name='microphone'
                         id="recordButton"
-                        onClick={() => this.recordingOnOffSwitch()}
-                    >REC
-                    </button>
+                        onClick={() => this.recordingOnOffSwitch()} />
                     <audio
                         id="player"
                         controls
@@ -270,27 +335,24 @@ class SongView extends Component {
                     {this.state.tags.map(tag =>
                         <Label key={tag.id} color='purple' horizontal>
                             {tag.tag}
-                            <Icon name='delete' onClick={() => {this.deleteTag(tag.id)}}/>
+                            <Icon name='delete' onClick={() => { this.deleteTag(tag.id) }} />
                         </Label>
                     )}
-                    {/* <button class='ui horizontal label' id="addTagButton">
-                        + ADD TAG
-                    </button> */}
                     <Popup
                         trigger={
                             <button className='ui horizontal label' id="addTagButton">
-                                + ADD TAG
+                                ADD TAG +
                             </button>
                         }
                         content={
-                            <form onSubmit = {this.submitNewTag}>
-                            <Input icon='tags'
-                                iconPosition='left'
-                                name="tag"
-                                onChange={(evt) => this.handleFieldChange(evt)}
-                                placeholder='Enter new tag...' />
+                            <form onSubmit={this.submitNewTag}>
+                                <Input icon='tags'
+                                    iconPosition='left'
+                                    name="tag"
+                                    onChange={(evt) => this.handleFieldChange(evt)}
+                                    placeholder='Enter new tag...' />
                             </form>
-                            }
+                        }
                         open={this.state.isOpen}
                         on='click'
                         onOpen={this.handleOpen}
@@ -313,7 +375,7 @@ class SongView extends Component {
                 </div>
                 <footer id="songFooter">
                     {this.state.editSongDetails ? (
-                        <SongDetailsEdit toggle={this.toggleDetailsCard} {...this.props} />
+                        <SongDetailsEdit toggle={this.toggleDetailsCard} show={this.show(dimmer)} {...this.props} />
                     ) : <SongDetails toggle={this.toggleDetailsCard} {...this.props} title={this.state.title} lyrics={this.state.lyrics} updateSongAndReturnToHome={this.updateTitleandLyricsAndReturnToHome} />}
                 </footer>
             </>

@@ -99,14 +99,14 @@ class Home extends Component {
         const userId = localStorage.getItem("user")
         ApiManager.getAll("songs", userId)
             .then((songsArray) => songsArray.filter((song) => {
-            const songTitle = song.title
-            const songLyrics = song.lyrics
-            const query = this.state.searchInput
-            
-            return songTitle.toLowerCase().includes(query.toLowerCase()) || songLyrics.toLowerCase().includes(query.toLowerCase())
-                })
+                const songTitle = song.title
+                const songLyrics = song.lyrics
+                const query = this.state.searchInput
+
+                return songTitle.toLowerCase().includes(query.toLowerCase()) || songLyrics.toLowerCase().includes(query.toLowerCase())
+            })
             )
-            .then((results) => this.setState({songs: results}))
+            .then((results) => this.setState({ songs: results }))
     }
 
     handleLogout = () => {
@@ -144,6 +144,7 @@ class Home extends Component {
                             onChange={(evt) => this.searchSongCollection(evt)}
                         />
                         <Dropdown
+                            id="filterButton"
                             text='Filter'
                             icon='filter'
                             floating
@@ -182,7 +183,6 @@ class Home extends Component {
                                     deleteSong={this.deleteSong}
                                 />
                             )}
-                            {/* <div class="ui fitted divider"></div> */}
                         </section>
                     </div>
                 </div>
