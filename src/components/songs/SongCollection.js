@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ApiManager from "../modules/ApiManager";
 import SongCard from "./SongCard";
+import { Input, Dropdown, Button, Icon } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCollection.css";
 import "./Footer.css";
@@ -8,16 +9,16 @@ import "./Footer.css";
 class Home extends Component {
     state = {
         songs: [],
-        songId: null
-        // selectedSong: null
+        songId: null,
+        searchInput: ""
     }
 
 
-    /* selectSong = (song) => {
+    handleFieldChange = (evt) => {
         this.setState({
-            selectedSong: song.id
+            [evt.target.name]: evt.target.value
         })
-    } */
+    }
 
     createNewSong = evt => {
         const activeUserId = localStorage.getItem("user")
@@ -61,10 +62,10 @@ class Home extends Component {
                             firstName: firstName,
                             lastName: lastName
                         };
-                        return ApiManager.createNew("writers", newWritersObject) 
+                        return ApiManager.createNew("writers", newWritersObject)
                     })
                     .then((newWritersObject) => this.props.history.push(`/songs/${newWritersObject.songId}`));
-                })
+            })
 
     }
 
@@ -72,10 +73,10 @@ class Home extends Component {
         const userId = localStorage.getItem("user")
         ApiManager.getAll("songs", userId)
             .then((songsArray) => {
-                        this.setState({
-                            songs: songsArray
-                        })
-                    })
+                this.setState({
+                    songs: songsArray
+                })
+            })
     }
 
     deleteSong = (id) => {
@@ -83,14 +84,32 @@ class Home extends Component {
         ApiManager.delete("songs", id)
             .then(() => {
                 ApiManager.deleteChain("chords", id)
-                })
-                .then(() => {
-                    ApiManager.deleteChain("writers", id)
-                    })
-                    .then(() => {this.getAllSongs()
-                    })
+            })
+            .then(() => {
+                ApiManager.deleteChain("writers", id)
+            })
+            .then(() => {
+                this.getAllSongs()
+            })
     }
-    
+
+    filterSongCollection = (evt) => {
+        this.handleFieldChange(evt)
+
+        const userId = localStorage.getItem("user")
+        ApiManager.getAll("songs", userId)
+            .then((songsArray) => songsArray.filter((song) => {
+            const songTitle = song.title
+            const songLyrics = song.lyrics
+            const query = this.state.searchInput
+            
+            return songTitle.toLowerCase().includes(query.toLowerCase()) || songLyrics.toLowerCase().includes(query.toLowerCase())
+                })
+            )
+            .then((results) => this.setState({songs: results}))
+        // this.setState({songs: songList})
+        // console.log("this.state.songs search results", this.state.songs)
+    }
 
     handleLogout = () => {
         //clears user from localStorage and redirects to home page
@@ -114,12 +133,50 @@ class Home extends Component {
 
 
     render() {
+        console.log("this.state.searchInput", this.state.searchInput)
         return (
             <>
-                <header id="songCollectionHeader">
-                    <h1>MY SONGS</h1>
-                    <button id=
-                        "logOutButton" onClick={() => this.handleLogout()}>Logout</button>
+                <header>
+                    <div id="songCollectionHeader">
+                        <h1>MY SONGS</h1>
+                        <button id=
+                            "logOutButton" onClick={() => this.handleLogout()}>Logout
+                        </button>
+                    </div>
+                    <div>
+                        <Input type="text"
+                            name="searchInput"
+                            icon={<Icon name='search' link onClick={(evt) => this.filterSongCollection(evt)}/>}
+                            placeholder='Search songs...'
+                            value={this.state.searchInput}
+                            onChange={(evt) => this.filterSongCollection(evt)}
+                        />
+                        <Dropdown
+                            text='Filter'
+                            icon='filter'
+                            floating
+                            labeled
+                            button
+                            className='icon'
+                        >
+                            <Dropdown.Menu>
+                                <Dropdown.Header icon='tags' content='Filter by tag' />
+                                <Dropdown.Divider />
+                                <Dropdown.Item
+                                    label={{ color: 'red', empty: true, circular: true }}
+                                    text='Important'
+                                />
+                                <Dropdown.Item
+                                    label={{ color: 'blue', empty: true, circular: true }}
+                                    text='Announcement'
+                                />
+                                <Dropdown.Item
+                                    label={{ color: 'black', empty: true, circular: true }}
+                                    text='Discussion'
+                                />
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div>
                 </header>
                 <div className="column">
                     <div className="ui vertical fluid menu">
@@ -132,13 +189,13 @@ class Home extends Component {
                                     {...this.props}
                                     deleteSong={this.deleteSong}
                                 />
-                                )}
-                                {/* <div class="ui fitted divider"></div> */}
+                            )}
+                            {/* <div class="ui fitted divider"></div> */}
                         </section>
                     </div>
                 </div>
                 <footer id="collectionFooter">
-                    <FontAwesomeIcon id="addNewSongButton" icon="plus-circle"  type="button" onClick={(evt) => this.createNewSong(evt)} />
+                    <FontAwesomeIcon id="addNewSongButton" icon="plus-circle" type="button" onClick={(evt) => this.createNewSong(evt)} />
                 </footer>
             </>
         )
