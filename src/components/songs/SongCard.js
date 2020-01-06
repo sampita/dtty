@@ -3,6 +3,7 @@ import { Label } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "./SongCard.css";
 import ApiManager from '../modules/ApiManager';
+import moment from 'moment';
 
 class SongCard extends Component {
     state = {
@@ -36,7 +37,7 @@ class SongCard extends Component {
                             )}
                         </section>
                         <h3>{this.props.song.title}</h3>
-                        <p>Last updated {this.props.song.lastUpdated}</p>
+                        <p>Last updated {moment(this.props.song.lastUpdated).format("MMMM D, YYYY")}</p>
                         <p>{this.props.song.length}</p>
                     </div>
                 
