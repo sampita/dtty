@@ -82,7 +82,7 @@
       "key": "",
       "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-2-user-1?alt=media&token=ce7c49bd-d0c9-4b04-bcd4-8cbf30576859",
       "length": "",
-      "lyrics": "Jingle bells\nBatman smells\nrobin laid an egg",
+      "lyrics": "Jingle bells\nBatman smells\nrobin laid an egg\nsnow",
       "dateCreated": "2019-12-16T20:42:45.415Z",
       "lastUpdated": "2019-12-16T20:42:45.415Z",
       "id": 2
@@ -166,6 +166,11 @@
       "tag": "TEST",
       "songId": "1",
       "id": 5
+    },
+    {
+      "tag": "CHRISTMAS",
+      "songId": "2",
+      "id": 6
     }
   ]
 }
