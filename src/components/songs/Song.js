@@ -378,7 +378,7 @@ class SongView extends Component {
                 </div>
                 <footer id="songFooter">
                     {this.state.editSongDetails ? (
-                        <SongDetailsEdit toggle={this.toggleDetailsCard} show={this.show(dimmer)} {...this.props} />
+                        <SongDetailsEdit toggle={this.toggleDetailsCard} show={this.show(dimmer)} {...this.props} writers={this.state.writers}/>
                     ) : <SongDetails toggle={this.toggleDetailsCard} {...this.props} title={this.state.title} lyrics={this.state.lyrics} updateSongAndReturnToHome={this.updateTitleandLyricsAndReturnToHome} />}
                 </footer>
             </>

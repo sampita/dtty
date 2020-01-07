@@ -33,8 +33,8 @@ class SongDetailsEdit extends Component {
         };
 
         ApiManager.patch("songs", songId, updatedKey)
-        .then(() => ApiManager.patch("chords", chordsId, updatedChords))
-        .then(this.props.toggle)
+            .then(() => ApiManager.patch("chords", chordsId, updatedChords))
+            .then(this.props.toggle)
     }
 
     /* saveNewWriter = evt => {
@@ -65,13 +65,13 @@ class SongDetailsEdit extends Component {
         })
     }
 
-    collapsibleFormHandler = (evt) => {
+/*     collapsibleFormHandler = (evt) => {
         let hiddenForm = this.state.hidden
         hiddenForm = hiddenForm ? false : true;
         this.setState({
             hidden: hiddenForm
         })
-    }
+    } */
 
     componentDidMount() {
         const songId = this.props.match.params.songId
@@ -86,14 +86,15 @@ class SongDetailsEdit extends Component {
                     chordsId: song.chords[0].id
                 })
             });
-        ApiManager.getItemsForSpecificSong("writers", songId).then(writersArray => 
-            this.setState({writers: writersArray}));
+        ApiManager.getItemsForSpecificSong("writers", songId).then(writersArray =>
+            this.setState({ writers: writersArray }));
     }
 
     render() {
+        console.log("writers array", this.state.writers)
         return (
             <>
-                <section>
+                <div id="songDetailsBigContainer">
                     <p
                         className="songDetailsContainer boldText">Key:
                         <input
@@ -142,18 +143,15 @@ class SongDetailsEdit extends Component {
                         </input>
                         <FontAwesomeIcon icon="edit" type="button" />
                     </p>
-                </section>
-                <section>
-                        <span className="songDetailsContainer boldText">Written By:
+                    <span className="songDetailsContainer boldText">Written By:
                         </span>
-                        {this.state.writers.map(writer =>
-                            <div key={writer.id} value={writer.id}>
-                                {writer.firstName} {writer.lastName}
-                            </div>
-                        )}
-                        <Button onClick={() => this.props.show('blurring')}>Add Writer +</Button>
-                        {/* <button type="button" className="collapsible" onClick={(evt) => this.collapsibleFormHandler(evt)}>+ Add Writer</button> */}
-                        <div className="content" hidden={this.state.hidden}>
+                    {this.props.writers.map(writer =>
+                        <div key={writer.id} value={writer.id}>
+                            {writer.firstName} {writer.lastName}
+                        </div>
+                    )}
+                    <Button id="addWriterButton" onClick={() => this.props.show('blurring')}>Add Writer +</Button>
+                    {/* <div className="content" hidden={this.state.hidden}>
                             <div>
                                 <label>First Name</label>
                                 <input
@@ -175,8 +173,8 @@ class SongDetailsEdit extends Component {
                                 </input>
                             </div>
                             <button id="saveNewWriterButton" onClick={(evt) => {this.saveNewWriter(evt)}}>Add</button>
-                        </div>
-                </section>
+                        </div> */}
+                </div>
                 <section className="flexContainer">
                     <button id="editSongDetailsButton" onClick={() => { this.saveChangesAndToggleView() }}>Save</button>
                 </section>
