@@ -31,15 +31,26 @@ body {
   margin: 0 20px;
 }
 
+@keyframes glowing {
+  0% { background-color: #2ba805; box-shadow: 0 0 5px #2ba805; }
+  50% { background-color: #49e819; box-shadow: 0 0 20px #49e819; }
+  100% { background-color: #2ba805; box-shadow: 0 0 5px #2ba805; }
+  }
+
 #recordButton {
   background-color: rgb(5, 224, 86);
-  padding: 15px;
+  padding: 17px 15px 13px 15px;
   color: white;
   font-size: 30px;
   border-radius: 40px;
   width: 56px;
   height: 56px;
   outline: none;
+  /* animation: glowing 1300ms infinite; */
+}
+
+.glowing {
+  animation: glowing 1300ms infinite;
 }
 
 audio#player {
@@ -76,7 +87,7 @@ audio#player {
 .lines {
   margin-top: 10px;
   height: calc(100% - 40px);
-  background-image: repeating-linear-gradient(rgb(225, 225, 225) 0px, rgb(225, 225, 225) 24px, rgb(193, 193, 193) 25px);
+  background-image: repeating-linear-gradient(rgb(233, 233, 233) 0px, rgb(233, 233, 233) 24px, rgb(193, 193, 193) 25px);
 }
 
 .lyricsTextBox {
@@ -85,36 +96,18 @@ audio#player {
     font-size: 18px;
     border: none;
     resize: none;
-    margin: 94px 15px 160px 0px;}
+    margin: 82px 15px 160px 0px;}
 
 .text {
   position: absolute;
   top: 65px;
-  left: 55px;
+  /* left: 55px; */
   bottom: 10px;
   right: 10px;
   line-height: 25px;
   font-family: 'Indie Flower';
   overflow: hidden;
   outline: none;
-}
-.holes {
-  position: absolute;
-  left: 10px;
-  height: 25px;
-  width: 25px;
-  background: lightgoldenrodyellow;
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 2px 0px #888;
-}
-.hole-top {
-  top: 10%;
-}
-.hole-middle {
-  top: 50%;
-}
-.hole-bottom {
-  bottom: 10%;
 }
 
 /* .lyricsTextArea {
