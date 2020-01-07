@@ -37,15 +37,15 @@ class SongDetails extends Component {
             <>
                 <div>
                     <div className="ui equal width grid">
-                        <div className="column">
+                        <div className="column" id="backButtonColumn">
                             <FontAwesomeIcon icon="arrow-alt-circle-left" type="button"
                             id="backButton" onClick={(evt) => {this.props.updateSongAndReturnToHome(evt)}} />
                         </div>
                         <section className="column">
                             <div><span className="boldText">Key:</span>{this.state.key}</div>
-                            <div><span className="boldText">Verse:</span>{this.state.verse}</div>
-                            <div><span className="boldText">Chorus:</span>{this.state.chorus}</div>
-                            <div><span className="boldText">Bridge:</span>{this.state.bridge}</div>
+                            <div><span className="boldText nextLine">Verse:</span>{this.state.verse}</div>
+                            <div><span className="boldText nextLine">Chorus:</span>{this.state.chorus}</div>
+                            <div><span className="boldText nextLine">Bridge:</span>{this.state.bridge}</div>
                         </section>
                         <section className="column">
                             <span className="boldText">Written By:

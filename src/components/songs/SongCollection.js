@@ -169,7 +169,6 @@ class Home extends Component {
                     </div>
                 </header>
                 <div className="column">
-                    <div className="ui vertical fluid menu">
                         <section className="item" id="songCardContainer">
                             {this.state.songs.map(song =>
                                 <SongCard
@@ -181,10 +180,8 @@ class Home extends Component {
                                 />
                             )}
                         </section>
-                    </div>
                 </div>
                 <footer id="collectionFooter">
-                    {/* <FontAwesomeIcon id="addNewSongButton" icon="plus-circle" type="button" onClick={(evt) => this.createNewSong(evt)} /> */}
                     <Icon name='plus circle' id="addNewSongButton" onClick={(evt) => this.createNewSong(evt)} />
                 </footer>
             </>
