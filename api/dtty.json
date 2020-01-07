@@ -69,7 +69,7 @@
       "userId": 1,
       "title": "Let It Snow",
       "key": "A Major",
-      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2Fsong-1-user-1?alt=media&token=b17fc9ef-96fc-422b-bcea-9d4d541f177e",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578356981730-song-1-user-1?alt=media&token=b535b59c-1439-4973-a044-7629a64ed150",
       "length": "",
       "lyrics": "The weather outside is frightful, but the fire is so delightful.\n\nAs long as there's no place to go, let it snow, let it snow, let it snow",
       "dateCreated": "2019-12-16T17:50:35.118Z",
@@ -94,75 +94,31 @@
       "audio": "",
       "length": "",
       "lyrics": "",
-      "dateCreated": "2020-01-06T22:52:30.829Z",
-      "lastUpdated": "2020-01-06T22:52:30.829Z",
-      "id": 9
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-01-06T23:00:10.962Z",
-      "lastUpdated": "2020-01-06T23:00:10.962Z",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-01-06T23:00:13.701Z",
-      "lastUpdated": "2020-01-06T23:00:13.701Z",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-01-06T23:00:16.197Z",
-      "lastUpdated": "2020-01-06T23:00:16.197Z",
-      "id": 12
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-01-06T23:00:17.600Z",
-      "lastUpdated": "2020-01-06T23:00:17.600Z",
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-01-06T23:00:19.128Z",
-      "lastUpdated": "2020-01-06T23:00:19.128Z",
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
       "dateCreated": "2020-01-06T23:00:20.556Z",
       "lastUpdated": "2020-01-06T23:00:20.556Z",
       "id": 15
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-07T02:58:17.534Z",
+      "lastUpdated": "2020-01-07T02:58:17.534Z",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "title": "Untitled",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-07T03:13:45.250Z",
+      "lastUpdated": "2020-01-07T03:13:45.250Z",
+      "id": 17
     }
   ],
   "writers": [
@@ -181,53 +137,25 @@
       "id": 2
     },
     {
-      "songId": 9,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 12
-    },
-    {
-      "songId": 10,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 13
-    },
-    {
-      "songId": 11,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 14
-    },
-    {
-      "songId": 12,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 15
-    },
-    {
-      "songId": 13,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 16
-    },
-    {
-      "songId": 14,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 17
-    },
-    {
       "songId": 15,
       "userId": 1,
       "firstName": "Dude",
       "lastName": "Smith",
       "id": 18
+    },
+    {
+      "songId": 16,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 19
+    },
+    {
+      "songId": 17,
+      "userId": 1,
+      "firstName": "Dude",
+      "lastName": "Smith",
+      "id": 20
     }
   ],
   "chords": [
@@ -250,60 +178,6 @@
       "id": 2
     },
     {
-      "songId": 9,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 9
-    },
-    {
-      "songId": 10,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 10
-    },
-    {
-      "songId": 11,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 11
-    },
-    {
-      "songId": 12,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 12
-    },
-    {
-      "songId": 13,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 13
-    },
-    {
-      "songId": 14,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 14
-    },
-    {
       "songId": 15,
       "intro": "",
       "verse": "",
@@ -311,6 +185,24 @@
       "bridge": "",
       "outro": "",
       "id": 15
+    },
+    {
+      "songId": 16,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 16
+    },
+    {
+      "songId": 17,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 17
     }
   ],
   "tags": [
@@ -333,6 +225,11 @@
       "tag": "CHRISTMAS",
       "songId": "2",
       "id": 6
+    },
+    {
+      "tag": "UNTITLED",
+      "songId": "17",
+      "id": 7
     }
   ]
 }

@@ -3,6 +3,7 @@
 img.smallLogo {
     width: 100px;
     display: flex;
+    margin-top: 30%;
     margin-left: auto;
     margin-right: auto;
 }

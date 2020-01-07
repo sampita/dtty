@@ -135,8 +135,9 @@ class Home extends Component {
                             "logOutButton" onClick={() => this.handleLogout()}>Logout
                         </button>
                     </div>
-                    <div>
+                    <div id="searchContainer">
                         <Input type="text"
+                            id="searchInput"
                             name="searchInput"
                             icon={<Icon name='search' link />}
                             placeholder='Search songs...'
@@ -187,7 +188,8 @@ class Home extends Component {
                     </div>
                 </div>
                 <footer id="collectionFooter">
-                    <FontAwesomeIcon id="addNewSongButton" icon="plus-circle" type="button" onClick={(evt) => this.createNewSong(evt)} />
+                    {/* <FontAwesomeIcon id="addNewSongButton" icon="plus-circle" type="button" onClick={(evt) => this.createNewSong(evt)} /> */}
+                    <Icon name='plus circle' id="addNewSongButton" onClick={(evt) => this.createNewSong(evt)} />
                 </footer>
             </>
         )

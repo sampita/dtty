@@ -39,19 +39,21 @@ class SongCard extends Component {
                                 </Label>
                             )}
                         </section>
-                        <h3>{this.props.song.title}</h3>
-                        <p>Last updated {moment(this.props.song.lastUpdated).format("MMMM D, YYYY")}</p>
+                        <h3 className="songCardTitle">{this.props.song.title}</h3>
+                        <p className="lastUpdatedText">Last updated {moment(this.props.song.lastUpdated).format("MMMM D, YYYY")}</p>
                         <p>{this.props.song.length}</p>
                     </div>
 
                     {this.state.isSongSelected ? (
                         <div>
-                        <audio
-                            id="player"
-                            controls
-                            src={this.props.song.audio}
-                        >
+                            <div id="audioFlexContainer">
+                            <audio
+                                id="player"
+                                controls
+                                src={this.props.song.audio}
+                            >
                             </audio>
+                            </div>
                         <section className="cardButtonContainer">
                             <FontAwesomeIcon icon="trash-alt" type="button" onClick={() => this.props.deleteSong(this.props.id)} />
                             <FontAwesomeIcon icon="play" type="button" onClick={() => document.getElementById('player').play()}/>

@@ -2,6 +2,14 @@
 
 body {
     font-family: 'Roboto';
+    background-color: rgb(247, 247, 247);
+}
+
+h1 {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 40px;
 }
 
 #songCollectionHeader {
@@ -9,8 +17,17 @@ body {
     justify-content: space-between;
 }
 
+#searchContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#songCardContainer {
+    margin-top: 10px;
+    margin-bottom: 105px;
+}
+
 #songCardContainer.item {
-    background-color: lightgrey;
     padding: 0;
     margin: none;
 
@@ -20,34 +37,46 @@ body {
     border: none;
 }
 
-.collectionFooter {
+/* .collectionFooter {
     display: flex;
     justify-content: center;
     background-color: black;
     color: white;
-}
+} */
 
 #logOutButton {
-    background-color: black;
+    /* background-color: rgb(247, 247, 247); */
+    margin: 15px;
+    border-radius: 10px;
+    background-color: rgb(18, 206, 137);
     color: white;
     border: none;
+    font-weight: bold;
 }
 
 #addNewSongButton {
-    color: #00DF8C;
+    padding-top: 37px;
+    color: white;
     cursor: pointer;
-    font-size: 48px;
+    font-size: 70px;
 }
 
 #addNewSongButton:hover {
-    color: rgb(2, 165, 106);
+    color: rgb(50, 235, 167);
+}
+
+#searchInput {
+    width: 70%;
+    height: 38px;
+    margin-left: 10px;
 }
 
 #filterButton {
-    width: 30%;
+    width: 40%;
     height: 38px;
     padding: 0;
     margin: 0;
+    margin-right: 10px;
 }
 
 /* newSongButton {

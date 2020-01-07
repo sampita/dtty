@@ -37,7 +37,7 @@ class SongDetailsEdit extends Component {
         .then(this.props.toggle)
     }
 
-    saveNewWriter = evt => {
+    /* saveNewWriter = evt => {
         const songId = Number(this.props.match.params.songId)
         const newWriterObject = {
             songId: songId,
@@ -57,7 +57,7 @@ class SongDetailsEdit extends Component {
             })
 
         this.collapsibleFormHandler(evt)
-    }
+    } */
 
     handleFieldChange = (evt) => {
         this.setState({
@@ -98,6 +98,7 @@ class SongDetailsEdit extends Component {
                         className="songDetailsContainer boldText">Key:
                         <input
                             type="text"
+                            className="songEditInput"
                             name="key"
                             value={this.state.key}
                             onChange={(evt) => this.handleFieldChange(evt)}
@@ -109,6 +110,7 @@ class SongDetailsEdit extends Component {
                         className="songDetailsContainer boldText">Verse:
                         <input
                             type="text"
+                            className="songEditInput"
                             name="verse"
                             value={this.state.verse}
                             onChange={(evt) => this.handleFieldChange(evt)}
@@ -120,6 +122,7 @@ class SongDetailsEdit extends Component {
                         className="songDetailsContainer boldText">Chorus:
                         <input
                             type="text"
+                            className="songEditInput"
                             name="chorus"
                             value={this.state.chorus}
                             onChange={(evt) => this.handleFieldChange(evt)}
@@ -131,6 +134,7 @@ class SongDetailsEdit extends Component {
                         className="songDetailsContainer boldText">Bridge:
                         <input
                             type="text"
+                            className="songEditInput"
                             name="bridge"
                             value={this.state.bridge}
                             onChange={(evt) => this.handleFieldChange(evt)}

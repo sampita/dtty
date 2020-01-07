@@ -6,22 +6,21 @@ section.songDetailsContainer {
 
 #backButton {
   font-size: 40px;
-  margin-top: 40%;
 }
 
 #editSongDetailsButton {
 color: rgb(255, 255, 255);
-background-color: rgb(109, 4, 170);
+font-weight: bold;
+background-color: rgb(128, 16, 193, 0);
 padding: 8px;
-border: 1px solid rgb(109, 4, 170);
+margin-bottom: 10px;
 border-radius: 5px;
 }
 
 #editSongDetailsButton:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(85, 2, 133);
+  background-color: rgb(85, 2, 133, .5);
   padding: 8px;
-  border: 1px solid rgb(85, 2, 133);
   border-radius: 5px;
   cursor: pointer;
   }
@@ -47,6 +46,12 @@ border-radius: 5px;
     text-align: left;
     outline: none;
     font-size: 15px;
+  }
+
+  .songEditInput {
+    font-family: 'Roboto';
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
