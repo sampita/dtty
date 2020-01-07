@@ -118,14 +118,113 @@
     },
     {
       "userId": 10,
+      "title": "Love Me Do",
+      "key": "G Major",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578374782475-song-21-user-10?alt=media&token=4bd65913-d227-4b92-be1e-a5764de1754e",
+      "length": "",
+      "lyrics": "Love, love me do\nYou know I love you\nI'll always be true\nSo please, love me do\nWhoa, love me do\n\nLove, love me do\nYou know I love you\nI'll always be true\nSo please, love me do\n\nWhoa, love me do\nSomeone to love\nSomebody new\nSomeone to love\nSomeone like you",
+      "dateCreated": "1958-01-07T05:22:08.989Z",
+      "lastUpdated": "1962-06-07T05:53:39.208Z",
+      "id": 21
+    },
+    {
+      "userId": 10,
+      "title": "Ob-La-Di, Ob-La-Da",
+      "key": "Bb",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578374846754-song-22-user-10?alt=media&token=c165a8f2-0efa-4d56-bd6d-3c3595623768",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "1968-09-07T05:22:30.005Z",
+      "lastUpdated": "1968-11-07T05:22:30.005Z",
+      "id": 22
+    },
+    {
+      "userId": 10,
+      "title": "She Loves Me",
+      "key": "",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578374894056-song-23-user-10?alt=media&token=ecc17c23-d5b1-41b6-a6b0-afdea9d905d9",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "1970-01-07T05:22:48.000Z",
+      "lastUpdated": "1973-01-07T05:22:48.000Z",
+      "id": 23
+    },
+    {
+      "userId": 10,
+      "title": "Penny Lane",
+      "key": "",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578374951489-song-24-user-10?alt=media&token=5c86dd5a-b7d0-4080-a83f-5c6d7020981e",
+      "length": "",
+      "lyrics": "In Penny Lane, there is a barber showing photographs\nOf every head he's had the pleasure to know\nAnd all the people that come and go\nStop and say, \"Hello\"\n\nOn the corner is a banker with a motorcar\nAnd little children laugh at him behind his back\nAnd the banker never wears a mac\nIn the pouring rain, very strange\nPenny Lane is in my ears and in my eyes\nThere beneath the blue suburban skies\nI sit, and meanwhile back\nIn Penny Lane there is a fireman with an hourglass",
+      "dateCreated": "1967-01-07T05:23:05.560Z",
+      "lastUpdated": "1967-02-07T06:06:15.211Z",
+      "id": 24
+    },
+    {
+      "userId": 10,
       "title": "I Wanna Hold Your Hand",
+      "key": "G Major",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578374999691-song-25-user-10?alt=media&token=770fa438-b592-432a-80b0-19ed4f231877",
+      "length": "",
+      "lyrics": "oh yeah, ill tell you something\ni think you'll understand\nwhen i'll say that something\ni want to hold your hand\n\ni want to hold your hand\ni want to hold your hand\n\noh please, say to me\nyou'll let me be your man\nand please, say to me\nyou'll let me hold your hand\nnow let me hold your hand\ni wanna hold your hand\nand when i touch you i feel happy inside\nits such a feeling that my love\ni cant hide, i cant hide, i cant hide",
+      "dateCreated": "1962-01-07T05:23:24.406Z",
+      "lastUpdated": "1963-09-07T06:06:27.092Z",
+      "id": 25
+    },
+    {
+      "userId": 10,
+      "title": "Can't Buy Me Love",
       "key": "",
       "audio": "",
       "length": "",
       "lyrics": "",
-      "dateCreated": "2020-01-07T05:15:57.335Z",
-      "lastUpdated": "2020-01-07T05:15:57.335Z",
-      "id": 18
+      "dateCreated": "1964-01-07T05:23:42.750Z",
+      "lastUpdated": "2020-01-07T06:08:04.694Z",
+      "id": 26
+    },
+    {
+      "userId": 10,
+      "title": "Strawberry Fields",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-07T05:23:58.132Z",
+      "lastUpdated": "2020-01-07T05:23:58.132Z",
+      "id": 27
+    },
+    {
+      "userId": 10,
+      "title": "Yesterday",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-07T05:24:27.367Z",
+      "lastUpdated": "2020-01-07T06:03:16.555Z",
+      "id": 28
+    },
+    {
+      "userId": 10,
+      "title": "Help!",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-07T05:24:34.005Z",
+      "lastUpdated": "2020-01-07T06:04:01.578Z",
+      "id": 29
+    },
+    {
+      "userId": 10,
+      "title": "Ticket To Ride",
+      "key": "",
+      "audio": "",
+      "length": "",
+      "lyrics": "",
+      "dateCreated": "2020-01-07T05:24:48.960Z",
+      "lastUpdated": "2020-01-07T06:03:32.040Z",
+      "id": 30
     }
   ],
   "writers": [
@@ -158,11 +257,74 @@
       "id": 20
     },
     {
-      "songId": 18,
+      "songId": 21,
       "userId": 10,
       "firstName": "Paul",
       "lastName": "McCartney",
-      "id": 21
+      "id": 24
+    },
+    {
+      "songId": 22,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 25
+    },
+    {
+      "songId": 23,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 26
+    },
+    {
+      "songId": 24,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 27
+    },
+    {
+      "songId": 25,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 28
+    },
+    {
+      "songId": 26,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 29
+    },
+    {
+      "songId": 27,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 30
+    },
+    {
+      "songId": 28,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 31
+    },
+    {
+      "songId": 29,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 32
+    },
+    {
+      "songId": 30,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 33
     }
   ],
   "chords": [
@@ -203,13 +365,94 @@
       "id": 17
     },
     {
-      "songId": 18,
+      "songId": 21,
+      "intro": "",
+      "verse": "G C G C",
+      "chorus": "G C G C",
+      "bridge": "D C F G",
+      "outro": "",
+      "id": 21
+    },
+    {
+      "songId": 22,
+      "intro": "",
+      "verse": "A E E7 A A D",
+      "chorus": "A E F#m A E A",
+      "bridge": "D A D A/E",
+      "outro": "",
+      "id": 22
+    },
+    {
+      "songId": 23,
       "intro": "",
       "verse": "",
       "chorus": "",
       "bridge": "",
       "outro": "",
-      "id": 18
+      "id": 23
+    },
+    {
+      "songId": 24,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 24
+    },
+    {
+      "songId": 25,
+      "intro": "",
+      "verse": "G D Em B7",
+      "chorus": "C D G Em",
+      "bridge": "Dm7 G C Am",
+      "outro": "",
+      "id": 25
+    },
+    {
+      "songId": 26,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 26
+    },
+    {
+      "songId": 27,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 27
+    },
+    {
+      "songId": 28,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 28
+    },
+    {
+      "songId": 29,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 29
+    },
+    {
+      "songId": 30,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 30
     }
   ],
   "tags": [
@@ -237,6 +480,61 @@
       "tag": "UNTITLED",
       "songId": "17",
       "id": 7
+    },
+    {
+      "tag": "LOVE SONG",
+      "songId": "21",
+      "id": 8
+    },
+    {
+      "tag": "LOVE SONG",
+      "songId": "23",
+      "id": 9
+    },
+    {
+      "tag": "UPTEMPO",
+      "songId": "22",
+      "id": 10
+    },
+    {
+      "tag": "LIFE",
+      "songId": "22",
+      "id": 11
+    },
+    {
+      "tag": "UPTEMPO",
+      "songId": "29",
+      "id": 12
+    },
+    {
+      "tag": "SAD SONG",
+      "songId": "28",
+      "id": 13
+    },
+    {
+      "tag": "BALLAD",
+      "songId": "28",
+      "id": 14
+    },
+    {
+      "tag": "UPTEMPO",
+      "songId": "30",
+      "id": 15
+    },
+    {
+      "tag": "MANIC",
+      "songId": "29",
+      "id": 16
+    },
+    {
+      "tag": "ROCK",
+      "songId": "29",
+      "id": 17
+    },
+    {
+      "tag": "ANTI-LOVE",
+      "songId": "26",
+      "id": 18
     }
   ]
 }

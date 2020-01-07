@@ -45,10 +45,12 @@ class SongView extends Component {
 
     updateTitleandLyricsAndReturnToHome = (evt) => {
         const songId = this.props.match.params.songId
+        const lastUpdated = new Date();
 
         const updatedTitleAndLyrics = {
             title: this.state.title,
-            lyrics: this.state.lyrics
+            lyrics: this.state.lyrics,
+            lastUpdated: lastUpdated
         };
 
         ApiManager.patch("songs", songId, updatedTitleAndLyrics)

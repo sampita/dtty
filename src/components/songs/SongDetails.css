@@ -40,6 +40,10 @@ border-radius: 5px;
 .boldText {
     font-weight: bold;
     margin-right: 5px;
+  }
+  
+  .nextLine {
+    display: block;
 }
 
 .flexContainer {
