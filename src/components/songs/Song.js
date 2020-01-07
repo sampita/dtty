@@ -262,6 +262,8 @@ class SongView extends Component {
                         lastName: ""
                     }));
             })
+
+        this.close()
     }
 
     componentDidMount() {
@@ -308,7 +310,7 @@ class SongView extends Component {
                                 icon='checkmark'
                                 labelPosition='right'
                                 content="Submit"
-                                onClick={this.close}
+                                onClick={(evt) => this.saveNewWriter(evt)}
                             />
                         </Modal.Actions>
                     </Modal>

@@ -3,24 +3,40 @@ h3 {
     margin: 0;
 }
 
-.songCard {
-    background-color: rgb(220, 220, 220);
-    border-radius: 10px;
-    padding: 1em;
+h3.songCardTitle {
+    margin-bottom: 15px;
 }
 
-.divider {
-    background-color: #E5E5E5;
+.songCard {
+    background-color: rgb(233, 233, 233);
+    border-radius: 2px;
+    padding: 1em 1em .2em 1em;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid rgb(247, 247, 247);
+}
+
+p.lastUpdatedText {
+    padding: 0;
+}
+
+#audioFlexContainer {
+    display: flex;
+    justify-content: center;
+}
+
+audio#player {
+    width: 100%;
 }
 
 section.cardButtonContainer {
     display: flex;
     justify-content: space-between;
-    padding: 0 50px 0 50px;
+    padding: 1em 50px;
 }
 
 .ui.horizontal.label {
-    margin: .5em 0;
+    margin: 0 0;
     padding: .4em .4em;
 }
 

@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-  background: #E5E5E5;
+  /* background: #E5E5E5; */
   height: 667px;
 }
 
@@ -28,11 +28,12 @@ body {
 #audioContainer {
   display: flex;
   justify-content: center;
+  margin: 0 20px;
 }
 
 #recordButton {
   background-color: rgb(5, 224, 86);
-  padding-top: 15px;
+  padding: 15px;
   color: white;
   font-size: 30px;
   border-radius: 40px;
@@ -43,6 +44,7 @@ body {
 
 audio#player {
   outline: none;
+  color: rgb(247, 247, 247);
 }
 
 #tagContainerSongView {
@@ -74,7 +76,7 @@ audio#player {
 .lines {
   margin-top: 10px;
   height: calc(100% - 40px);
-  background-image: repeating-linear-gradient(rgb(225, 225, 225) 0px, rgb(225, 225, 225) 24px, white 25px);
+  background-image: repeating-linear-gradient(rgb(225, 225, 225) 0px, rgb(225, 225, 225) 24px, rgb(193, 193, 193) 25px);
 }
 
 .lyricsTextBox {
@@ -83,7 +85,7 @@ audio#player {
     font-size: 18px;
     border: none;
     resize: none;
-    margin: 80px 15px 160px 0px;}
+    margin: 94px 15px 160px 0px;}
 
 .text {
   position: absolute;
