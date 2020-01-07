@@ -6,14 +6,19 @@ body {
   height: 667px;
 }
 
+input {
+  outline: none;
+}
+
 
 #songTitle {
     font-family: 'Roboto';
     background: none !important;
     border: none;
-    font-size: 36px;
+    font-size: 30px;
     margin-top: 10px;
     margin-left: 25px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
@@ -97,7 +102,7 @@ audio#player {
     font-size: 18px;
     border: none;
     resize: none;
-    margin: 82px 15px 160px 0px;}
+    margin: 80px 15px 160px 0px;}
 
 .text {
   position: absolute;

@@ -95,6 +95,7 @@ border-radius: 5px;
   div.ui.equal.width.grid {
     margin-top: 1px;
     margin-left: 5px;
+    margin-right: 5px;
   }
 
   div.column {
