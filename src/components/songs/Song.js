@@ -325,6 +325,7 @@ class SongView extends Component {
                 <section id="audioContainer">
                     <Icon name='microphone'
                         id="recordButton"
+                        className={`${this.state.recordingStatus !== false ? "glowing" : null}`}
                         onClick={() => this.recordingOnOffSwitch()} />
                     <audio
                         id="player"

@@ -25,10 +25,6 @@ class Home extends Component {
         const firstName = localStorage.getItem("firstName")
         const lastName = localStorage.getItem("lastName")
         const dateCreated = new Date();
-        // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-
-        // this.setState({ loadingStatus: true });
 
         const song = {
             userId: Number(activeUserId),
