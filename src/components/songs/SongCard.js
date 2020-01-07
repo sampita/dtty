@@ -56,7 +56,6 @@ class SongCard extends Component {
                             </div>
                         <section className="cardButtonContainer">
                             <FontAwesomeIcon icon="trash-alt" type="button" onClick={() => this.props.deleteSong(this.props.id)} />
-                            <FontAwesomeIcon icon="play" type="button" onClick={() => document.getElementById('player').play()}/>
                             <FontAwesomeIcon icon="ellipsis-h" type="button" onClick={() => { this.props.history.push(`/songs/${this.props.id}`) }} />
                         </section>
                         </div>

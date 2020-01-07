@@ -91,23 +91,12 @@
       "userId": 1,
       "title": "Untitled",
       "key": "",
-      "audio": "",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578370714967-song-15-user-1?alt=media&token=5810b761-68e4-487f-b7f8-8e429e766add",
       "length": "",
       "lyrics": "",
       "dateCreated": "2020-01-06T23:00:20.556Z",
       "lastUpdated": "2020-01-06T23:00:20.556Z",
       "id": 15
-    },
-    {
-      "userId": 1,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-01-07T02:58:17.534Z",
-      "lastUpdated": "2020-01-07T02:58:17.534Z",
-      "id": 16
     },
     {
       "userId": 1,
@@ -144,13 +133,6 @@
       "id": 18
     },
     {
-      "songId": 16,
-      "userId": 1,
-      "firstName": "Dude",
-      "lastName": "Smith",
-      "id": 19
-    },
-    {
       "songId": 17,
       "userId": 1,
       "firstName": "Dude",
@@ -185,15 +167,6 @@
       "bridge": "",
       "outro": "",
       "id": 15
-    },
-    {
-      "songId": 16,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 16
     },
     {
       "songId": 17,

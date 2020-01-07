@@ -27,6 +27,7 @@ border-radius: 5px;
 
 .boldText {
     font-weight: bold;
+    margin-right: 5px;
 }
 
 .flexContainer {
@@ -68,4 +69,13 @@ border-radius: 5px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+  }
+
+  div.ui.equal.width.grid {
+    margin-top: 1px;
+    margin-left: 5px;
+  }
+
+  div.column {
+    width: 20px;
   }
