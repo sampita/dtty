@@ -4,14 +4,26 @@ section.songDetailsContainer {
     /* flex-basis: 100%; */
 }
 
+#songDetailsBigContainer {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
 #backButton {
   font-size: 40px;
 }
 
 #editSongDetailsButton {
-color: rgb(255, 255, 255);
-font-weight: bold;
-background-color: rgb(128, 16, 193, 0);
+background: #e0e1e2 none;
+font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+color: rgba(0,0,0,.8);
+border: none;
+min-height: 1em;
+margin: 0 .25em 0 0;
+padding: .78571429em 1.5em .78571429em;
+/* color: rgb(255, 255, 255); */
+font-weight: 600;
+/* background-color: rgb(128, 16, 193, 0); */
 padding: 8px;
 margin-bottom: 10px;
 border-radius: 5px;
@@ -19,7 +31,7 @@ border-radius: 5px;
 
 #editSongDetailsButton:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(85, 2, 133, .5);
+  background-color: rgb(132, 17, 189);
   padding: 8px;
   border-radius: 5px;
   cursor: pointer;
@@ -51,8 +63,17 @@ border-radius: 5px;
 
   .songEditInput {
     font-family: 'Roboto';
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: .5px solid white;
+    border-radius: 7px;
+    margin-left: 5px;
+    margin-right: 7px;
+    padding-left: 5px;
+  }
+
+  .songDetailsFlex {
+    display: flex;
   }
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -78,4 +99,12 @@ border-radius: 5px;
 
   div.column {
     width: 20px;
+  }
+
+  #addWriterButton {
+    color: rgb(255, 255, 255);
+    background-color: rgb(132, 17, 189);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
   }

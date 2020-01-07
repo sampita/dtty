@@ -23,6 +23,8 @@ body {
 
 .writerLabel {
   color: gray;
+  margin-left: 10%;
+  margin-right: 5px;
 }
 
 #audioContainer {
