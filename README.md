@@ -74,3 +74,5 @@ ___________________________________
 1. Paste your config information here (the whole config folder will be `.gitignore`-ed)
 1. The app should now be fully-functioning
 
+_____________________________________
+&copy; 2020   | Application written by Sam Pita
