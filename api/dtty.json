@@ -124,7 +124,7 @@
       "length": "",
       "lyrics": "Love, love me do\nYou know I love you\nI'll always be true\nSo please, love me do\nWhoa, love me do\n\nLove, love me do\nYou know I love you\nI'll always be true\nSo please, love me do\n\nWhoa, love me do\nSomeone to love\nSomebody new\nSomeone to love\nSomeone like you",
       "dateCreated": "1958-01-07T05:22:08.989Z",
-      "lastUpdated": "2020-01-08T17:25:39.665Z",
+      "lastUpdated": "2020-01-14T04:20:53.685Z",
       "id": 21
     },
     {
@@ -135,7 +135,7 @@
       "length": "",
       "lyrics": "",
       "dateCreated": "1968-09-07T05:22:30.005Z",
-      "lastUpdated": "2020-01-14T03:40:21.139Z",
+      "lastUpdated": "2020-01-14T04:20:32.954Z",
       "id": 22
     },
     {
@@ -157,7 +157,7 @@
       "length": "",
       "lyrics": "In Penny Lane, there is a barber showing photographs\nOf every head he's had the pleasure to know\nAnd all the people that come and go\nStop and say, \"Hello\"\n\nOn the corner is a banker with a motorcar\nAnd little children laugh at him behind his back\nAnd the banker never wears a mac\nIn the pouring rain, very strange\nPenny Lane is in my ears and in my eyes\nThere beneath the blue suburban skies\nI sit, and meanwhile back\nIn Penny Lane there is a fireman with an hourglass",
       "dateCreated": "1967-01-07T05:23:05.560Z",
-      "lastUpdated": "2020-01-07T20:06:10.414Z",
+      "lastUpdated": "2020-01-14T04:06:56.781Z",
       "id": 24
     },
     {
@@ -174,12 +174,12 @@
     {
       "userId": 10,
       "title": "Can't Buy Me Love",
-      "key": "",
+      "key": "Em",
       "audio": "",
       "length": "",
-      "lyrics": "",
+      "lyrics": "Can't buy me love, love\nCan't buy me love\nI'll buy you a diamond ring, my friend\nIf it makes you feel all right\nI'll get you anything, my friend\nIf it makes you feel all right\n'Cause I don't care too much for money\nMoney can't buy me love\nI'll give you all I've got to give\nIf you say you love me, too\nI may not have a lot to give\nBut what I've got I'll give to you\nI don't care too much for money\nMoney can't buy me love",
       "dateCreated": "1964-01-07T05:23:42.750Z",
-      "lastUpdated": "2020-01-07T20:06:33.832Z",
+      "lastUpdated": "2020-01-14T04:20:29.377Z",
       "id": 26
     },
     {
@@ -236,6 +236,17 @@
       "dateCreated": "2020-01-07T15:03:14.381Z",
       "lastUpdated": "2020-01-08T17:25:08.467Z",
       "id": 31
+    },
+    {
+      "userId": 10,
+      "title": "My New Song",
+      "key": "",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578974857274-song-32-user-10?alt=media&token=4d0d2b34-caa7-4d38-977c-660ec3ee28c9",
+      "length": "",
+      "lyrics": "Roses are red\nViolets are blue",
+      "dateCreated": "2020-01-14T04:07:15.438Z",
+      "lastUpdated": "2020-01-14T04:20:25.330Z",
+      "id": 32
     }
   ],
   "writers": [
@@ -343,6 +354,20 @@
       "firstName": "Paul",
       "lastName": "McCartney",
       "id": 34
+    },
+    {
+      "songId": 26,
+      "userId": "",
+      "firstName": "John",
+      "lastName": "Lennon",
+      "id": 35
+    },
+    {
+      "songId": 32,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 36
     }
   ],
   "chords": [
@@ -430,7 +455,7 @@
     {
       "songId": 26,
       "intro": "",
-      "verse": "",
+      "verse": "Em Am Em Am",
       "chorus": "",
       "bridge": "",
       "outro": "",
@@ -480,6 +505,15 @@
       "bridge": "",
       "outro": "",
       "id": 31
+    },
+    {
+      "songId": 32,
+      "intro": "",
+      "verse": "",
+      "chorus": "",
+      "bridge": "",
+      "outro": "",
+      "id": 32
     }
   ],
   "tags": [
@@ -554,14 +588,14 @@
       "id": 17
     },
     {
-      "tag": "ANTI-LOVE",
-      "songId": "26",
-      "id": 18
-    },
-    {
       "tag": "LOVE SONG",
       "songId": "21",
       "id": 19
+    },
+    {
+      "tag": "ANTI-LOVE SONG",
+      "songId": "26",
+      "id": 21
     }
   ]
 }
