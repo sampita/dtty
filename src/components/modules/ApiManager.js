@@ -18,6 +18,11 @@ export default {
         return fetch(`${remoteURL}/${tableName}?userId=${userId}`).then(result => result.json())
     },
 
+    // GET all objects from tableName for the active user.
+    getAllSongs(tableName, userId) {
+        return fetch(`${remoteURL}/${tableName}?userId=${userId}&_sort=lastUpdated&_order=desc`).then(result => result.json())
+    },
+
     // GET all writers for a particular song.
     getItemsForSpecificSong(tableName, songId) {
       return fetch(`${remoteURL}/${tableName}?songId=${songId}`).then(result => result.json())

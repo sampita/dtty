@@ -124,7 +124,7 @@
       "length": "",
       "lyrics": "Love, love me do\nYou know I love you\nI'll always be true\nSo please, love me do\nWhoa, love me do\n\nLove, love me do\nYou know I love you\nI'll always be true\nSo please, love me do\n\nWhoa, love me do\nSomeone to love\nSomebody new\nSomeone to love\nSomeone like you",
       "dateCreated": "1958-01-07T05:22:08.989Z",
-      "lastUpdated": "1962-06-07T05:53:39.208Z",
+      "lastUpdated": "2020-01-08T17:25:39.665Z",
       "id": 21
     },
     {
@@ -135,7 +135,7 @@
       "length": "",
       "lyrics": "",
       "dateCreated": "1968-09-07T05:22:30.005Z",
-      "lastUpdated": "1968-11-07T05:22:30.005Z",
+      "lastUpdated": "2020-01-14T03:40:21.139Z",
       "id": 22
     },
     {
@@ -146,7 +146,7 @@
       "length": "",
       "lyrics": "",
       "dateCreated": "1970-01-07T05:22:48.000Z",
-      "lastUpdated": "1973-01-07T05:22:48.000Z",
+      "lastUpdated": "2020-01-07T20:06:21.602Z",
       "id": 23
     },
     {
@@ -157,7 +157,7 @@
       "length": "",
       "lyrics": "In Penny Lane, there is a barber showing photographs\nOf every head he's had the pleasure to know\nAnd all the people that come and go\nStop and say, \"Hello\"\n\nOn the corner is a banker with a motorcar\nAnd little children laugh at him behind his back\nAnd the banker never wears a mac\nIn the pouring rain, very strange\nPenny Lane is in my ears and in my eyes\nThere beneath the blue suburban skies\nI sit, and meanwhile back\nIn Penny Lane there is a fireman with an hourglass",
       "dateCreated": "1967-01-07T05:23:05.560Z",
-      "lastUpdated": "1967-02-07T06:06:15.211Z",
+      "lastUpdated": "2020-01-07T20:06:10.414Z",
       "id": 24
     },
     {
@@ -179,7 +179,7 @@
       "length": "",
       "lyrics": "",
       "dateCreated": "1964-01-07T05:23:42.750Z",
-      "lastUpdated": "2020-01-07T06:08:04.694Z",
+      "lastUpdated": "2020-01-07T20:06:33.832Z",
       "id": 26
     },
     {
@@ -212,7 +212,7 @@
       "length": "",
       "lyrics": "",
       "dateCreated": "2020-01-07T05:24:34.005Z",
-      "lastUpdated": "2020-01-07T06:04:01.578Z",
+      "lastUpdated": "2020-01-07T14:27:12.353Z",
       "id": 29
     },
     {
@@ -225,6 +225,17 @@
       "dateCreated": "2020-01-07T05:24:48.960Z",
       "lastUpdated": "2020-01-07T06:03:32.040Z",
       "id": 30
+    },
+    {
+      "userId": 10,
+      "title": "Yellow Submarine",
+      "key": "G Major",
+      "audio": "https://firebasestorage.googleapis.com/v0/b/dtty-63e9d.appspot.com/o/audio%2F1578409451875-song-31-user-10?alt=media&token=97da366e-15a3-44ba-bc4b-cb99c4d76aa3",
+      "length": "",
+      "lyrics": "We all live in a yellow submarine\nYellow submarine, yellow submarine\nWe all live in a yellow submarine\nYellow submarine, yellow submarine",
+      "dateCreated": "2020-01-07T15:03:14.381Z",
+      "lastUpdated": "2020-01-08T17:25:08.467Z",
+      "id": 31
     }
   ],
   "writers": [
@@ -325,6 +336,13 @@
       "firstName": "Paul",
       "lastName": "McCartney",
       "id": 33
+    },
+    {
+      "songId": 31,
+      "userId": 10,
+      "firstName": "Paul",
+      "lastName": "McCartney",
+      "id": 34
     }
   ],
   "chords": [
@@ -453,6 +471,15 @@
       "bridge": "",
       "outro": "",
       "id": 30
+    },
+    {
+      "songId": 31,
+      "intro": "",
+      "verse": "",
+      "chorus": "G D G",
+      "bridge": "",
+      "outro": "",
+      "id": 31
     }
   ],
   "tags": [
@@ -480,11 +507,6 @@
       "tag": "UNTITLED",
       "songId": "17",
       "id": 7
-    },
-    {
-      "tag": "LOVE SONG",
-      "songId": "21",
-      "id": 8
     },
     {
       "tag": "LOVE SONG",
@@ -535,6 +557,11 @@
       "tag": "ANTI-LOVE",
       "songId": "26",
       "id": 18
+    },
+    {
+      "tag": "LOVE SONG",
+      "songId": "21",
+      "id": 19
     }
   ]
 }
