@@ -1,70 +1,76 @@
 # dtty
-## A Songwriting App you can use whenever, wherever
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A songwriting app you can use whenever, wherever
 
-## Available Scripts
+![App Screenshots](./src/images/dtty-preview.png)
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**dtty** is a dynamic, mobile-friendly web application built
+using React. It is a songwriting app where users can
+capture audio and text as well as add keys, chords, writer
+names, and tags to each song. The idea was born from a
+problem I identified when I was still working as an audio engineer. I
+realized that when someone had a song idea, there was
+no widely-used mobile application that would allow that person to
+store lyrics (text) and melodies (audio) in a single, organized place.
+**dtty** was created to solve this problem.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+___________________________________
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+    - ReactJS
+    - MediaStream Recording API
+    - Firebase Cloud Storage
+    - JSON Server
+    - MomentJS
+    - Semantic UI
+    - Fort Awesome
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+_____________________________________
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## How It Works
+**dtty** allows each user to create an account and login to show their unique song collection. From here, they can create a new song or view/edit an existing song from their collection.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![App Screenshots](./src/images/dtty-login-homepage.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Also from the song collection view, a user can search for a word or term in the title and lyrics of each song to filter down the results.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![App Screenshots](./src/images/dtty-search.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+When a user creates a new song, they can not only write lyrics, but also record audio by clicking the Microphone icon.
 
-## Learn More
+![App Screenshots](./src/images/dtty-new-song.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A user can add the song's key and chords.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![App Screenshots](./src/images/dtty-song-details.gif)
 
-### Code Splitting
+A user can add additional writers to each song.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![App Screenshots](./src/images/dtty-add-writer.gif)
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+___________________________________
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Setup
+### Follow these instructions to setup this application on your computer
+1. Click the green **Clone or download** button on the top right of this repo and copy the SSH key from here
+1. Clone this repository using `git clone [paste_SSH_key_here]`
+1. `cd` into the directory it creates
+1. Run `npm install` inside your terminal and wait for all dependencies to be installed
+1. Run `npm start` inside your terminal to verify that installation was successful
+1. Open another terminal window and navigate to the **api** folder within the **src** folder
+1. Run `json-server -p 5002 -w dtty.json` using your terminal
+1. Lastly, you will need to create your own Firebase Cloud Storage account and setup your config file for this
+1. Go to [Google's Firebase Site](https://console.cloud.google.com/freetrial) to setup a free acount
+1. Grab the config information and then create a **config** folder within the **src** folder
+1. In this new **config** folder, create a file called **FirebaseConfig.js**
+1. Paste your config information here (the whole config folder will be `.gitignore`-ed)
+1. The app should now be fully-functioning
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
