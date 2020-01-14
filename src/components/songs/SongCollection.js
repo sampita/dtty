@@ -67,7 +67,7 @@ class Home extends Component {
 
     getAllSongs = () => {
         const userId = localStorage.getItem("user")
-        ApiManager.getAll("songs", userId)
+        ApiManager.getAllSongs("songs", userId)
             .then((songsArray) => {
                 this.setState({
                     songs: songsArray
