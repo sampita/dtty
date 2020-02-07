@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from "react-router-dom";
 import './index.css';
-import firebaseConfig from "./config/FirebaseConfig"
+import {firebaseConfig} from "./config/FirebaseConfig"
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 // import withFirebaseAuth from 'react-with-firebase-auth';
