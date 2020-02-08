@@ -10,16 +10,15 @@ input {
   outline: none;
 }
 
-
 #songTitle {
-    font-family: 'Roboto';
-    background: none !important;
-    border: none;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-left: 25px;
-    margin-bottom: 5px;
-    font-weight: bold;
+  font-family: 'Roboto';
+  background: none !important;
+  border: none;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 #songPageContainer {
@@ -39,10 +38,19 @@ input {
 }
 
 @keyframes glowing {
-  0% { background-color: #2ba805; box-shadow: 0 0 5px #2ba805; }
-  50% { background-color: #49e819; box-shadow: 0 0 20px #49e819; }
-  100% { background-color: #2ba805; box-shadow: 0 0 5px #2ba805; }
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
   }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+}
 
 #recordButton {
   background-color: rgb(5, 224, 86);
@@ -89,20 +97,24 @@ audio#player {
   box-shadow: 0px 0px 5px 0px #888;
 }
 
-
 .lines {
   margin-top: 10px;
   height: calc(100% - 40px);
-  background-image: repeating-linear-gradient(rgb(233, 233, 233) 0px, rgb(233, 233, 233) 24px, rgb(193, 193, 193) 25px);
+  background-image: repeating-linear-gradient(
+    rgb(233, 233, 233) 0px,
+    rgb(233, 233, 233) 24px,
+    rgb(193, 193, 193) 25px
+  );
 }
 
 .lyricsTextBox {
-    width: 80%;
-    background-color: rgba(236, 236, 236, 0);
-    font-size: 18px;
-    border: none;
-    resize: none;
-    margin: 80px 15px 160px 0px;}
+  width: 80%;
+  background-color: rgba(236, 236, 236, 0);
+  font-size: 18px;
+  border: none;
+  resize: none;
+  margin: 80px 15px 160px 0px;
+}
 
 .text {
   position: absolute;
@@ -122,10 +134,10 @@ audio#player {
     background-color: #E8E8E8;
     border: none;
     /* padding: 10px; */
-    /* margin: 10px; }*/
+/* margin: 10px; }*/
 
 /*     background-image: -moz-linear-gradient(top , transparent, transparent 30px,rgb(252, 252, 252) 0px); 
     background-image: -webkit-linear-gradient(top , transparent, transparent 49px,rgb(254, 254, 254) 0);
     -webkit-background-size:  100% 50px;
     background-size: 100% 50px; */
-    /* background-attachment: local; */
+/* background-attachment: local; */

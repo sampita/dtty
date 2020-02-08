@@ -1,102 +1,104 @@
-
-
 img.smallLogo {
-    width: 100px;
-    display: flex;
-    margin-top: 30%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100px;
+  display: flex;
+  margin-top: 30%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.loginInput, .createAccountInput, .smallLink {
-    display: block;
+.loginInput,
+.createAccountInput,
+.smallLink {
+  display: block;
 }
 
-.loginInput, .createAccountInput {
-    display: block;
-    background-color: rgb(238, 238, 238);
-    border: 2px solid rgb(238, 238, 238);
-    border-radius: 4px;
-    padding: 2px;
-    margin: 5px;
-
+.loginInput,
+.createAccountInput {
+  display: block;
+  background-color: rgb(238, 238, 238);
+  border: 2px solid rgb(238, 238, 238);
+  border-radius: 4px;
+  padding: 2px;
+  margin: 5px;
 }
 
-form.userAuthForm, fieldset.userAuthForm {
-    display: flex;
-    width: 70%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+form.userAuthForm,
+fieldset.userAuthForm {
+  display: flex;
+  width: 70%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form.userAuthForm {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 fieldset.userAuthForm {
-    border: none;
+  border: none;
 }
 
 fieldset#signup {
-    background-color: rgb(219, 211, 249);
-    border: none;
-    border-radius: 7px;
+  background-color: rgb(219, 211, 249);
+  border: none;
+  border-radius: 7px;
 }
 
-input.loginInput, input.createAccountInput {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+input.loginInput,
+input.createAccountInput {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .smallLink {
-    color: #8C00DF;
-    padding: 10px;
+  color: #8c00df;
+  padding: 10px;
 }
 
 #loginButton {
-    background-color: #01C47C;
-    color: white;
-    border: 2px solid #01C47C;
-    border-radius: 5px;
+  background-color: #01c47c;
+  color: white;
+  border: 2px solid #01c47c;
+  border-radius: 5px;
 }
 
 #loginButton:hover {
-    background-color: rgb(3, 147, 94);
-    border: 2px solid rgb(3, 147, 94);
+  background-color: rgb(3, 147, 94);
+  border: 2px solid rgb(3, 147, 94);
 }
 
 #signupButton {
-    background-color: #8C00DF;
-    color: white;
-    border: 2px solid #8C00DF;
-    border-radius: 5px;
+  background-color: #8c00df;
+  color: white;
+  border: 2px solid #8c00df;
+  border-radius: 5px;
 }
 
 #signupButton:hover {
-    background-color: rgb(109, 4, 170);
-    border: 2px solid rgb(109, 4, 170);
+  background-color: rgb(109, 4, 170);
+  border: 2px solid rgb(109, 4, 170);
 }
 
 .picture {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #cassetteImage {
-    width: 100%;
+  width: 100%;
 }
 
 #microphoneImage {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }

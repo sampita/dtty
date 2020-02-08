@@ -1,7 +1,7 @@
 section.songDetailsContainer {
-    display: flex;
-    flex-wrap: nowrap;
-    /* flex-basis: 100%; */
+  display: flex;
+  flex-wrap: nowrap;
+  /* flex-basis: 100%; */
 }
 
 #songDetailsBigContainer {
@@ -14,19 +14,19 @@ section.songDetailsContainer {
 }
 
 #editSongDetailsButton {
-background: #e0e1e2 none;
-font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-color: rgba(0,0,0,.8);
-border: none;
-min-height: 1em;
-margin: 0 .25em 0 0;
-padding: .78571429em 1.5em .78571429em;
-/* color: rgb(255, 255, 255); */
-font-weight: 600;
-/* background-color: rgb(128, 16, 193, 0); */
-padding: 8px;
-margin-bottom: 10px;
-border-radius: 5px;
+  background: #e0e1e2 none;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  border: none;
+  min-height: 1em;
+  margin: 0 0.25em 0 0;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  /* color: rgb(255, 255, 255); */
+  font-weight: 600;
+  /* background-color: rgb(128, 16, 193, 0); */
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 #editSongDetailsButton:hover {
@@ -35,15 +35,15 @@ border-radius: 5px;
   padding: 8px;
   border-radius: 5px;
   cursor: pointer;
-  }
+}
 
 .boldText {
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .nextLine {
-    display: block;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.nextLine {
+  display: block;
 }
 
 .flexContainer {
@@ -54,62 +54,63 @@ border-radius: 5px;
 }
 /* Style the Add Writer button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: rgb(22, 22, 22);
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    padding: 10px 0 10px 0px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
+  background-color: rgb(22, 22, 22);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 10px 0 10px 0px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
-  .songEditInput {
-    font-family: 'Roboto';
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-    border: .5px solid white;
-    border-radius: 7px;
-    margin-left: 5px;
-    margin-right: 7px;
-    padding-left: 5px;
-  }
+.songEditInput {
+  font-family: 'Roboto';
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0.5px solid white;
+  border-radius: 7px;
+  margin-left: 5px;
+  margin-right: 7px;
+  padding-left: 5px;
+}
 
-  .songDetailsFlex {
-    display: flex;
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
-    background-color: #ccc;
-  }
-  
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
-    background-color: rgb(22, 22, 22);
-    color: white;
-    padding: 0 18px 80px 0;
-    /* display: none; */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-  }
+.songDetailsFlex {
+  display: flex;
+}
 
-  div.ui.equal.width.grid {
-    margin-top: 1px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: #ccc;
+}
 
-  div.column {
-    width: 20px;
-  }
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  background-color: rgb(22, 22, 22);
+  color: white;
+  padding: 0 18px 80px 0;
+  /* display: none; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
 
-  #addWriterButton {
-    color: rgb(255, 255, 255);
-    background-color: rgb(132, 17, 189);
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+div.ui.equal.width.grid {
+  margin-top: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+div.column {
+  width: 20px;
+}
+
+#addWriterButton {
+  color: rgb(255, 255, 255);
+  background-color: rgb(132, 17, 189);
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}

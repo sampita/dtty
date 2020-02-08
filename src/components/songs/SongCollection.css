@@ -1,42 +1,41 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-    font-family: 'Roboto';
-    background-color: rgb(247, 247, 247);
+  font-family: 'Roboto';
+  background-color: rgb(247, 247, 247);
 }
 
 h1 {
-    margin: 0;
-    padding-top: 10px;
-    padding-left: 10px;
-    font-size: 40px;
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 40px;
 }
 
 #songCollectionHeader {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #searchContainer {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #songCardContainer {
-    position: absolute;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 105px;
+  position: absolute;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 105px;
 }
 
 #songCardContainer.item {
-    padding: 0;
-    margin: none;
-
+  padding: 0;
+  margin: none;
 }
 
 .ui.menu {
-    border: none;
+  border: none;
 }
 
 /* .collectionFooter {
@@ -47,38 +46,38 @@ h1 {
 } */
 
 #logOutButton {
-    /* background-color: rgb(247, 247, 247); */
-    margin: 15px;
-    border-radius: 10px;
-    background-color: rgb(18, 206, 137);
-    color: white;
-    border: none;
-    font-weight: bold;
+  /* background-color: rgb(247, 247, 247); */
+  margin: 15px;
+  border-radius: 10px;
+  background-color: rgb(18, 206, 137);
+  color: white;
+  border: none;
+  font-weight: bold;
 }
 
 #addNewSongButton {
-    padding-top: 37px;
-    color: white;
-    cursor: pointer;
-    font-size: 70px;
+  padding-top: 37px;
+  color: white;
+  cursor: pointer;
+  font-size: 70px;
 }
 
 #addNewSongButton:hover {
-    color: rgb(50, 235, 167);
+  color: rgb(50, 235, 167);
 }
 
 #searchInput {
-    width: 70%;
-    height: 38px;
-    margin-left: 10px;
+  width: 70%;
+  height: 38px;
+  margin-left: 10px;
 }
 
 #filterButton {
-    width: 40%;
-    height: 38px;
-    padding: 0;
-    margin: 0;
-    margin-right: 10px;
+  width: 40%;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
 }
 
 /* newSongButton {

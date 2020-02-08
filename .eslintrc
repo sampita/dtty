@@ -1,0 +1,25 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
+    "react/forbid-prop-types": [0, { "forbid": [] }],
+    "react/no-array-index-key": "warn",
+    "import/extensions": [1, "never", { "svg": "always", "json": "always" }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "implicit-arrow-linebreak": "off",
+    "semi": ["error", "never"],
+    "comma-dangle": "off",
+    "operator-linebreak": "off"
+  },
+  "plugins": ["react-hooks"]
+}
