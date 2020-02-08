@@ -69,41 +69,6 @@
       "email": "paul@thebeatles.com",
       "password": "beatles",
       "id": 10
-    },
-    {
-      "firstName": "Max",
-      "lastName": "Wolf",
-      "email": "v@v.com",
-      "password": "123",
-      "id": 11
-    },
-    {
-      "firstName": "Max",
-      "lastName": "Wolf",
-      "email": "maxcharleswolf@gmail.com",
-      "password": "123",
-      "id": 12
-    },
-    {
-      "firstName": "Max",
-      "lastName": "Wolf",
-      "email": "max@wolf.com",
-      "password": "123",
-      "id": 13
-    },
-    {
-      "firstName": "a",
-      "lastName": "a",
-      "email": "a@a.com",
-      "password": "123",
-      "id": 14
-    },
-    {
-      "firstName": "Max",
-      "lastName": "Wolf",
-      "email": "m@wolf.com",
-      "password": "123",
-      "id": 15
     }
   ],
   "songs": [
@@ -282,28 +247,6 @@
       "dateCreated": "2020-01-14T04:07:15.438Z",
       "lastUpdated": "2020-01-14T04:20:25.330Z",
       "id": 32
-    },
-    {
-      "userId": 12,
-      "title": "Untitled",
-      "key": "",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-02-08T03:15:23.772Z",
-      "lastUpdated": "2020-02-08T03:15:23.772Z",
-      "id": 33
-    },
-    {
-      "userId": 13,
-      "title": "Untitled",
-      "key": "A",
-      "audio": "",
-      "length": "",
-      "lyrics": "",
-      "dateCreated": "2020-02-08T03:19:54.585Z",
-      "lastUpdated": "2020-02-08T03:21:29.561Z",
-      "id": 34
     }
   ],
   "writers": [
@@ -425,20 +368,6 @@
       "firstName": "Paul",
       "lastName": "McCartney",
       "id": 36
-    },
-    {
-      "songId": 34,
-      "userId": 13,
-      "firstName": "Max",
-      "lastName": "Wolf",
-      "id": 37
-    },
-    {
-      "songId": 34,
-      "userId": "",
-      "firstName": "Rang",
-      "lastName": "Dipkin",
-      "id": 38
     }
   ],
   "chords": [
@@ -585,24 +514,6 @@
       "bridge": "",
       "outro": "",
       "id": 32
-    },
-    {
-      "songId": 33,
-      "intro": "",
-      "verse": "",
-      "chorus": "",
-      "bridge": "",
-      "outro": "",
-      "id": 33
-    },
-    {
-      "songId": 34,
-      "intro": "",
-      "verse": "B",
-      "chorus": "C",
-      "bridge": "D",
-      "outro": "",
-      "id": 34
     }
   ],
   "tags": [
