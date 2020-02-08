@@ -19,9 +19,7 @@
     "implicit-arrow-linebreak": "off",
     "semi": ["error", "never"],
     "comma-dangle": "off",
-    "operator-linebreak": ["error", "before", { "overrides": { "=": "ignore" } }],
+    "operator-linebreak": "off"
   },
-  "plugins": [
-    "react-hooks"
-  ]
+  "plugins": ["react-hooks"]
 }

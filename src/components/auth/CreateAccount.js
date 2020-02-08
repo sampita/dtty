@@ -13,11 +13,7 @@ const initialState = {
   confirmPassword: '',
 }
 
-// The reason this is a traditional function declaration, is purely for organizational reasons
-// Since `function` ignores block scope and allows this `reducer` to be "hoisted" and used even before it was declared.
-// Keeping it at the bottom of the file tends to keep things tidier for me, but this could very easily be an arrow function,
-// but it would have to live at the top of the file.
-function reducer(state, action) {
+const reducer = (state, action) => {
   switch (action.type) {
     case 'setField':
       return {
@@ -32,45 +28,45 @@ function reducer(state, action) {
 export const CreateAccount = ({ setUser, history }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const { confirmPassword, ...user } = state
-  const { email, password } = user
+  const { firstName, lastName, email, password, confirmPassword } = state
+  const user = { firstName, lastName, email, password }
 
-  const userEmailExists = async users =>
-    await users.find(user => user.email.toLowerCase() === state.email.toLowerCase())
+  const userEmailExists = users =>
+    users && users.find(user => user.email.toLowerCase() === state.email.toLowerCase())
 
   const userPasswordMismatch = password !== confirmPassword
   const allFieldsValid = email && password && confirmPassword
   const userEmailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 
-  const alertValidationErrors = async users =>
-    (await userEmailExists(users))
-      ? alert('This email is already taken')
-      : userPasswordMismatch
-      ? alert('Your passwords do not match')
-      : !allFieldsValid
-      ? alert('Please fill out all fields')
-      : !userEmailValid
-      ? alert('Please enter a valid email address')
-      : null
+  const alertValidationErrors = async () => {
+    const users = await ApiManager.getAll('users')
 
-  const getAllUsers = async () => await ApiManager.getAll('users')
+    if (userEmailExists(users)) alert('This email is already taken')
 
-  // Create the user and redirect user to home
-  const createUser = async () => {
-    const result = await ApiManager.createNew('users', user)
-    setUser(result)
-    history.push('/')
+    if (userPasswordMismatch) alert('Your passwords do not match')
+
+    if (!allFieldsValid) alert('Please fill out all fields')
+
+    if (!userEmailValid) alert('Please enter a valid email address')
   }
 
-  const createNewUser = event => {
+  const createUserAndRedirectHome = async () => {
+    const results = await ApiManager.createNew('users', user)
+    await setUser(results)
+    await history.push('/')
+  }
+
+  const onClickCreateNewUser = event => {
     event.preventDefault()
-    alertValidationErrors(getAllUsers())
-    createUser()
+
+    alertValidationErrors()
+
+    createUserAndRedirectHome()
   }
 
   const onFieldChange = (event, fieldType) => {
     const value = event && event.target && event.target.value
-    dispatch({ type: 'setField', action: { field: fieldType, value } })
+    dispatch({ type: 'setField', field: fieldType, value })
   }
 
   return (
@@ -81,7 +77,7 @@ export const CreateAccount = ({ setUser, history }) => {
           <h3>Sign Up:</h3>
           <div className="formgrid">
             <input
-              onChange={e => onFieldChange('firstName')}
+              onChange={e => onFieldChange(e, 'firstName')}
               type="name"
               className="createAccountInput"
               id="firstName"
@@ -89,7 +85,7 @@ export const CreateAccount = ({ setUser, history }) => {
               required=""
             />
             <input
-              onChange={e => onFieldChange('lastName')}
+              onChange={e => onFieldChange(e, 'lastName')}
               type="name"
               className="createAccountInput"
               id="lastName"
@@ -97,7 +93,7 @@ export const CreateAccount = ({ setUser, history }) => {
               required=""
             />
             <input
-              onChange={e => onFieldChange('email')}
+              onChange={e => onFieldChange(e, 'email')}
               type="email"
               className="createAccountInput"
               id="email"
@@ -105,7 +101,7 @@ export const CreateAccount = ({ setUser, history }) => {
               required=""
             />
             <input
-              onChange={e => onFieldChange('password')}
+              onChange={e => onFieldChange(e, 'password')}
               type="password"
               className="createAccountInput"
               id="password"
@@ -113,7 +109,7 @@ export const CreateAccount = ({ setUser, history }) => {
               required=""
             />
             <input
-              onChange={e => onFieldChange('confirmPassword')}
+              onChange={e => onFieldChange(e, 'confirmPassword')}
               type="password"
               className="createAccountInput"
               id="confirmPassword"
@@ -121,7 +117,7 @@ export const CreateAccount = ({ setUser, history }) => {
               required=""
             />
           </div>
-          <button onClick={createNewUser} type="submit" className="button" id="signupButton">
+          <button onClick={onClickCreateNewUser} type="submit" className="button" id="signupButton">
             Register
           </button>
           <Link className="smallLink" to="/login">

@@ -1,45 +1,45 @@
 h3 {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 h3.songCardTitle {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .songCard {
-    background-color: rgb(233, 233, 233);
-    border-radius: 2px;
-    padding: 1em 1em .2em 1em;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-bottom: 1px solid rgb(247, 247, 247);
+  background-color: rgb(233, 233, 233);
+  border-radius: 2px;
+  padding: 1em 1em 0.2em 1em;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid rgb(247, 247, 247);
 }
 
 p.lastUpdatedText {
-    padding: 0;
+  padding: 0;
 }
 
 #audioFlexContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 audio#player {
-    width: 100%;
+  width: 100%;
 }
 
 section.cardButtonContainer {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 50px;
 }
 
 .ui.horizontal.label {
-    margin: 0 .04em;
-    padding: .4em .4em;
+  margin: 0 0.04em;
+  padding: 0.4em 0.4em;
 }
 
 .tagContainer {
-    float: right;
+  float: right;
 }
