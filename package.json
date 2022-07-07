@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^7.5.2",
     "json-server": "^0.15.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "re-base": "^4.0.0",
     "react": "^16.12.0",
     "react-autosize-textarea": "^7.0.0",
